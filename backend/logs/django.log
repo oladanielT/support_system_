@@ -1,0 +1,755 @@
+INFO 2025-06-26 04:48:19,348 autoreload 19046 127476257669120 Watching for file changes with StatReloader
+INFO 2025-06-26 04:51:17,604 autoreload 19472 135145390583808 Watching for file changes with StatReloader
+WARNING 2025-06-26 04:52:39,448 log 19472 135145332926016 Not Found: /api/
+WARNING 2025-06-26 04:53:16,016 log 19472 135145332926016 Not Found: /api/auth
+INFO 2025-06-26 04:54:42,056 autoreload 19472 135145390583808 /home/oladan/support_system_/backend/backend/urls.py changed, reloading.
+INFO 2025-06-26 04:54:43,755 autoreload 19981 136108983013376 Watching for file changes with StatReloader
+INFO 2025-06-26 04:59:12,638 autoreload 20520 129245852336128 Watching for file changes with StatReloader
+INFO 2025-06-26 05:08:33,289 autoreload 21481 133956267495424 Watching for file changes with StatReloader
+INFO 2025-07-29 18:20:08,279 autoreload 3274 128189593550848 Watching for file changes with StatReloader
+INFO 2025-07-29 18:22:13,108 autoreload 3274 128189593550848 /home/oladan/support_system_/backend/complaints/serializers.py changed, reloading.
+INFO 2025-07-29 18:22:13,683 autoreload 3677 128952211333120 Watching for file changes with StatReloader
+INFO 2025-07-29 18:25:54,364 autoreload 3677 128952211333120 /home/oladan/support_system_/backend/complaints/serializers.py changed, reloading.
+INFO 2025-07-29 18:25:54,876 autoreload 4360 135992688152576 Watching for file changes with StatReloader
+WARNING 2025-07-29 18:26:01,556 log 4360 135992556123712 Not Found: /
+WARNING 2025-07-29 18:26:24,748 log 4360 135992539338304 Not Found: /
+WARNING 2025-07-29 18:26:25,272 log 4360 135992539338304 Not Found: /favicon.ico
+WARNING 2025-07-29 18:26:25,288 log 4360 135992556123712 Not Found: /favicon.ico
+WARNING 2025-07-29 18:26:25,321 log 4360 135992539338304 Not Found: /
+WARNING 2025-07-29 18:26:36,166 log 4360 135992556123712 Not Found: /api/auth/
+WARNING 2025-07-29 18:26:49,403 log 4360 135992539338304 Not Found: /
+WARNING 2025-07-29 18:26:49,485 log 4360 135992539338304 Not Found: /favicon.ico
+WARNING 2025-07-29 18:26:49,505 log 4360 135992539338304 Not Found: /
+WARNING 2025-07-29 18:26:49,605 log 4360 135992556123712 Method Not Allowed: /api/auth/register/
+WARNING 2025-07-29 18:26:59,631 log 4360 135992539338304 Not Found: /
+WARNING 2025-07-29 18:26:59,678 log 4360 135992539338304 Not Found: /favicon.ico
+WARNING 2025-07-29 18:26:59,765 log 4360 135992539338304 Not Found: /
+WARNING 2025-07-29 18:27:08,706 log 4360 135992556123712 Method Not Allowed: /api/auth/login/
+WARNING 2025-07-29 18:27:15,802 log 4360 135992539338304 Not Found: /
+WARNING 2025-07-29 18:27:15,842 log 4360 135992539338304 Not Found: /favicon.ico
+WARNING 2025-07-29 18:27:15,910 log 4360 135992539338304 Not Found: /
+WARNING 2025-07-29 18:27:20,487 log 4360 135992556123712 Not Found: /api/auth
+WARNING 2025-07-29 18:27:28,234 log 4360 135992539338304 Not Found: /
+WARNING 2025-07-29 18:27:28,370 log 4360 135992539338304 Not Found: /favicon.ico
+WARNING 2025-07-29 18:27:28,402 log 4360 135992539338304 Not Found: /
+WARNING 2025-07-29 18:27:35,836 log 4360 135992556123712 Unauthorized: /api/complaints/
+WARNING 2025-07-29 18:27:44,214 log 4360 135992539338304 Not Found: /
+WARNING 2025-07-29 18:27:44,252 log 4360 135992539338304 Not Found: /favicon.ico
+WARNING 2025-07-29 18:27:44,306 log 4360 135992539338304 Not Found: /
+INFO 2025-07-29 18:31:38,422 autoreload 5985 134831924654080 Watching for file changes with StatReloader
+ERROR 2025-07-29 18:33:32,679 log 5985 134831866373696 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'support_db.users' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 25, in create
+    serializer.is_valid(raise_exception=True)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 442, in run_validation
+    value = self.to_internal_value(data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 499, in to_internal_value
+    validated_value = field.run_validation(primitive_value)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/fields.py", line 757, in run_validation
+    return super().run_validation(data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/fields.py", line 539, in run_validation
+    self.run_validators(value)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/fields.py", line 551, in run_validators
+    validator(value, self)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/validators.py", line 73, in __call__
+    if qs_exists(queryset):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/validators.py", line 21, in qs_exists
+    return queryset.exists()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 1288, in exists
+    return self.query.has_results(using=self.db)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 660, in has_results
+    return compiler.has_results()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1542, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'support_db.users' doesn't exist")
+ERROR 2025-07-29 19:07:04,178 log 5985 134831866373696 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'support_db.users' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 25, in create
+    serializer.is_valid(raise_exception=True)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 442, in run_validation
+    value = self.to_internal_value(data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 499, in to_internal_value
+    validated_value = field.run_validation(primitive_value)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/fields.py", line 757, in run_validation
+    return super().run_validation(data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/fields.py", line 539, in run_validation
+    self.run_validators(value)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/fields.py", line 551, in run_validators
+    validator(value, self)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/validators.py", line 73, in __call__
+    if qs_exists(queryset):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/validators.py", line 21, in qs_exists
+    return queryset.exists()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 1288, in exists
+    return self.query.has_results(using=self.db)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 660, in has_results
+    return compiler.has_results()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1542, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'support_db.users' doesn't exist")
+INFO 2025-07-29 19:07:35,575 autoreload 14690 132284534497280 Watching for file changes with StatReloader
+ERROR 2025-07-29 19:08:24,971 log 14690 132284476810816 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'support_db.users' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 25, in create
+    serializer.is_valid(raise_exception=True)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 442, in run_validation
+    value = self.to_internal_value(data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 499, in to_internal_value
+    validated_value = field.run_validation(primitive_value)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/fields.py", line 757, in run_validation
+    return super().run_validation(data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/fields.py", line 539, in run_validation
+    self.run_validators(value)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/fields.py", line 551, in run_validators
+    validator(value, self)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/validators.py", line 73, in __call__
+    if qs_exists(queryset):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/validators.py", line 21, in qs_exists
+    return queryset.exists()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 1288, in exists
+    return self.query.has_results(using=self.db)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 660, in has_results
+    return compiler.has_results()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1542, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'support_db.users' doesn't exist")
+ERROR 2025-07-29 19:16:33,107 log 14690 132284476810816 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'support_db.users' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 25, in create
+    serializer.is_valid(raise_exception=True)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 442, in run_validation
+    value = self.to_internal_value(data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 499, in to_internal_value
+    validated_value = field.run_validation(primitive_value)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/fields.py", line 757, in run_validation
+    return super().run_validation(data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/fields.py", line 539, in run_validation
+    self.run_validators(value)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/fields.py", line 551, in run_validators
+    validator(value, self)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/validators.py", line 73, in __call__
+    if qs_exists(queryset):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/validators.py", line 21, in qs_exists
+    return queryset.exists()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 1288, in exists
+    return self.query.has_results(using=self.db)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 660, in has_results
+    return compiler.has_results()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1542, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'support_db.users' doesn't exist")
+INFO 2025-07-29 19:18:10,132 autoreload 14690 132284534497280 /home/oladan/support_system_/backend/users/serializers.py changed, reloading.
+INFO 2025-07-29 19:18:11,183 autoreload 16609 127483446767616 Watching for file changes with StatReloader
+ERROR 2025-07-29 19:18:50,622 log 16609 127483389142592 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'support_db.users' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 25, in create
+    serializer.is_valid(raise_exception=True)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 442, in run_validation
+    value = self.to_internal_value(data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 499, in to_internal_value
+    validated_value = field.run_validation(primitive_value)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/fields.py", line 757, in run_validation
+    return super().run_validation(data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/fields.py", line 539, in run_validation
+    self.run_validators(value)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/fields.py", line 551, in run_validators
+    validator(value, self)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/validators.py", line 73, in __call__
+    if qs_exists(queryset):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/validators.py", line 21, in qs_exists
+    return queryset.exists()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 1288, in exists
+    return self.query.has_results(using=self.db)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 660, in has_results
+    return compiler.has_results()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1542, in has_results
+    return bool(self.execute_sql(SINGLE))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'support_db.users' doesn't exist")
+INFO 2025-07-29 19:18:57,240 autoreload 16609 127483446767616 /home/oladan/support_system_/backend/users/serializers.py changed, reloading.
+INFO 2025-07-29 19:18:57,815 autoreload 16816 136912698961920 Watching for file changes with StatReloader
+WARNING 2025-07-29 19:26:07,361 log 16816 136912641713728 Unauthorized: /api/complaints/
+WARNING 2025-07-29 19:26:45,933 log 16816 136912417322560 Not Found: /
+WARNING 2025-07-29 19:26:45,981 log 16816 136912417322560 Not Found: /favicon.ico
+WARNING 2025-07-29 19:26:46,046 log 16816 136912417322560 Not Found: /
+WARNING 2025-07-29 19:27:17,207 log 16816 136912641713728 Not Found: /api/auth/
+WARNING 2025-07-29 19:27:30,117 log 16816 136912417322560 Not Found: /
+WARNING 2025-07-29 19:27:30,207 log 16816 136912417322560 Not Found: /favicon.ico
+WARNING 2025-07-29 19:27:30,270 log 16816 136912417322560 Not Found: /
+ERROR 2025-07-29 19:27:43,527 log 16816 136912400537152 Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'support_db.users' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 444, in login
+    return LoginView.as_view(**defaults)(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/contrib/auth/views.py", line 89, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/edit.py", line 150, in post
+    if form.is_valid():
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/forms/forms.py", line 197, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/forms/forms.py", line 192, in errors
+    self.full_clean()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/forms/forms.py", line 326, in full_clean
+    self._clean_form()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/forms/forms.py", line 342, in _clean_form
+    cleaned_data = self.clean()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/contrib/auth/forms.py", line 356, in clean
+    self.user_cache = authenticate(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/contrib/auth/__init__.py", line 79, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/contrib/auth/backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/contrib/auth/base_user.py", line 37, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'support_db.users' doesn't exist")
+WARNING 2025-07-29 19:27:56,016 log 16816 136912417322560 Not Found: /
+WARNING 2025-07-29 19:27:56,106 log 16816 136912417322560 Not Found: /favicon.ico
+WARNING 2025-07-29 19:27:56,138 log 16816 136912417322560 Not Found: /
+INFO 2025-07-29 21:30:07,868 autoreload 39685 128815011553280 Watching for file changes with StatReloader
+WARNING 2025-07-29 21:30:43,779 log 39685 128814726248000 Not Found: /
+WARNING 2025-07-29 21:30:43,813 log 39685 128814726248000 Not Found: /favicon.ico
+WARNING 2025-07-29 21:30:43,890 log 39685 128814726248000 Not Found: /
+WARNING 2025-07-29 21:30:53,909 log 39685 128814726248000 Not Found: /
+WARNING 2025-07-29 21:30:54,188 log 39685 128814726248000 Not Found: /favicon.ico
+WARNING 2025-07-29 21:30:54,219 log 39685 128814726248000 Not Found: /
+WARNING 2025-07-29 21:31:09,347 log 39685 128814726248000 Not Found: /
+WARNING 2025-07-29 21:31:09,441 log 39685 128814726248000 Not Found: /favicon.ico
+WARNING 2025-07-29 21:31:09,472 log 39685 128814726248000 Not Found: /
+WARNING 2025-07-29 21:31:30,165 log 39685 128814726248000 Not Found: /
+WARNING 2025-07-29 21:31:30,245 log 39685 128814726248000 Not Found: /favicon.ico
+WARNING 2025-07-29 21:31:30,266 log 39685 128814726248000 Not Found: /
+WARNING 2025-07-29 21:31:55,193 log 39685 128814952736320 Not Found: /
+WARNING 2025-07-29 21:32:03,264 log 39685 128814726248000 Not Found: /
+WARNING 2025-07-29 21:32:03,373 log 39685 128814726248000 Not Found: /favicon.ico
+WARNING 2025-07-29 21:32:03,754 log 39685 128814726248000 Not Found: /
+WARNING 2025-07-29 21:32:14,410 log 39685 128814952736320 Method Not Allowed: /api/auth/register/
+WARNING 2025-07-29 21:32:21,217 log 39685 128814726248000 Not Found: /
+WARNING 2025-07-29 21:32:21,256 log 39685 128814726248000 Not Found: /favicon.ico
+WARNING 2025-07-29 21:32:21,313 log 39685 128814726248000 Not Found: /
+WARNING 2025-07-29 21:32:32,621 log 39685 128814952736320 Unauthorized: /api/complaints/
+WARNING 2025-07-29 21:32:41,185 log 39685 128814726248000 Not Found: /
+WARNING 2025-07-29 21:32:41,223 log 39685 128814726248000 Not Found: /favicon.ico
+WARNING 2025-07-29 21:32:41,280 log 39685 128814726248000 Not Found: /
+WARNING 2025-07-29 21:35:04,405 log 39685 128814717855296 Bad Request: /api/auth/register/
+ERROR 2025-07-29 21:35:52,260 log 39685 128814717855296 Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 25, in create
+    serializer.is_valid(raise_exception=True)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 445, in run_validation
+    value = self.validate(value)
+  File "/home/oladan/support_system_/backend/users/serializers.py", line 16, in validate
+    if attrs['password'] != attr['confirm_password']:
+NameError: name 'attrs' is not defined
+INFO 2025-07-29 21:37:13,165 autoreload 39685 128815011553280 /home/oladan/support_system_/backend/users/serializers.py changed, reloading.
+INFO 2025-07-29 21:37:14,409 autoreload 41363 131122865278976 Watching for file changes with StatReloader
+WARNING 2025-07-29 21:40:48,376 log 41363 131122734298688 Method Not Allowed: /api/auth/register/
+WARNING 2025-07-29 21:41:26,957 log 41363 131122717513280 Not Found: /
+WARNING 2025-07-29 21:41:27,000 log 41363 131122717513280 Not Found: /favicon.ico
+WARNING 2025-07-29 21:41:27,112 log 41363 131122717513280 Not Found: /
+INFO 2025-07-29 21:45:00,814 autoreload 41363 131122865278976 /home/oladan/support_system_/backend/backend/settings.py changed, reloading.
+INFO 2025-07-29 21:45:02,532 autoreload 42814 123586903891968 Watching for file changes with StatReloader
+WARNING 2025-07-29 21:45:09,714 log 42814 123586836682304 Method Not Allowed: /api/auth/register/
+WARNING 2025-07-29 21:45:32,992 log 42814 123586585019968 Not Found: /
+WARNING 2025-07-29 21:45:33,026 log 42814 123586585019968 Not Found: /favicon.ico
+WARNING 2025-07-29 21:45:33,092 log 42814 123586585019968 Not Found: /
+WARNING 2025-07-29 21:45:42,785 log 42814 123586836682304 Method Not Allowed: /api/auth/login/
+WARNING 2025-07-29 21:45:53,665 log 42814 123586585019968 Not Found: /
+WARNING 2025-07-29 21:45:53,684 log 42814 123586585019968 Not Found: /favicon.ico
+WARNING 2025-07-29 21:45:53,740 log 42814 123586585019968 Not Found: /
+WARNING 2025-07-29 21:46:03,414 log 42814 123586836682304 Method Not Allowed: /api/auth/register/
+WARNING 2025-07-29 21:46:12,545 log 42814 123586585019968 Not Found: /
+WARNING 2025-07-29 21:46:12,845 log 42814 123586585019968 Not Found: /favicon.ico
+WARNING 2025-07-29 21:46:12,887 log 42814 123586585019968 Not Found: /
+WARNING 2025-07-29 21:47:09,330 log 42814 123586836682304 Unauthorized: /api/complaints/
+WARNING 2025-07-29 21:47:18,751 log 42814 123586585019968 Not Found: /
+WARNING 2025-07-29 21:47:18,799 log 42814 123586585019968 Not Found: /favicon.ico
+WARNING 2025-07-29 21:47:19,016 log 42814 123586585019968 Not Found: /
+WARNING 2025-07-29 21:49:46,285 log 42814 123586593412672 Method Not Allowed: /api/auth/login/
+WARNING 2025-07-29 21:50:02,171 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:50:02,684 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 21:50:02,705 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:50:32,157 log 42814 123586593412672 Bad Request: /api/auth/login/
+WARNING 2025-07-29 21:50:46,389 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:50:46,525 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 21:50:46,556 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:52:06,840 log 42814 123586593412672 Method Not Allowed: /api/auth/register/
+WARNING 2025-07-29 21:52:18,247 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:52:19,080 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 21:52:19,101 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:52:33,645 log 42814 123586593412672 Bad Request: /api/auth/register/
+WARNING 2025-07-29 21:52:44,589 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:52:44,642 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 21:52:44,719 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:53:14,816 log 42814 123586593412672 Method Not Allowed: /api/auth/login/
+WARNING 2025-07-29 21:53:24,228 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:53:24,369 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 21:53:24,403 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:54:40,038 log 42814 123586593412672 Bad Request: /api/auth/login/
+WARNING 2025-07-29 21:54:49,057 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:54:49,431 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 21:54:49,464 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:55:03,096 log 42814 123586593412672 Bad Request: /api/auth/login/
+WARNING 2025-07-29 21:55:14,145 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:55:14,227 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 21:55:14,253 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:55:23,169 log 42814 123586593412672 Method Not Allowed: /api/auth/register/
+WARNING 2025-07-29 21:55:31,350 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:55:31,469 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 21:55:31,499 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:56:15,730 log 42814 123586593412672 Bad Request: /api/auth/register/
+WARNING 2025-07-29 21:56:25,611 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:56:25,710 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 21:56:25,739 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:56:50,649 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:56:50,711 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 21:56:50,739 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:58:13,798 log 42814 123586593412672 Method Not Allowed: /api/auth/register/
+WARNING 2025-07-29 21:58:33,146 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:58:33,281 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 21:58:33,349 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:58:45,247 log 42814 123586593412672 Method Not Allowed: /api/auth/login/
+WARNING 2025-07-29 21:58:46,374 log 42814 123586593412672 Method Not Allowed: /api/auth/login/
+WARNING 2025-07-29 21:58:57,419 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:58:57,499 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 21:58:57,527 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:59:08,137 log 42814 123586593412672 Bad Request: /api/auth/login/
+WARNING 2025-07-29 21:59:16,415 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 21:59:16,533 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 21:59:16,556 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 22:02:47,170 log 42814 123586593412672 Bad Request: /api/auth/login/
+WARNING 2025-07-29 22:03:04,099 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 22:03:04,144 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 22:03:04,224 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 22:04:37,791 log 42814 123586593412672 Bad Request: /api/auth/login/
+WARNING 2025-07-29 22:04:52,646 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 22:04:52,669 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 22:04:52,739 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 22:06:47,407 log 42814 123586593412672 Bad Request: /api/auth/login/
+WARNING 2025-07-29 22:07:10,768 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 22:07:11,554 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 22:07:11,672 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 22:09:38,628 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 22:09:38,732 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 22:09:38,763 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 22:10:32,628 log 42814 123586845075008 Not Found: /
+WARNING 2025-07-29 22:10:32,720 log 42814 123586845075008 Not Found: /favicon.ico
+WARNING 2025-07-29 22:10:32,757 log 42814 123586845075008 Not Found: /
+INFO 2025-07-29 22:12:42,898 autoreload 49157 123377034977280 Watching for file changes with StatReloader
+WARNING 2025-07-29 22:13:17,385 log 49157 123376886605376 Not Found: /
+WARNING 2025-07-29 22:13:17,481 log 49157 123376886605376 Not Found: /favicon.ico
+WARNING 2025-07-29 22:13:17,508 log 49157 123376886605376 Not Found: /
+WARNING 2025-07-29 22:13:34,770 log 49157 123376886605376 Not Found: /
+WARNING 2025-07-29 22:13:34,869 log 49157 123376886605376 Not Found: /favicon.ico
+WARNING 2025-07-29 22:13:34,894 log 49157 123376886605376 Not Found: /
+WARNING 2025-07-29 22:14:15,367 log 49157 123376886605376 Not Found: /
+WARNING 2025-07-29 22:14:15,799 log 49157 123376886605376 Not Found: /favicon.ico
+WARNING 2025-07-29 22:14:15,828 log 49157 123376886605376 Not Found: /
+INFO 2025-07-29 22:18:33,605 autoreload 49157 123377034977280 /home/oladan/support_system_/backend/users/admin.py changed, reloading.
+INFO 2025-07-29 22:18:35,588 autoreload 50319 127085774589952 Watching for file changes with StatReloader
+INFO 2025-07-29 22:18:57,779 autoreload 50319 127085774589952 /home/oladan/support_system_/backend/complaints/admin.py changed, reloading.
+INFO 2025-07-29 22:18:58,761 autoreload 50424 131670480429056 Watching for file changes with StatReloader
+INFO 2025-07-29 22:21:45,418 autoreload 50424 131670480429056 /home/oladan/support_system_/backend/complaints/admin.py changed, reloading.
+INFO 2025-07-29 22:21:46,390 autoreload 50914 127943234158592 Watching for file changes with StatReloader
+INFO 2025-07-29 22:29:40,970 autoreload 52387 138900976037888 Watching for file changes with StatReloader
+WARNING 2025-07-29 22:30:13,734 log 52387 138900830934592 Not Found: /
+WARNING 2025-07-29 22:30:13,771 log 52387 138900830934592 Not Found: /favicon.ico
+WARNING 2025-07-29 22:30:13,833 log 52387 138900830934592 Not Found: /
+WARNING 2025-07-29 22:31:43,335 log 52387 138900830934592 Not Found: /
+WARNING 2025-07-29 22:31:43,954 log 52387 138900830934592 Not Found: /favicon.ico
+WARNING 2025-07-29 22:31:43,993 log 52387 138900830934592 Not Found: /
+INFO 2025-07-30 08:58:56,575 autoreload 1740 128485076455424 Watching for file changes with StatReloader
+WARNING 2025-07-30 08:59:25,739 log 1740 128484950144576 Not Found: /
+WARNING 2025-07-30 08:59:46,548 log 1740 128484932310592 Not Found: /
+WARNING 2025-07-30 08:59:46,631 log 1740 128484950144576 Not Found: /favicon.ico
+WARNING 2025-07-30 08:59:46,656 log 1740 128484932310592 Not Found: /favicon.ico
+WARNING 2025-07-30 08:59:46,678 log 1740 128484932310592 Not Found: /
+WARNING 2025-07-30 09:00:04,085 log 1740 128484950144576 Method Not Allowed: /api/auth/register/
+WARNING 2025-07-30 09:00:05,057 log 1740 128484950144576 Method Not Allowed: /api/auth/register/
+WARNING 2025-07-30 09:00:14,655 log 1740 128484932310592 Not Found: /
+WARNING 2025-07-30 09:00:14,974 log 1740 128484932310592 Not Found: /favicon.ico
+WARNING 2025-07-30 09:00:15,018 log 1740 128484932310592 Not Found: /
+INFO 2025-07-30 11:42:59,693 autoreload 2104 127544946057216 Watching for file changes with StatReloader
+WARNING 2025-07-30 11:44:05,929 log 1740 128484941751872 Not Found: /
+WARNING 2025-07-30 11:44:08,643 log 1740 128484941751872 Not Found: /favicon.ico
+WARNING 2025-07-30 11:44:32,412 log 1740 128484941751872 Method Not Allowed: /api/auth/login/
+WARNING 2025-07-30 11:49:18,699 log 1740 128484906083904 Unauthorized: /api/auth/logout/
