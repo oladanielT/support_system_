@@ -37,26 +37,36 @@ class RegisterView(generics.CreateAPIView):
             'message': 'Registration successful'
         }, status=status.HTTP_201_CREATED)
 
+        print("Registered user role:", user.role)
+
+
 class LoginView(generics.GenericAPIView):
     permission_classes = (AllowAny,)
     serializer_class = UserLoginSerializer
-    
+
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data['user']
-        
+
         # Generate tokens
         refresh = RefreshToken.for_user(user)
-        
+        access_token = str(refresh.access_token)
+
         return Response({
-            'user': UserProfileSerializer(user).data,
-            'tokens': {
-                'refresh': str(refresh),
-                'access': str(refresh.access_token),
+            "user": {
+                "id": user.id,
+                "email": user.email,
+                "role": user.role, 
+                "full_name": user.get_full_name(),
             },
-            'message': 'Login successful'
+            "tokens": {
+                "access": access_token,
+                "refresh": str(refresh),
+            },
+            "message": "Login successful"
         })
+
 
 class ProfileView(generics.RetrieveUpdateAPIView):
     permission_classes = (IsAuthenticated,)

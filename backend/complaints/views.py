@@ -1,7 +1,4 @@
 from django.shortcuts import render
-
-# Create your views here.
-# complaints/views.py
 from rest_framework import generics, status, permissions
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
@@ -20,6 +17,7 @@ from .serializers import (
     ComplaintAttachmentSerializer
 )
 
+
 class ComplaintListCreateView(generics.ListCreateAPIView):
     """List all complaints or create a new complaint"""
     permission_classes = [permissions.IsAuthenticated]
@@ -33,16 +31,24 @@ class ComplaintListCreateView(generics.ListCreateAPIView):
         user = self.request.user
         queryset = Complaint.objects.select_related('submitted_by', 'assigned_to')
         
-        # Filter based on user role
+        # # Filter based on user role
+        # if user.role == 'user':
+        #     # Users can only see their own complaints
+        #     queryset = queryset.filter(submitted_by=user)
+        # # elif user.role == 'engineer':
+        # #     # Engineers can see assigned complaints and unassigned ones
+        # #     queryset = queryset.filter(
+        # #         Q(assigned_to=user) | Q(assigned_to__isnull=True)
+        # #     )
+        # elif user.role == 'engineer':
+        #     # Engineers should only see complaints assigned to them
+        #     queryset = queryset.filter(assigned_to=user)
+
         if user.role == 'user':
-            # Users can only see their own complaints
             queryset = queryset.filter(submitted_by=user)
         elif user.role == 'engineer':
-            # Engineers can see assigned complaints and unassigned ones
-            queryset = queryset.filter(
-                Q(assigned_to=user) | Q(assigned_to__isnull=True)
-            )
-        # Admins can see all complaints (no additional filter)
+            queryset = queryset.filter(assigned_to=user)
+        # No need for elif for admin — they get full queryset
         
         # Apply filters from query parameters
         status_filter = self.request.query_params.get('status')
@@ -83,11 +89,14 @@ class ComplaintDetailView(generics.RetrieveUpdateDestroyAPIView):
         if user.role == 'user':
             # Users can only access their own complaints
             return queryset.filter(submitted_by=user)
+        # elif user.role == 'engineer':
+        #     # Engineers can access assigned complaints
+        #     return queryset.filter(
+        #         Q(assigned_to=user) | Q(assigned_to__isnull=True)
+        #     )
         elif user.role == 'engineer':
-            # Engineers can access assigned complaints
-            return queryset.filter(
-                Q(assigned_to=user) | Q(assigned_to__isnull=True)
-            )
+            # Engineers can only access assigned complaints
+            return queryset.filter(assigned_to=user)
         # Admins can access all complaints
         return queryset
 
@@ -169,7 +178,7 @@ def assign_complaint(request, complaint_id):
         'complaint': ComplaintDetailSerializer(complaint).data
     }, status=status.HTTP_200_OK)
 
-@api_view(['POST'])
+@api_view(['POST', 'PATCH'])
 @permission_classes([permissions.IsAuthenticated])
 def update_complaint_status(request, complaint_id):
     """Update complaint status"""

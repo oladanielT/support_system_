@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -63,9 +64,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Your frontend URL
-]
 
 
 ROOT_URLCONF = 'backend.urls'
@@ -197,11 +195,14 @@ SIMPLE_JWT = {
     'JTI_CLAIM': 'jti',
 }
 
-# CORS Settings
+CORS_ALLOW_ALL_ORIGINS = False
+
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React development server
+    "http://localhost:5173",
+    "http://127.0.0.1:5173", 
+    "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "http://localhost:8080",  # Alternative frontend port
+    "http://localhost:8080",
 ]
 
 CORS_ALLOW_CREDENTIALS = True

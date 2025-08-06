@@ -24,6 +24,7 @@ class Complaint(models.Model):
         ('wifi_issues', 'WiFi Issues'),
         ('server_issues', 'Server Issues'),
         ('email_issues', 'Email Issues'),
+        ('internet', 'Internet Connectivity'),
         ('other', 'Other'),
     )
     

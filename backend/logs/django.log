@@ -753,3 +753,208 @@ WARNING 2025-07-30 11:44:05,929 log 1740 128484941751872 Not Found: /
 WARNING 2025-07-30 11:44:08,643 log 1740 128484941751872 Not Found: /favicon.ico
 WARNING 2025-07-30 11:44:32,412 log 1740 128484941751872 Method Not Allowed: /api/auth/login/
 WARNING 2025-07-30 11:49:18,699 log 1740 128484906083904 Unauthorized: /api/auth/logout/
+INFO 2025-08-01 10:21:04,494 autoreload 12281 124756007337984 Watching for file changes with StatReloader
+WARNING 2025-08-01 10:21:12,592 log 12281 124755947546176 Not Found: /
+WARNING 2025-08-01 10:22:07,892 log 12281 124755929712192 Not Found: /
+WARNING 2025-08-01 10:22:07,919 log 12281 124755947546176 Not Found: /favicon.ico
+WARNING 2025-08-01 10:22:08,114 log 12281 124755929712192 Not Found: /favicon.ico
+WARNING 2025-08-01 10:22:08,173 log 12281 124755929712192 Not Found: /
+INFO 2025-08-01 10:25:26,964 autoreload 13508 134881908346880 Watching for file changes with StatReloader
+INFO 2025-08-01 10:27:21,319 autoreload 13508 134881908346880 /home/oladan/support_system_/backend/backend/settings.py changed, reloading.
+INFO 2025-08-01 10:27:27,052 autoreload 14008 133519272157184 Watching for file changes with StatReloader
+ERROR 2025-08-01 10:27:45,394 log 14008 133519205455424 Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 1073, in render
+    return render_value_in_context(output, context)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/template/base.py", line 1050, in render_value_in_context
+    value = str(value)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+  File "/home/oladan/support_system_/backend/users/models.py", line 62, in __str__
+    return f"{self.user} ({self.role})"
+AttributeError: 'User' object has no attribute 'user'
+WARNING 2025-08-01 10:28:26,930 log 14008 133518990505536 Not Found: /
+WARNING 2025-08-01 10:28:27,167 log 14008 133518990505536 Not Found: /favicon.ico
+WARNING 2025-08-01 10:28:27,903 log 14008 133518990505536 Not Found: /
+INFO 2025-08-01 10:33:02,020 autoreload 14008 133519272157184 /home/oladan/support_system_/backend/users/models.py changed, reloading.
+INFO 2025-08-01 10:33:07,181 autoreload 19650 139717955584000 Watching for file changes with StatReloader
+WARNING 2025-08-01 10:34:18,819 log 19650 139717366511168 Not Found: /
+WARNING 2025-08-01 10:34:19,015 log 19650 139717366511168 Not Found: /favicon.ico
+WARNING 2025-08-01 10:34:19,111 log 19650 139717366511168 Not Found: /
+INFO 2025-08-05 06:39:42,241 autoreload 12915 130435919298560 Watching for file changes with StatReloader
+INFO 2025-08-05 06:47:20,338 autoreload 13746 125755975606272 Watching for file changes with StatReloader
+INFO 2025-08-05 06:48:57,957 autoreload 14222 137610830544896 Watching for file changes with StatReloader
+INFO 2025-08-05 09:46:02,052 autoreload 9265 133920503361536 Watching for file changes with StatReloader
+WARNING 2025-08-05 09:46:23,818 log 9265 133920360228416 Not Found: /
+WARNING 2025-08-05 09:46:31,261 log 9265 133920360228416 Not Found: /favicon.ico
+WARNING 2025-08-05 09:46:57,754 log 9265 133920360228416 Not Found: /api/auth
+INFO 2025-08-05 11:13:32,149 autoreload 30783 134408837488640 Watching for file changes with StatReloader
+INFO 2025-08-05 11:20:22,770 autoreload 30783 134408837488640 /home/oladan/support_system_/backend/backend/settings.py changed, reloading.
+INFO 2025-08-05 11:20:25,101 autoreload 31993 138564281200640 Watching for file changes with StatReloader
+WARNING 2025-08-05 11:20:34,151 log 31993 138564204480064 Bad Request: /api/auth/register/
+INFO 2025-08-05 11:20:51,874 autoreload 32251 129797874659328 Watching for file changes with StatReloader
+WARNING 2025-08-05 11:20:56,724 log 32251 129797815526976 Bad Request: /api/auth/register/
+WARNING 2025-08-05 11:28:55,842 log 32251 129797815526976 Bad Request: /api/auth/register/
+WARNING 2025-08-05 11:46:25,586 log 32251 129797815526976 Bad Request: /api/auth/login/
+WARNING 2025-08-05 11:46:49,619 log 32251 129797815526976 Bad Request: /api/auth/login/
+WARNING 2025-08-05 11:47:47,525 log 32251 129797815526976 Bad Request: /api/auth/login/
+WARNING 2025-08-05 11:50:16,957 log 32251 129797815526976 Bad Request: /api/auth/login/
+WARNING 2025-08-05 11:54:55,524 log 32251 129797815526976 Bad Request: /api/auth/login/
+WARNING 2025-08-05 11:57:06,639 log 32251 129797815526976 Bad Request: /api/auth/login/
+INFO 2025-08-05 12:16:45,722 autoreload 32251 129797874659328 /home/oladan/support_system_/backend/users/models.py changed, reloading.
+INFO 2025-08-05 12:16:49,675 autoreload 42575 131316280786944 Watching for file changes with StatReloader
+INFO 2025-08-05 12:24:41,918 autoreload 42575 131316280786944 /home/oladan/support_system_/backend/users/serializers.py changed, reloading.
+INFO 2025-08-05 12:24:44,635 autoreload 43874 134081297420288 Watching for file changes with StatReloader
+WARNING 2025-08-05 12:25:12,806 log 43874 134081238001216 Bad Request: /api/auth/login/
+INFO 2025-08-05 12:28:13,819 autoreload 43874 134081297420288 /home/oladan/support_system_/backend/users/serializers.py changed, reloading.
+INFO 2025-08-05 12:28:15,019 autoreload 44529 123841479032832 Watching for file changes with StatReloader
+INFO 2025-08-05 12:29:32,188 autoreload 44529 123841479032832 /home/oladan/support_system_/backend/users/serializers.py changed, reloading.
+INFO 2025-08-05 12:29:33,059 autoreload 44826 128694603161600 Watching for file changes with StatReloader
+INFO 2025-08-05 12:29:42,851 autoreload 44826 128694603161600 /home/oladan/support_system_/backend/users/serializers.py changed, reloading.
+INFO 2025-08-05 12:29:44,091 autoreload 44909 136402467155968 Watching for file changes with StatReloader
+INFO 2025-08-05 12:31:38,117 autoreload 44909 136402467155968 /home/oladan/support_system_/backend/users/serializers.py changed, reloading.
+INFO 2025-08-05 12:31:40,160 autoreload 45196 137876055293952 Watching for file changes with StatReloader
+WARNING 2025-08-05 12:36:06,022 log 45196 137875996796480 Bad Request: /api/auth/login/
+WARNING 2025-08-05 12:36:12,457 log 45196 137875996796480 Bad Request: /api/auth/login/
+INFO 2025-08-05 12:37:40,419 autoreload 46506 133368446095360 Watching for file changes with StatReloader
+WARNING 2025-08-05 12:39:07,407 log 46506 133368386676288 Bad Request: /api/auth/login/
+WARNING 2025-08-05 12:48:32,508 log 46506 133368386676288 Unauthorized: /api/auth/login/
+INFO 2025-08-05 13:28:29,466 autoreload 54780 133390582263808 Watching for file changes with StatReloader
+INFO 2025-08-05 13:45:09,585 autoreload 54780 133390582263808 /home/oladan/support_system_/backend/users/serializers.py changed, reloading.
+INFO 2025-08-05 13:45:13,789 autoreload 57623 140457811505152 Watching for file changes with StatReloader
+INFO 2025-08-05 13:49:11,348 autoreload 57623 140457811505152 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-05 13:49:17,013 autoreload 58313 134328282038272 Watching for file changes with StatReloader
+WARNING 2025-08-05 14:31:03,779 log 58313 134328207001152 Bad Request: /api/auth/login/
+WARNING 2025-08-05 14:31:22,989 log 58313 134328207001152 Bad Request: /api/auth/login/
+WARNING 2025-08-05 14:31:25,708 log 58313 134328198608448 Bad Request: /api/auth/login/
+WARNING 2025-08-05 14:31:31,872 log 58313 134328198608448 Bad Request: /api/auth/login/
+INFO 2025-08-05 14:40:49,610 autoreload 58313 134328282038272 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-05 14:40:53,937 autoreload 66334 128507972239360 Watching for file changes with StatReloader
+INFO 2025-08-05 15:11:58,786 autoreload 71301 126934032162816 Watching for file changes with StatReloader
+INFO 2025-08-06 10:26:26,934 autoreload 6484 133419985223680 Watching for file changes with StatReloader
+WARNING 2025-08-06 10:26:44,779 log 6484 133419909498432 Bad Request: /api/auth/login/
+WARNING 2025-08-06 10:26:48,778 log 6484 133419901105728 Bad Request: /api/auth/login/
+WARNING 2025-08-06 10:27:08,844 log 6484 133419901105728 Bad Request: /api/auth/login/
+WARNING 2025-08-06 10:27:18,992 log 6484 133419901105728 Bad Request: /api/auth/login/
+WARNING 2025-08-06 10:27:32,921 log 6484 133419901105728 Bad Request: /api/auth/login/
+WARNING 2025-08-06 10:27:38,470 log 6484 133419901105728 Bad Request: /api/auth/login/
+WARNING 2025-08-06 10:29:22,547 log 6484 133419901105728 Bad Request: /api/auth/login/
+WARNING 2025-08-06 10:30:59,441 log 6484 133419909498432 Bad Request: /api/auth/login/
+WARNING 2025-08-06 10:31:22,628 log 6484 133419888514624 Not Found: /
+WARNING 2025-08-06 10:31:28,247 log 6484 133419888514624 Not Found: /favicon.ico
+INFO 2025-08-06 10:36:27,876 autoreload 8815 132915288387584 Watching for file changes with StatReloader
+WARNING 2025-08-06 11:12:16,229 log 8815 132915229877824 Bad Request: /api/auth/login/
+INFO 2025-08-06 16:03:40,395 autoreload 25188 133725899427840 Watching for file changes with StatReloader
+WARNING 2025-08-06 16:11:40,469 log 25188 133725618697792 Method Not Allowed: /api/auth/register/
+INFO 2025-08-06 16:12:25,332 autoreload 25188 133725899427840 /home/oladan/support_system_/backend/backend/settings.py changed, reloading.
+INFO 2025-08-06 16:12:30,338 autoreload 26758 127052801495040 Watching for file changes with StatReloader
+WARNING 2025-08-06 16:31:16,821 log 26758 127052742125120 Bad Request: /api/auth/register/
+WARNING 2025-08-06 16:33:38,709 log 26758 127052733732416 Bad Request: /api/complaints/
+INFO 2025-08-06 16:41:05,865 autoreload 26758 127052801495040 /home/oladan/support_system_/backend/complaints/models.py changed, reloading.
+INFO 2025-08-06 16:41:14,214 autoreload 32678 132686853971968 Watching for file changes with StatReloader
+INFO 2025-08-06 16:42:03,179 autoreload 32678 132686853971968 /home/oladan/support_system_/backend/complaints/models.py changed, reloading.
+INFO 2025-08-06 16:42:04,376 autoreload 32947 135011611283456 Watching for file changes with StatReloader
+INFO 2025-08-06 16:42:30,311 autoreload 32947 135011611283456 /home/oladan/support_system_/backend/complaints/models.py changed, reloading.
+INFO 2025-08-06 16:42:31,095 autoreload 33084 131560501121024 Watching for file changes with StatReloader
+INFO 2025-08-06 16:42:47,507 autoreload 33084 131560501121024 /home/oladan/support_system_/backend/complaints/models.py changed, reloading.
+INFO 2025-08-06 16:42:48,259 autoreload 33151 133511144513536 Watching for file changes with StatReloader
+WARNING 2025-08-06 16:43:58,146 log 33151 133511085286976 Bad Request: /api/auth/login/
+WARNING 2025-08-06 16:48:06,841 log 33151 133510996158016 Not Found: /
+WARNING 2025-08-06 16:48:11,624 log 33151 133510996158016 Not Found: /favicon.ico
+WARNING 2025-08-06 16:51:40,835 log 33151 133511085286976 Method Not Allowed: /api/complaints/1/status/
+WARNING 2025-08-06 17:39:35,541 log 33151 133510996158016 Not Found: /api/auth/user/
+WARNING 2025-08-06 17:39:35,668 log 33151 133510970979904 Not Found: /api/auth/user/
+WARNING 2025-08-06 17:40:53,553 log 33151 133510996158016 Method Not Allowed: /api/complaints/1/status/
+INFO 2025-08-06 17:44:29,420 autoreload 33151 133511144513536 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-06 17:44:33,924 autoreload 43223 139085410586624 Watching for file changes with StatReloader
+WARNING 2025-08-06 17:44:49,342 log 43223 139085350954560 Method Not Allowed: /api/complaints/1/status/
+INFO 2025-08-06 17:45:14,121 autoreload 43223 139085410586624 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-06 17:45:14,717 autoreload 43436 126079899693056 Watching for file changes with StatReloader
+INFO 2025-08-06 17:45:31,648 autoreload 43436 126079899693056 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-06 17:45:32,867 autoreload 43516 125006026956800 Watching for file changes with StatReloader
+INFO 2025-08-06 17:45:45,870 autoreload 43516 125006026956800 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-06 17:45:46,468 autoreload 43596 136294517800960 Watching for file changes with StatReloader
+WARNING 2025-08-06 17:45:52,806 log 43596 136294458975808 Forbidden: /api/complaints/1/status/
+INFO 2025-08-06 17:51:59,549 autoreload 44762 124403088216064 Watching for file changes with StatReloader
+WARNING 2025-08-06 17:52:59,282 log 44762 124403028321856 Forbidden: /api/complaints/1/status/
+WARNING 2025-08-06 17:53:08,917 log 44762 124403028321856 Not Found: /api/auth/user/
+WARNING 2025-08-06 17:53:08,950 log 44762 124403019929152 Not Found: /api/auth/user/
+WARNING 2025-08-06 17:53:31,343 log 44762 124403019929152 Forbidden: /api/complaints/1/status/
+INFO 2025-08-06 17:59:56,539 autoreload 44762 124403088216064 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-06 18:00:00,351 autoreload 46246 130538891325440 Watching for file changes with StatReloader
+INFO 2025-08-06 18:01:14,890 autoreload 46246 130538891325440 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-06 18:01:15,362 autoreload 46481 123442024333312 Watching for file changes with StatReloader
+INFO 2025-08-06 18:02:24,981 autoreload 46481 123442024333312 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-06 18:02:25,896 autoreload 46699 140224029192192 Watching for file changes with StatReloader
+WARNING 2025-08-06 18:02:38,089 log 46699 140223902119488 Not Found: /api/auth/user/
+WARNING 2025-08-06 18:02:38,279 log 46699 140223893726784 Not Found: /api/auth/user/
+WARNING 2025-08-06 18:04:11,489 log 46699 140223893726784 Not Found: /api/users/
+WARNING 2025-08-06 18:04:11,542 log 46699 140223893726784 Not Found: /api/users/
+WARNING 2025-08-06 18:04:42,303 log 46699 140223893726784 Not Found: /api/users/
+WARNING 2025-08-06 18:04:42,362 log 46699 140223893726784 Not Found: /api/users/
+INFO 2025-08-06 18:07:01,960 autoreload 46699 140224029192192 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-06 18:07:03,138 autoreload 47540 140268085964800 Watching for file changes with StatReloader
+INFO 2025-08-06 18:07:30,196 autoreload 47540 140268085964800 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-06 18:07:30,820 autoreload 47664 137713249447936 Watching for file changes with StatReloader
+INFO 2025-08-06 18:12:17,968 autoreload 47664 137713249447936 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-06 18:12:20,531 autoreload 48518 137658739261440 Watching for file changes with StatReloader
+WARNING 2025-08-06 18:13:15,029 log 48518 137658679420480 Not Found: /api/auth/user/
+WARNING 2025-08-06 18:13:15,110 log 48518 137658679420480 Not Found: /api/auth/user/
+WARNING 2025-08-06 18:13:54,372 log 48518 137658679420480 Not Found: /api/users/
+WARNING 2025-08-06 18:13:54,397 log 48518 137658679420480 Not Found: /api/users/
+INFO 2025-08-06 18:24:21,303 autoreload 48518 137658739261440 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-06 18:24:23,031 autoreload 50680 123740785360896 Watching for file changes with StatReloader
+WARNING 2025-08-06 18:28:14,091 log 50680 123740718356032 Not Found: /api/users/
+WARNING 2025-08-06 18:28:14,116 log 50680 123740718356032 Not Found: /api/users/
+WARNING 2025-08-06 18:28:25,444 log 50680 123740726748736 Not Found: /api/users/
+WARNING 2025-08-06 18:28:25,472 log 50680 123740726748736 Not Found: /api/users/
+WARNING 2025-08-06 18:28:51,343 log 50680 123740726748736 Not Found: /api/users/
+WARNING 2025-08-06 18:28:51,379 log 50680 123740726748736 Not Found: /api/users/
