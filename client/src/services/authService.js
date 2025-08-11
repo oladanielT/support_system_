@@ -12,7 +12,7 @@ export const authService = {
   },
 
   async getCurrentUser() {
-    const response = await API.get("/auth/user/");
+    const response = await API.get("/auth/profile/");
     return response.data;
   },
 

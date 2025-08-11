@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { complaintService } from "../../services/complaintService.js";
 import Navbar from "../../components/layout/Navbar.jsx";
-import { ArrowLeft, Clock, User, MapPin } from "lucide-react";
+import { ArrowLeft, Clock, User, MapPin, Trash2 } from "lucide-react";
+import { toast } from "react-toastify";
 
 export default function ComplaintDetails() {
   const { id } = useParams();
   const [complaint, setComplaint] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showConfirm, setShowConfirm] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchComplaint = async () => {
@@ -25,6 +28,19 @@ export default function ComplaintDetails() {
 
     fetchComplaint();
   }, [id]);
+
+  const handleDelete = async () => {
+    try {
+      await complaintService.deleteComplaint(id);
+      toast.success("Complaint deleted successfully");
+      navigate("/user/dashboard");
+    } catch (err) {
+      console.error("Failed to delete complaint:", err);
+      toast.error("Something went wrong while deleting.");
+    } finally {
+      setShowConfirm(false);
+    }
+  };
 
   if (loading) {
     return (
@@ -142,6 +158,52 @@ export default function ComplaintDetails() {
                   </p>
                 </div>
               )}
+              <div className="flex justify-end space-x-4 mt-8">
+                <Link
+                  to={`/user/complaints/${complaint.id}/edit`}
+                  className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md text-sm font-medium"
+                >
+                  Edit Complaint
+                </Link>
+                {/* <button
+                  onClick={handleDelete}
+                  className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium"
+                >
+                  Delete
+                </button> */}
+
+                <button
+                  onClick={() => setShowConfirm(true)}
+                  className="text-red-600 hover:text-red-900"
+                >
+                  <Trash2 className="h-4 w-4" />
+                </button>
+
+                {/* Confirmation dialog */}
+                {showConfirm && (
+                  <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
+                    <div className="bg-white p-6 rounded shadow-md max-w-sm w-full text-center">
+                      <p className="mb-4 text-lg font-medium">
+                        Are you sure you want to delete this complaint?
+                      </p>
+                      <div className="flex justify-center space-x-4">
+                        <button
+                          onClick={handleDelete}
+                          className="btn-primary px-4 py-2"
+                        >
+                          Yes, Delete
+                        </button>
+                        <button
+                          onClick={() => setShowConfirm(false)}
+                          className="btn-secondary px-4 py-2"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

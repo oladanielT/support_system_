@@ -8,6 +8,10 @@ export const complaintService = {
     return response.data;
   },
 
+  getAllComplaints: async () => {
+    const res = await API.get("/complaints/");
+    return res.data;
+  },
   // Get single complaint
   async getComplaint(id) {
     const response = await API.get(`/complaints/${id}/`);
@@ -26,6 +30,12 @@ export const complaintService = {
     return response.data;
   },
 
+  // Delete complaint
+  async deleteComplaint(id) {
+    const response = await API.delete(`/complaints/${id}/`);
+    return response.data;
+  },
+
   // Update complaint status
   async updateComplaintStatus(id, status, notes = "") {
     const response = await API.patch(`/complaints/${id}/status/`, {
@@ -37,9 +47,14 @@ export const complaintService = {
 
   // Assign complaint to engineer
   async assignComplaint(id, engineerId) {
-    const response = await API.patch(`/complaints/${id}/assign/`, {
+    const response = await API.post(`/complaints/${id}/assign/`, {
       engineer_id: engineerId,
     });
+    return response.data;
+  },
+
+  getStats: async () => {
+    const response = await API.get(`/complaints/complaint-stats/`);
     return response.data;
   },
 };

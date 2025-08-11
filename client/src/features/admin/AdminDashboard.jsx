@@ -20,21 +20,50 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       // Fetch complaints and stats
+  //       const complaintsData = await complaintService.getComplaints({
+  //         limit: 5,
+  //       });
+  //       setRecentComplaints(complaintsData.results || complaintsData);
+
+  //       // Mock stats - replace with actual API calls
+  //       setStats({
+  //         total_complaints: 127,
+  //         pending_assignments: 23,
+  //         active_engineers: 8,
+  //         resolution_rate: 94,
+  //       });
+  //     } catch (err) {
+  //       setError("Failed to load dashboard data");
+  //       console.error(err);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch complaints and stats
+        // Fetch recent complaints
         const complaintsData = await complaintService.getComplaints({
           limit: 5,
         });
         setRecentComplaints(complaintsData.results || complaintsData);
 
-        // Mock stats - replace with actual API calls
+        // Fetch real stats from backend
+        const realStats = await complaintService.getStats();
+
         setStats({
-          total_complaints: 127,
-          pending_assignments: 23,
-          active_engineers: 8,
-          resolution_rate: 94,
+          total_complaints: realStats.total_complaints,
+          pending_assignments: realStats.pending_complaints, // backend uses 'pending_complaints'
+          active_engineers: realStats.active_engineers || 0, // you might want to add this in backend or fetch separately
+          resolution_rate: calculateResolutionRate(realStats), // function to compute % resolution rate
         });
       } catch (err) {
         setError("Failed to load dashboard data");
@@ -46,6 +75,12 @@ export default function AdminDashboard() {
 
     fetchData();
   }, []);
+
+  function calculateResolutionRate(stats) {
+    const { resolved_complaints, total_complaints } = stats;
+    if (!total_complaints) return 0;
+    return Math.round((resolved_complaints / total_complaints) * 100);
+  }
 
   const getPriorityColor = (priority) => {
     switch (priority) {
@@ -185,7 +220,10 @@ export default function AdminDashboard() {
                   </div>
                 </Link>
 
-                <button className="flex items-center w-full p-3 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                <Link
+                  to="/admin/complaint-stats"
+                  className="flex items-center w-full p-3 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+                >
                   <TrendingUp className="mr-3 h-5 w-5 text-purple-600" />
                   <div>
                     <p className="font-medium text-gray-900">View Analytics</p>
@@ -193,7 +231,17 @@ export default function AdminDashboard() {
                       System performance reports
                     </p>
                   </div>
-                </button>
+                </Link>
+
+                {/* <button className="flex items-center w-full p-3 text-left border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                  <TrendingUp className="mr-3 h-5 w-5 text-purple-600" />
+                  <div>
+                    <p className="font-medium text-gray-900">View Analytics</p>
+                    <p className="text-sm text-gray-500">
+                      System performance reports
+                    </p>
+                  </div>
+                </button> */}
               </div>
             </div>
 

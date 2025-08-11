@@ -20,10 +20,8 @@ export default function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -51,7 +49,6 @@ export default function Login() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
@@ -75,11 +72,12 @@ export default function Login() {
       const res = await API.post("/auth/login/", formData);
 
       const {
-        tokens: { access: token },
-        user: { role },
+        tokens: { access, refresh },
+        user,
       } = res.data;
 
-      login(token, role);
+      // Pass full user object to AuthContext
+      login(access, { ...user, refresh });
 
       toast({
         title: "Welcome back!",
@@ -87,7 +85,7 @@ export default function Login() {
         variant: "success",
       });
 
-      navigate(`/${role}/dashboard`);
+      navigate(`/${user.role}/dashboard`);
     } catch (err) {
       console.error("Login error:", err);
 
@@ -123,6 +121,7 @@ export default function Login() {
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Email */}
             <div className="space-y-2">
               <label
                 htmlFor="email"
@@ -148,6 +147,7 @@ export default function Login() {
               )}
             </div>
 
+            {/* Password */}
             <div className="space-y-2">
               <label
                 htmlFor="password"
@@ -187,8 +187,7 @@ export default function Login() {
             <Button type="submit" className="w-full" disabled={loading}>
               {loading ? (
                 <>
-                  <LoadingSpinner size="sm" className="mr-2" />
-                  Signing in...
+                  <LoadingSpinner size="sm" className="mr-2" /> Signing in...
                 </>
               ) : (
                 "Sign In"
@@ -196,6 +195,7 @@ export default function Login() {
             </Button>
           </form>
 
+          {/* Links */}
           <div className="mt-6 text-center space-y-2">
             <p className="text-sm text-gray-600">
               Don't have an account?{" "}

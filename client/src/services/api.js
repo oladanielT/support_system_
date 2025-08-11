@@ -14,24 +14,58 @@ const API = axios.create({
 API.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
+    console.log(token);
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
 // Response interceptor to handle auth errors
 API.interceptors.response.use(
   (response) => response,
-  (error) => {
+  async (error) => {
+    const originalRequest = error.config;
+
     if (error.response?.status === 401) {
-      localStorage.removeItem("token");
-      window.location.href = "/login";
+      if (!originalRequest._retry) {
+        originalRequest._retry = true;
+
+        try {
+          const refreshToken = localStorage.getItem("refreshToken");
+          if (refreshToken) {
+            // UPDATED: Use the correct auth URL structure
+            const response = await axios.post(
+              `${API_BASE_URL}/auth/token/refresh/`,
+              {
+                refresh: refreshToken,
+              }
+            );
+            const newToken = response.data.access;
+            localStorage.setItem("token", newToken);
+            originalRequest.headers.Authorization = `Bearer ${newToken}`;
+            return axios(originalRequest);
+          }
+        } catch (refreshError) {
+          console.error("Token refresh failed:", refreshError);
+          // Clear tokens and redirect to login
+          localStorage.removeItem("token");
+          localStorage.removeItem("refreshToken");
+          localStorage.removeItem("user");
+          window.location.href = "/login";
+          return Promise.reject(refreshError);
+        }
+
+        // No refresh token available
+        localStorage.removeItem("token");
+        localStorage.removeItem("refreshToken");
+        localStorage.removeItem("user");
+        window.location.href = "/login";
+      }
     }
+
     return Promise.reject(error);
   }
 );

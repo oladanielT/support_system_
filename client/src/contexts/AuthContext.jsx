@@ -12,53 +12,94 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(null); // stores the full user object
+  const [loading, setIsLoading] = useState(true);
+
+  // Run once on app load to restore auth
 
   useEffect(() => {
-    const initAuth = async () => {
-      const token = localStorage.getItem("token");
-      if (token) {
-        try {
-          // Set the token in API headers
-          API.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    // Load from localStorage on mount
+    const storedUser = localStorage.getItem("user");
+    const storedToken = localStorage.getItem("token");
 
-          // Get current user info
-          const response = await API.get("/auth/user/");
-          setUser(response.data);
-        } catch (error) {
-          console.error("Failed to get current user:", error);
-          localStorage.removeItem("token");
-          delete API.defaults.headers.common["Authorization"];
-        }
-      }
-      setLoading(false);
-    };
-
-    initAuth();
+    if (storedUser && storedToken) {
+      setUser(JSON.parse(storedUser));
+      API.defaults.headers.common["Authorization"] = `Bearer ${storedToken}`;
+    }
+    setIsLoading(false);
   }, []);
 
-  const login = (token, role) => {
+  const login = (token, userData) => {
     localStorage.setItem("token", token);
+    localStorage.setItem("user", JSON.stringify(userData));
     API.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-
-    // You might want to fetch user details here or pass them from login
-    setUser({ role, token });
+    setUser(userData);
   };
 
   const logout = () => {
-    localStorage.removeItem("token");
+    localStorage.clear();
     delete API.defaults.headers.common["Authorization"];
     setUser(null);
   };
 
-  const value = {
-    user,
-    login,
-    logout,
-    loading,
-    isAuthenticated: !!user,
-  };
+  // useEffect(() => {
+  //   const initAuth = async () => {
+  //     const token = localStorage.getItem("token");
+  //     const savedUser = localStorage.getItem("user"); // store whole user from login
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  //     if (token) {
+  //       API.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
+  //       if (savedUser) {
+  //         // Use saved user info immediately to avoid flicker
+  //         setUser(JSON.parse(savedUser));
+  //       }
+
+  //       try {
+  //         // Try to fetch updated user profile (requires /auth/user/ backend)
+  //         const res = await API.get("/auth/user/");
+  //         setUser(res.data);
+  //         localStorage.setItem("user", JSON.stringify(res.data));
+  //       } catch (error) {
+  //         console.warn("Could not refresh user from API, using saved data.");
+  //         if (!savedUser) {
+  //           logout();
+  //         }
+  //       }
+  //     }
+  //     setLoading(false);
+  //   };
+
+  //   initAuth();
+  // }, []);
+
+  // Login — save everything in localStorage
+  // const login = (token, userData) => {
+  //   localStorage.setItem("token", token);
+  //   localStorage.setItem("user", JSON.stringify(userData));
+  //   API.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  //   setUser(userData);
+  // };
+
+  // const logout = () => {
+  //   localStorage.removeItem("token");
+  //   localStorage.removeItem("user");
+  //   delete API.defaults.headers.common["Authorization"];
+  //   setUser(null);
+  // };
+
+  return (
+    <AuthContext.Provider
+      value={{
+        user,
+        role: user?.role || null,
+        login,
+        logout,
+        loading,
+        isAuthenticated: !!user,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
 };

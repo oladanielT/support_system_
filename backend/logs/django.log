@@ -958,3 +958,657 @@ WARNING 2025-08-06 18:28:25,444 log 50680 123740726748736 Not Found: /api/users/
 WARNING 2025-08-06 18:28:25,472 log 50680 123740726748736 Not Found: /api/users/
 WARNING 2025-08-06 18:28:51,343 log 50680 123740726748736 Not Found: /api/users/
 WARNING 2025-08-06 18:28:51,379 log 50680 123740726748736 Not Found: /api/users/
+INFO 2025-08-07 08:21:41,613 autoreload 7833 133775487463424 Watching for file changes with StatReloader
+INFO 2025-08-07 10:37:20,118 autoreload 7833 133775487463424 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-07 10:37:24,555 autoreload 31670 139480353583104 Watching for file changes with StatReloader
+WARNING 2025-08-07 11:18:07,236 log 31670 139480295007808 Bad Request: /api/auth/register/
+WARNING 2025-08-07 11:20:23,049 log 31670 139480061175360 Not Found: /
+WARNING 2025-08-07 11:20:23,313 log 31670 139480061175360 Not Found: /favicon.ico
+WARNING 2025-08-07 11:20:23,359 log 31670 139480061175360 Not Found: /
+WARNING 2025-08-07 11:21:55,528 log 31670 139480061175360 Not Found: /
+WARNING 2025-08-07 11:21:55,865 log 31670 139480061175360 Not Found: /favicon.ico
+WARNING 2025-08-07 11:21:55,904 log 31670 139480061175360 Not Found: /
+WARNING 2025-08-07 11:23:00,951 log 31670 139480061175360 Not Found: /
+WARNING 2025-08-07 11:23:03,116 log 31670 139480061175360 Not Found: /favicon.ico
+WARNING 2025-08-07 11:23:04,911 log 31670 139480061175360 Not Found: /
+WARNING 2025-08-07 11:25:50,323 log 31670 139480061175360 Not Found: /
+WARNING 2025-08-07 11:25:50,823 log 31670 139480061175360 Not Found: /favicon.ico
+WARNING 2025-08-07 11:25:50,919 log 31670 139480061175360 Not Found: /
+WARNING 2025-08-07 11:26:34,358 log 31670 139480061175360 Not Found: /
+WARNING 2025-08-07 11:26:34,401 log 31670 139480061175360 Not Found: /favicon.ico
+WARNING 2025-08-07 11:26:34,480 log 31670 139480061175360 Not Found: /
+WARNING 2025-08-07 11:27:02,042 log 31670 139480061175360 Not Found: /
+WARNING 2025-08-07 11:27:02,463 log 31670 139480061175360 Not Found: /favicon.ico
+WARNING 2025-08-07 11:27:02,503 log 31670 139480061175360 Not Found: /
+WARNING 2025-08-07 11:27:35,187 log 31670 139480061175360 Not Found: /
+WARNING 2025-08-07 11:27:35,255 log 31670 139480061175360 Not Found: /favicon.ico
+WARNING 2025-08-07 11:27:35,296 log 31670 139480061175360 Not Found: /
+WARNING 2025-08-07 11:28:22,882 log 31670 139479532697152 Not Found: /api/users/
+WARNING 2025-08-07 11:28:22,945 log 31670 139480019211840 Not Found: /api/users/
+WARNING 2025-08-07 12:28:52,689 log 31670 139480286615104 Not Found: /api/users/
+WARNING 2025-08-07 12:28:53,197 log 31670 139480044389952 Not Found: /api/users/
+WARNING 2025-08-07 12:41:34,818 log 31670 139480044389952 Not Found: /api/users/
+WARNING 2025-08-07 12:41:34,972 log 31670 139480286615104 Not Found: /api/users/
+WARNING 2025-08-07 12:42:06,274 log 31670 139479524304448 Not Found: /api/users/
+WARNING 2025-08-07 12:42:06,479 log 31670 139480286615104 Not Found: /api/users/
+INFO 2025-08-07 13:43:31,226 autoreload 31670 139480353583104 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-07 13:43:41,090 autoreload 57381 135886612869120 Watching for file changes with StatReloader
+INFO 2025-08-07 13:44:06,406 autoreload 57381 135886612869120 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-07 13:44:07,281 autoreload 57494 136962721796096 Watching for file changes with StatReloader
+INFO 2025-08-07 13:44:34,233 autoreload 57494 136962721796096 /home/oladan/support_system_/backend/users/urls.py changed, reloading.
+INFO 2025-08-07 13:44:35,077 autoreload 57580 123576694132736 Watching for file changes with StatReloader
+INFO 2025-08-07 17:46:41,026 autoreload 57580 123576694132736 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-07 17:47:11,663 autoreload 84269 137448991834112 Watching for file changes with StatReloader
+INFO 2025-08-08 12:50:25,854 autoreload 5686 134524159066112 Watching for file changes with StatReloader
+WARNING 2025-08-08 12:57:20,265 log 5686 134523878635072 Not Found: /api/auth/user/
+WARNING 2025-08-08 12:57:20,367 log 5686 134524099880512 Not Found: /api/auth/user/
+WARNING 2025-08-08 12:57:20,397 log 5686 134523878635072 Not Found: /api/auth/user/
+WARNING 2025-08-08 12:57:20,534 log 5686 134524099880512 Not Found: /api/auth/user/
+WARNING 2025-08-08 12:57:32,602 log 5686 134524099880512 Bad Request: /api/auth/login/
+WARNING 2025-08-08 12:58:04,438 log 5686 134524099880512 Bad Request: /api/auth/login/
+WARNING 2025-08-08 12:58:11,889 log 5686 134524099880512 Bad Request: /api/auth/login/
+WARNING 2025-08-08 12:58:24,380 log 5686 134524099880512 Bad Request: /api/auth/login/
+WARNING 2025-08-08 12:58:40,473 log 5686 134524099880512 Bad Request: /api/auth/login/
+INFO 2025-08-08 13:04:29,185 autoreload 5686 134524159066112 /home/oladan/support_system_/backend/users/urls.py changed, reloading.
+INFO 2025-08-08 13:04:31,046 autoreload 7900 132726513184768 Watching for file changes with StatReloader
+WARNING 2025-08-08 13:31:47,858 log 7900 132726454740544 Bad Request: /api/auth/login/
+INFO 2025-08-08 13:49:26,482 autoreload 15017 140575718379520 Watching for file changes with StatReloader
+WARNING 2025-08-08 13:50:29,187 log 15017 140575658468928 Bad Request: /api/auth/login/
+WARNING 2025-08-08 14:48:20,916 log 15017 140575658468928 Bad Request: /api/complaints/
+WARNING 2025-08-08 14:51:08,769 log 15017 140575658468928 Not Found: /api/complaints/2/
+WARNING 2025-08-08 14:51:19,118 log 15017 140575658468928 Not Found: /api/complaints/2/
+WARNING 2025-08-08 15:09:29,948 log 15017 140575658468928 Not Found: /api/complaints/3/
+WARNING 2025-08-08 15:09:29,999 log 15017 140575658468928 Not Found: /api/complaints/3/
+WARNING 2025-08-08 15:20:24,053 log 15017 140575637485120 Bad Request: /api/complaints/
+WARNING 2025-08-08 15:21:01,540 log 15017 140575637485120 Bad Request: /api/complaints/
+WARNING 2025-08-08 15:21:05,741 log 15017 140575637485120 Bad Request: /api/complaints/
+WARNING 2025-08-08 15:21:56,849 log 15017 140575637485120 Bad Request: /api/complaints/
+WARNING 2025-08-08 18:26:07,429 log 15017 140575658468928 Unauthorized: /api/auth/user/
+WARNING 2025-08-08 18:26:07,569 log 15017 140575658468928 Unauthorized: /api/auth/user/
+WARNING 2025-08-08 18:28:26,015 log 15017 140575637485120 Bad Request: /api/complaints/
+INFO 2025-08-08 18:45:29,113 autoreload 15017 140575718379520 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-08 18:45:32,431 autoreload 25816 127104429506560 Watching for file changes with StatReloader
+WARNING 2025-08-08 18:58:50,635 log 25816 127104361420352 Bad Request: /api/complaints/
+WARNING 2025-08-08 19:18:42,287 log 25816 127104361420352 Bad Request: /api/complaints/
+WARNING 2025-08-08 19:32:27,666 log 25816 127104351979072 Bad Request: /api/complaints/
+WARNING 2025-08-09 05:32:19,095 log 25816 127104351979072 Unauthorized: /api/auth/user/
+WARNING 2025-08-09 05:32:19,167 log 25816 127104361420352 Unauthorized: /api/auth/user/
+WARNING 2025-08-09 05:53:54,507 log 25816 127103970301504 Not Found: /
+WARNING 2025-08-09 05:53:56,840 log 25816 127103970301504 Not Found: /favicon.ico
+WARNING 2025-08-09 05:53:56,856 log 25816 127103970301504 Not Found: /
+WARNING 2025-08-09 05:58:29,815 log 25816 127103970301504 Not Found: /
+WARNING 2025-08-09 05:58:44,117 log 25816 127103970301504 Not Found: /
+WARNING 2025-08-09 05:58:44,399 log 25816 127103970301504 Not Found: /favicon.ico
+WARNING 2025-08-09 05:58:44,461 log 25816 127103970301504 Not Found: /
+WARNING 2025-08-09 05:58:59,009 log 25816 127103970301504 Not Found: /
+WARNING 2025-08-09 05:58:59,264 log 25816 127103970301504 Not Found: /favicon.ico
+WARNING 2025-08-09 05:58:59,364 log 25816 127104351979072 Not Found: /
+WARNING 2025-08-09 06:01:14,089 log 25816 127104351979072 Not Found: /
+WARNING 2025-08-09 06:01:14,124 log 25816 127104351979072 Not Found: /favicon.ico
+WARNING 2025-08-09 06:01:14,207 log 25816 127104351979072 Not Found: /
+WARNING 2025-08-09 06:01:43,496 log 25816 127104351979072 Not Found: /
+WARNING 2025-08-09 06:01:43,576 log 25816 127104351979072 Not Found: /favicon.ico
+WARNING 2025-08-09 06:01:43,718 log 25816 127104351979072 Not Found: /
+WARNING 2025-08-09 06:22:33,988 log 25816 127104334145088 Not Found: /api/users/
+WARNING 2025-08-09 06:22:34,064 log 25816 127104334145088 Not Found: /api/users/
+WARNING 2025-08-09 06:23:36,621 log 25816 127104334145088 Not Found: /api/users/
+WARNING 2025-08-09 06:23:36,677 log 25816 127104334145088 Not Found: /api/users/
+WARNING 2025-08-09 06:33:17,372 log 25816 127104351979072 Not Found: /api/users/
+WARNING 2025-08-09 06:33:18,053 log 25816 127104351979072 Not Found: /api/users/
+WARNING 2025-08-09 06:51:11,249 log 25816 127104351979072 Not Found: /api/users/
+WARNING 2025-08-09 06:51:11,423 log 25816 127104351979072 Not Found: /api/users/
+INFO 2025-08-09 08:43:11,874 autoreload 25816 127104429506560 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-09 08:43:17,880 autoreload 29398 130562238615552 Watching for file changes with StatReloader
+INFO 2025-08-09 11:33:19,861 autoreload 29398 130562238615552 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-09 11:33:26,649 autoreload 30576 136996358189056 Watching for file changes with StatReloader
+INFO 2025-08-09 11:34:50,346 autoreload 30576 136996358189056 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-09 11:34:51,185 autoreload 30608 130766738087936 Watching for file changes with StatReloader
+INFO 2025-08-09 11:41:36,312 autoreload 30608 130766738087936 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-09 11:41:39,496 autoreload 30662 136104493510656 Watching for file changes with StatReloader
+INFO 2025-08-09 11:42:53,268 autoreload 30662 136104493510656 /home/oladan/support_system_/backend/complaints/serializers.py changed, reloading.
+INFO 2025-08-09 11:42:53,849 autoreload 30710 127077203599360 Watching for file changes with StatReloader
+INFO 2025-08-09 13:07:22,234 autoreload 30710 127077203599360 /home/oladan/support_system_/backend/complaints/serializers.py changed, reloading.
+INFO 2025-08-09 13:07:25,461 autoreload 31138 137914129534976 Watching for file changes with StatReloader
+INFO 2025-08-09 13:14:52,981 autoreload 31138 137914129534976 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-09 13:14:55,475 autoreload 31224 136461331681280 Watching for file changes with StatReloader
+INFO 2025-08-09 13:16:19,001 autoreload 31224 136461331681280 /home/oladan/support_system_/backend/users/urls.py changed, reloading.
+INFO 2025-08-09 13:16:19,608 autoreload 31277 127787702489088 Watching for file changes with StatReloader
+INFO 2025-08-09 13:29:49,674 autoreload 31277 127787702489088 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-09 13:29:53,040 autoreload 31386 137878976368640 Watching for file changes with StatReloader
+INFO 2025-08-09 13:30:35,824 autoreload 31386 137878976368640 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-09 13:30:36,287 autoreload 31416 126877686087680 Watching for file changes with StatReloader
+INFO 2025-08-09 13:31:56,486 autoreload 31416 126877686087680 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-09 13:31:57,764 autoreload 31439 123740910563328 Watching for file changes with StatReloader
+INFO 2025-08-09 13:32:49,179 autoreload 31439 123740910563328 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-09 13:32:49,647 autoreload 31489 133668992753664 Watching for file changes with StatReloader
+INFO 2025-08-09 13:36:06,398 autoreload 31489 133668992753664 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-09 13:36:07,924 autoreload 31518 130258334314496 Watching for file changes with StatReloader
+INFO 2025-08-09 13:38:12,651 autoreload 31563 128043239813120 Watching for file changes with StatReloader
+WARNING 2025-08-09 13:40:27,199 log 31563 128043108529728 Not Found: /api/users/
+INFO 2025-08-09 13:49:21,571 autoreload 31563 128043239813120 /home/oladan/support_system_/backend/backend/urls.py changed, reloading.
+INFO 2025-08-09 13:49:24,026 autoreload 31697 130647928725504 Watching for file changes with StatReloader
+INFO 2025-08-09 13:50:29,661 autoreload 31697 130647928725504 /home/oladan/support_system_/backend/users/urls.py changed, reloading.
+INFO 2025-08-09 13:50:30,932 autoreload 31756 124915033088000 Watching for file changes with StatReloader
+INFO 2025-08-09 13:50:49,720 autoreload 31780 128423883325440 Watching for file changes with StatReloader
+INFO 2025-08-09 13:50:55,277 autoreload 31780 128423883325440 /home/oladan/support_system_/backend/users/urls.py changed, reloading.
+INFO 2025-08-09 13:50:56,960 autoreload 31803 129699834249216 Watching for file changes with StatReloader
+WARNING 2025-08-09 13:51:07,015 log 31803 129699775768128 Unauthorized: /api/users/
+WARNING 2025-08-09 13:59:01,798 log 31803 129699775768128 Forbidden: /api/users/engineers/
+INFO 2025-08-09 17:02:44,283 autoreload 31803 129699834249216 /home/oladan/support_system_/backend/users/urls.py changed, reloading.
+INFO 2025-08-09 17:02:47,647 autoreload 33204 135537434968064 Watching for file changes with StatReloader
+INFO 2025-08-09 17:03:27,813 autoreload 33204 135537434968064 /home/oladan/support_system_/backend/users/urls.py changed, reloading.
+INFO 2025-08-09 17:03:28,441 autoreload 33254 125416466374656 Watching for file changes with StatReloader
+WARNING 2025-08-09 17:32:29,232 log 33254 125416333375040 Not Found: /api/auth/user/
+WARNING 2025-08-09 17:32:29,263 log 33254 125416324982336 Not Found: /api/auth/user/
+WARNING 2025-08-09 17:32:29,475 log 33254 125416333375040 Unauthorized: /api/complaints/
+WARNING 2025-08-09 17:32:29,522 log 33254 125416333375040 Unauthorized: /api/complaints/
+WARNING 2025-08-09 17:39:44,466 log 33254 125416333375040 Not Found: /api/auth/user/
+WARNING 2025-08-09 17:39:44,663 log 33254 125416324982336 Not Found: /api/auth/user/
+WARNING 2025-08-09 17:40:03,146 log 33254 125416333375040 Bad Request: /api/auth/login/
+WARNING 2025-08-09 17:48:25,016 log 33254 125416324982336 Not Found: /api/auth/user/
+WARNING 2025-08-09 17:48:25,368 log 33254 125416333375040 Not Found: /api/auth/user/
+WARNING 2025-08-09 17:49:00,479 log 33254 125416333375040 Not Found: /api/auth/user/
+WARNING 2025-08-09 17:49:00,509 log 33254 125416333375040 Not Found: /api/auth/user/
+INFO 2025-08-10 15:01:52,303 autoreload 2356 124902151741440 Watching for file changes with StatReloader
+WARNING 2025-08-10 15:21:00,198 log 2356 124902011041344 Not Found: /api/auth/user/
+WARNING 2025-08-10 15:21:00,296 log 2356 124902091777600 Not Found: /api/auth/user/
+WARNING 2025-08-10 15:34:19,370 log 2356 124902011041344 Unauthorized: /api/auth/logout/
+WARNING 2025-08-10 15:34:23,494 log 2356 124901985863232 Not Found: /favicon.ico
+WARNING 2025-08-10 15:36:56,274 log 2356 124902091777600 Not Found: /api/auth/user/
+WARNING 2025-08-10 15:36:56,368 log 2356 124902091777600 Not Found: /api/auth/user/
+INFO 2025-08-11 08:56:57,628 autoreload 4876 132376874643456 Watching for file changes with StatReloader
+WARNING 2025-08-11 09:01:53,100 log 4876 132376807069248 Not Found: /api/auth/user/
+WARNING 2025-08-11 09:01:53,135 log 4876 132376586872384 Not Found: /api/auth/user/
+WARNING 2025-08-11 09:37:49,640 log 4876 132376807069248 Not Found: /api/auth/user/
+WARNING 2025-08-11 09:37:49,806 log 4876 132376815461952 Not Found: /api/auth/user/
+WARNING 2025-08-11 09:41:27,509 log 4876 132376815461952 Not Found: /api/auth/user/
+WARNING 2025-08-11 09:41:32,163 log 4876 132376807069248 Not Found: /favicon.ico
+INFO 2025-08-11 09:42:07,910 autoreload 4876 132376874643456 /home/oladan/support_system_/backend/users/urls.py changed, reloading.
+INFO 2025-08-11 09:42:10,724 autoreload 13124 136064214777856 Watching for file changes with StatReloader
+INFO 2025-08-11 10:00:47,876 autoreload 13124 136064214777856 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-11 10:00:50,685 autoreload 16457 123576708550656 Watching for file changes with StatReloader
+INFO 2025-08-11 10:03:17,366 autoreload 16457 123576708550656 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-11 10:03:19,021 autoreload 16950 134673235992576 Watching for file changes with StatReloader
+INFO 2025-08-11 10:22:56,048 autoreload 16950 134673235992576 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-11 10:22:59,014 autoreload 20599 129231554723840 Watching for file changes with StatReloader
+ERROR 2025-08-11 10:42:04,402 log 20599 129231488013888 Internal Server Error: /api/users/engineers/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 160, in get_engineers
+    serializer = UserSerializer(engineers, many=True)
+NameError: name 'UserSerializer' is not defined
+ERROR 2025-08-11 10:42:05,187 log 20599 129231270966848 Internal Server Error: /api/users/engineers/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 160, in get_engineers
+    serializer = UserSerializer(engineers, many=True)
+NameError: name 'UserSerializer' is not defined
+ERROR 2025-08-11 10:43:13,065 log 20599 129231270966848 Internal Server Error: /api/users/engineers/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 160, in get_engineers
+    serializer = UserSerializer(engineers, many=True)
+NameError: name 'UserSerializer' is not defined
+ERROR 2025-08-11 10:43:13,349 log 20599 129231262574144 Internal Server Error: /api/users/engineers/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 160, in get_engineers
+    serializer = UserSerializer(engineers, many=True)
+NameError: name 'UserSerializer' is not defined
+ERROR 2025-08-11 10:45:02,444 log 20599 129231262574144 Internal Server Error: /api/users/engineers/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 160, in get_engineers
+    serializer = UserSerializer(engineers, many=True)
+NameError: name 'UserSerializer' is not defined
+ERROR 2025-08-11 10:45:02,721 log 20599 129231254181440 Internal Server Error: /api/users/engineers/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 160, in get_engineers
+    serializer = UserSerializer(engineers, many=True)
+NameError: name 'UserSerializer' is not defined
+ERROR 2025-08-11 10:47:17,166 log 20599 129231488013888 Internal Server Error: /api/users/engineers/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 160, in get_engineers
+    serializer = UserSerializer(engineers, many=True)
+NameError: name 'UserSerializer' is not defined
+ERROR 2025-08-11 10:47:17,385 log 20599 129231245788736 Internal Server Error: /api/users/engineers/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 160, in get_engineers
+    serializer = UserSerializer(engineers, many=True)
+NameError: name 'UserSerializer' is not defined
+WARNING 2025-08-11 10:48:53,676 log 20599 129231245788736 Unauthorized: /api/users/engineers/
+WARNING 2025-08-11 10:48:55,999 log 20599 129231496406592 Not Found: /favicon.ico
+WARNING 2025-08-11 10:50:09,153 log 20599 129231262574144 Unauthorized: /api/users/
+WARNING 2025-08-11 10:50:36,816 log 20599 129231262574144 Not Found: /auth/users/
+WARNING 2025-08-11 10:50:55,198 log 20599 129231262574144 Unauthorized: /api/users/
+WARNING 2025-08-11 11:00:50,155 log 20599 129231496406592 Not Found: /users/
+WARNING 2025-08-11 11:01:15,644 log 20599 129231496406592 Not Found: /api/
+WARNING 2025-08-11 11:01:38,713 log 20599 129231496406592 Not Found: /api/user/
+WARNING 2025-08-11 11:02:09,965 log 20599 129231488013888 Unauthorized: /api/users/1/
+WARNING 2025-08-11 11:04:19,631 log 20599 129231488013888 Unauthorized: /api/users/engineers/
+WARNING 2025-08-11 11:04:49,326 log 20599 129231262574144 Unauthorized: /api/users/engineers/
+WARNING 2025-08-11 11:04:57,326 log 20599 129231262574144 Unauthorized: /api/users/
+WARNING 2025-08-11 11:05:07,065 log 20599 129231262574144 Unauthorized: /api/users/engineers/
+ERROR 2025-08-11 11:07:33,879 log 20599 129231488013888 Internal Server Error: /api/users/engineers/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 160, in get_engineers
+    serializer = UserSerializer(engineers, many=True)
+NameError: name 'UserSerializer' is not defined
+ERROR 2025-08-11 11:07:34,119 log 20599 129231262574144 Internal Server Error: /api/users/engineers/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 160, in get_engineers
+    serializer = UserSerializer(engineers, many=True)
+NameError: name 'UserSerializer' is not defined
+ERROR 2025-08-11 11:10:56,971 log 20599 129231262574144 Internal Server Error: /api/users/engineers/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 160, in get_engineers
+    serializer = UserSerializer(engineers, many=True)
+NameError: name 'UserSerializer' is not defined
+ERROR 2025-08-11 11:10:57,444 log 20599 129231496406592 Internal Server Error: /api/users/engineers/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 160, in get_engineers
+    serializer = UserSerializer(engineers, many=True)
+NameError: name 'UserSerializer' is not defined
+ERROR 2025-08-11 11:24:02,768 log 20599 129231496406592 Internal Server Error: /api/users/engineers/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 160, in get_engineers
+    serializer = UserSerializer(engineers, many=True)
+NameError: name 'UserSerializer' is not defined
+ERROR 2025-08-11 11:24:03,329 log 20599 129231488013888 Internal Server Error: /api/users/engineers/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 160, in get_engineers
+    serializer = UserSerializer(engineers, many=True)
+NameError: name 'UserSerializer' is not defined
+INFO 2025-08-11 11:27:55,689 autoreload 20599 129231554723840 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-11 11:28:01,530 autoreload 31263 130631841595392 Watching for file changes with StatReloader
+WARNING 2025-08-11 11:28:28,880 log 31263 130631781574208 Unauthorized: /api/users/engineers/
+INFO 2025-08-11 11:29:43,102 autoreload 31540 136219386736640 Watching for file changes with StatReloader
+WARNING 2025-08-11 11:30:41,439 log 31540 136219328505408 Unauthorized: /api/users/engineers/
+WARNING 2025-08-11 11:30:45,483 log 31540 136219328505408 Unauthorized: /api/users/engineers/
+INFO 2025-08-11 11:34:02,527 autoreload 31540 136219386736640 /home/oladan/support_system_/backend/users/serializers.py changed, reloading.
+INFO 2025-08-11 11:34:07,573 autoreload 32208 126292329508864 Watching for file changes with StatReloader
+ERROR 2025-08-11 11:34:32,187 log 32208 126292262377024 Internal Server Error: /api/users/engineers/
+ERROR 2025-08-11 11:34:32,244 log 32208 126292262377024 Internal Server Error: /api/users/engineers/
+ERROR 2025-08-11 11:34:35,863 log 32208 126292270769728 Internal Server Error: /api/users/engineers/
+ERROR 2025-08-11 11:34:35,912 log 32208 126292270769728 Internal Server Error: /api/users/engineers/
+INFO 2025-08-11 11:38:08,964 autoreload 32208 126292329508864 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-11 11:38:12,788 autoreload 32789 126720279339008 Watching for file changes with StatReloader
+WARNING 2025-08-11 11:38:56,326 log 32789 126720210359872 Method Not Allowed: /api/complaints/1/assign/
+WARNING 2025-08-11 11:52:53,876 log 32789 126720219801152 Method Not Allowed: /api/complaints/1/assign/
+WARNING 2025-08-11 12:27:40,365 log 32789 126720219801152 Method Not Allowed: /api/complaints/1/assign/
+INFO 2025-08-11 13:30:18,041 autoreload 32789 126720279339008 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-11 13:30:22,532 autoreload 47692 128500436664320 Watching for file changes with StatReloader
+INFO 2025-08-11 13:36:49,493 autoreload 47692 128500436664320 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-11 13:36:56,541 autoreload 48793 132401379426304 Watching for file changes with StatReloader
+INFO 2025-08-11 13:37:57,217 autoreload 48927 132337583484928 Watching for file changes with StatReloader
+WARNING 2025-08-11 13:38:12,244 log 48927 132337524270656 Unauthorized: /api/complaints/
+WARNING 2025-08-11 13:38:12,258 log 48927 132337524270656 Unauthorized: /api/complaints/
+WARNING 2025-08-11 13:38:30,387 log 48927 132337524270656 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 13:38:30,457 log 48927 132337515877952 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 13:38:47,255 log 48927 132337506436672 Unauthorized: /api/complaints/1/
+WARNING 2025-08-11 13:38:47,256 log 48927 132337515877952 Unauthorized: /api/users/engineers/
+WARNING 2025-08-11 13:38:47,270 log 48927 132337506436672 Unauthorized: /api/complaints/1/
+WARNING 2025-08-11 13:38:47,305 log 48927 132337515877952 Unauthorized: /api/users/engineers/
+INFO 2025-08-11 13:40:44,266 autoreload 48927 132337583484928 /home/oladan/support_system_/backend/complaints/urls.py changed, reloading.
+INFO 2025-08-11 13:40:55,728 autoreload 49343 138913520947200 Watching for file changes with StatReloader
+INFO 2025-08-11 13:42:01,703 autoreload 49343 138913520947200 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-11 13:42:06,127 autoreload 49562 130649825579008 Watching for file changes with StatReloader
+INFO 2025-08-11 13:42:42,329 autoreload 49562 130649825579008 /home/oladan/support_system_/backend/complaints/urls.py changed, reloading.
+INFO 2025-08-11 13:42:45,159 autoreload 49691 127205694779392 Watching for file changes with StatReloader
+INFO 2025-08-11 13:47:59,158 autoreload 49691 127205694779392 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-11 13:48:04,244 autoreload 50393 124770230452224 Watching for file changes with StatReloader
+INFO 2025-08-11 13:49:35,390 autoreload 50393 124770230452224 /home/oladan/support_system_/backend/complaints/urls.py changed, reloading.
+INFO 2025-08-11 13:49:36,403 autoreload 50601 135820049145856 Watching for file changes with StatReloader
+INFO 2025-08-11 13:50:24,140 autoreload 50601 135820049145856 /home/oladan/support_system_/backend/complaints/urls.py changed, reloading.
+INFO 2025-08-11 13:50:25,522 autoreload 50752 137544334467072 Watching for file changes with StatReloader
+WARNING 2025-08-11 13:50:40,808 log 50752 137544275584576 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 13:50:40,830 log 50752 137544267191872 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 13:53:25,841 log 50752 137544267191872 Not Found: /api/admin/complaints/
+INFO 2025-08-11 13:53:55,756 autoreload 50752 137544334467072 /home/oladan/support_system_/backend/complaints/urls.py changed, reloading.
+INFO 2025-08-11 13:53:58,030 autoreload 51239 128167157567488 Watching for file changes with StatReloader
+WARNING 2025-08-11 13:54:12,912 log 51239 128167098443328 Unauthorized: /api/complaints/
+INFO 2025-08-11 13:54:26,553 autoreload 51239 128167157567488 /home/oladan/support_system_/backend/complaints/urls.py changed, reloading.
+INFO 2025-08-11 13:54:28,449 autoreload 51350 123404742311936 Watching for file changes with StatReloader
+WARNING 2025-08-11 13:55:34,860 log 51350 123404610958912 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 13:55:34,891 log 51350 123404610958912 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 13:57:02,206 log 51350 123404610958912 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 13:57:02,588 log 51350 123404602566208 Not Found: /api/admin/complaints/
+INFO 2025-08-11 14:03:35,897 autoreload 51350 123404742311936 /home/oladan/support_system_/backend/complaints/urls.py changed, reloading.
+INFO 2025-08-11 14:03:40,756 autoreload 52719 124563560599552 Watching for file changes with StatReloader
+WARNING 2025-08-11 14:05:37,862 log 52719 124563494000192 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 14:05:38,141 log 52719 124563502392896 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 14:06:26,558 log 52719 124563502392896 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 14:06:26,761 log 52719 124563502392896 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 14:19:50,868 log 52719 124563494000192 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 14:19:50,904 log 52719 124563494000192 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 14:25:05,841 log 52719 124563494000192 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 14:25:05,939 log 52719 124563484558912 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 14:25:27,639 log 52719 124563484558912 Unauthorized: /api/users/engineers/
+WARNING 2025-08-11 14:25:52,548 log 52719 124563494000192 Unauthorized: /api/complaints/
+WARNING 2025-08-11 14:26:08,568 log 52719 124563494000192 Not Found: /api/admin/complaints/
+WARNING 2025-08-11 14:26:24,864 log 52719 124563502392896 Unauthorized: /api/complaints/
+INFO 2025-08-11 14:27:00,524 autoreload 52719 124563560599552 /home/oladan/support_system_/backend/complaints/urls.py changed, reloading.
+INFO 2025-08-11 14:27:04,599 autoreload 56437 123935525482496 Watching for file changes with StatReloader
+WARNING 2025-08-11 15:40:50,012 log 56437 123935466186304 Unauthorized: /api/users/
+WARNING 2025-08-11 15:40:50,319 log 56437 123935466186304 Unauthorized: /api/users/
+WARNING 2025-08-11 17:30:33,706 log 56437 123935466186304 Not Found: /api/complaint-stats/
+WARNING 2025-08-11 17:30:33,805 log 56437 123935456745024 Not Found: /api/complaint-stats/
+INFO 2025-08-11 17:33:04,969 autoreload 56437 123935525482496 /home/oladan/support_system_/backend/complaints/urls.py changed, reloading.
+INFO 2025-08-11 17:33:12,419 autoreload 81052 128385321172992 Watching for file changes with StatReloader
+WARNING 2025-08-11 17:33:15,449 log 81052 128385263068736 Not Found: /api/complaint-stats/
+WARNING 2025-08-11 17:33:15,505 log 81052 128385263068736 Not Found: /api/complaint-stats/
+WARNING 2025-08-11 17:33:29,443 log 81052 128385245234752 Unauthorized: /api/users/engineers/
+WARNING 2025-08-11 17:33:44,986 log 81052 128385245234752 Not Found: /api/complaint-stats/
+WARNING 2025-08-11 17:34:08,508 log 81052 128385253627456 Not Found: /
+INFO 2025-08-11 17:34:48,778 autoreload 81052 128385321172992 /home/oladan/support_system_/backend/complaints/urls.py changed, reloading.
+INFO 2025-08-11 17:34:49,840 autoreload 81343 136883561979904 Watching for file changes with StatReloader
+WARNING 2025-08-11 17:35:50,009 log 81343 136883502835264 Not Found: /api/complaint-stats/
+INFO 2025-08-11 17:36:28,476 autoreload 81761 126658542821376 Watching for file changes with StatReloader
+WARNING 2025-08-11 17:37:23,185 log 81761 126658475447872 Not Found: /api/complaint-stats/
+WARNING 2025-08-11 17:37:31,209 log 81761 126658467055168 Not Found: /api/complaint-stats/
+WARNING 2025-08-11 17:40:35,478 log 81761 126658475447872 Unauthorized: /api/complaints/complaint-stats/
+WARNING 2025-08-11 17:41:48,807 log 81761 126658475447872 Unauthorized: /api/complaints/complaint-stats/
+WARNING 2025-08-11 17:41:48,903 log 81761 126658475447872 Unauthorized: /api/complaints/complaint-stats/
+INFO 2025-08-11 17:58:13,919 autoreload 81761 126658542821376 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-11 17:58:19,814 autoreload 84581 137695655084032 Watching for file changes with StatReloader
+INFO 2025-08-11 18:13:46,222 autoreload 84581 137695655084032 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-11 18:13:50,101 autoreload 86579 133803992264704 Watching for file changes with StatReloader
+INFO 2025-08-11 18:16:55,212 autoreload 86579 133803992264704 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-11 18:17:00,768 autoreload 87128 137131120787456 Watching for file changes with StatReloader
+ERROR 2025-08-11 18:17:36,688 log 87128 137130982499904 Internal Server Error: /api/complaints/complaint-stats/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/complaints/views.py", line 331, in complaint_stats
+    active_engineers = User.objects.filter(role='engineer', is_active=True).count()
+NameError: name 'User' is not defined
+ERROR 2025-08-11 18:17:37,020 log 87128 137130990892608 Internal Server Error: /api/complaints/complaint-stats/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/complaints/views.py", line 331, in complaint_stats
+    active_engineers = User.objects.filter(role='engineer', is_active=True).count()
+NameError: name 'User' is not defined
+INFO 2025-08-11 18:21:08,347 autoreload 87128 137131120787456 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-11 18:21:16,890 autoreload 87719 139243194146816 Watching for file changes with StatReloader
+INFO 2025-08-11 18:21:57,610 autoreload 87719 139243194146816 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-11 18:21:58,868 autoreload 87820 125537107509248 Watching for file changes with StatReloader

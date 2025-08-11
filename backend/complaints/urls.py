@@ -9,6 +9,7 @@ urlpatterns = [
     path('<int:complaint_id>/assign/', views.assign_complaint, name='assign-complaint'),
     path('<int:complaint_id>/status/', views.update_complaint_status, name='update-complaint-status'),
     path('<int:complaint_id>/comment/', views.add_complaint_comment, name='add-complaint-comment'),
-    path('stats/', views.complaint_stats, name='complaint-stats'),
+    path('complaint-stats/', views.complaint_stats, name='complaint-stats'),
     path('bulk-sync/', views.bulk_sync_complaints, name='bulk-sync-complaints'),
+    path('complaints/', views.ComplaintListCreateView.as_view(), name='admin-complaints'),
 ]

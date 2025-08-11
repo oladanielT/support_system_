@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { userService } from "../../services/userService.js";
 import Navbar from "../../components/layout/Navbar.jsx";
 import { Users, UserPlus, Edit, Trash2, Search } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function ManageUsers() {
   const [users, setUsers] = useState([]);
@@ -15,6 +16,7 @@ export default function ManageUsers() {
       try {
         const data = await userService.getUsers();
         setUsers(data.results || data);
+        console.log(data.results);
       } catch (err) {
         setError("Failed to load users");
         console.error(err);
@@ -26,11 +28,24 @@ export default function ManageUsers() {
     fetchUsers();
   }, []);
 
+  // const filteredUsers = users.filter((user) => {
+  //   const matchesSearch =
+  //     user.first_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //     user.last_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //     user.email.toLowerCase().includes(searchTerm.toLowerCase());
+  //   const matchesRole = roleFilter === "all" || user.role === roleFilter;
+
+  //   return matchesSearch && matchesRole;
+  // });
+
   const filteredUsers = users.filter((user) => {
     const matchesSearch =
-      user.first_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      user.last_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      user.email.toLowerCase().includes(searchTerm.toLowerCase());
+      (user.first_name || "")
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase()) ||
+      (user.last_name || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (user.email || "").toLowerCase().includes(searchTerm.toLowerCase());
+
     const matchesRole = roleFilter === "all" || user.role === roleFilter;
 
     return matchesSearch && matchesRole;
@@ -187,6 +202,28 @@ export default function ManageUsers() {
                           <button className="text-blue-600 hover:text-blue-900">
                             <Edit className="h-4 w-4" />
                           </button>
+                          <button
+                            onClick={() => handleDeleteUser(user.id)}
+                            className="text-red-600 hover:text-red-900"
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </button>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <div className="flex space-x-2">
+                          <Link
+                            to={`/admin/users/${user.id}`}
+                            className="text-blue-600 hover:text-blue-900"
+                          >
+                            <Users className="h-4 w-4" />
+                          </Link>
+                          <Link
+                            to={`/admin/users/${user.id}/edit`}
+                            className="text-yellow-600 hover:text-yellow-900"
+                          >
+                            <Edit className="h-4 w-4" />
+                          </Link>
                           <button
                             onClick={() => handleDeleteUser(user.id)}
                             className="text-red-600 hover:text-red-900"

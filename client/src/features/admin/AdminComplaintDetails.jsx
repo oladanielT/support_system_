@@ -13,7 +13,7 @@ export default function AdminComplaintDetails() {
   const [assigning, setAssigning] = useState(false);
   const [error, setError] = useState(null);
   const [selectedEngineer, setSelectedEngineer] = useState("");
-
+  console.log(id, "here");
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -22,8 +22,9 @@ export default function AdminComplaintDetails() {
           userService.getEngineers(),
         ]);
         setComplaint(complaintData);
-        setEngineers(engineersData.results || engineersData);
+        setEngineers(engineersData);
         setSelectedEngineer(complaintData.assigned_to?.id || "");
+        console.log(engineersData);
       } catch (err) {
         setError("Failed to load complaint details");
         console.error(err);
@@ -34,6 +35,8 @@ export default function AdminComplaintDetails() {
 
     fetchData();
   }, [id]);
+
+  console.log(engineers);
 
   const handleAssignEngineer = async (e) => {
     e.preventDefault();
@@ -47,7 +50,7 @@ export default function AdminComplaintDetails() {
         id,
         selectedEngineer
       );
-      setComplaint(updatedComplaint);
+      setComplaint(updatedComplaint.complaint);
       alert("Engineer assigned successfully!");
     } catch (err) {
       console.error("Failed to assign engineer:", err);
@@ -66,6 +69,7 @@ export default function AdminComplaintDetails() {
   }
 
   if (error && !complaint) {
+    console.log("Error :", error);
     return (
       <div className="min-h-screen bg-gray-50">
         <Navbar />
@@ -113,7 +117,7 @@ export default function AdminComplaintDetails() {
                   {complaint.title}
                 </h2>
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mt-2">
-                  {complaint.status.replace("_", " ")}
+                  {complaint?.status?.replace("_", " ") ?? ""}
                 </span>
               </div>
 
@@ -231,8 +235,9 @@ export default function AdminComplaintDetails() {
                     <option value="">Choose an engineer...</option>
                     {engineers.map((engineer) => (
                       <option key={engineer.id} value={engineer.id}>
-                        {engineer.first_name} {engineer.last_name} -{" "}
-                        {engineer.department}
+                        {/* {engineer.first_name} {engineer.last_name} -{" "}
+                        {engineer.department} */}
+                        Engineer {engineer.full_name}
                       </option>
                     ))}
                   </select>

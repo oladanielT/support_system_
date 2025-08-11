@@ -97,13 +97,48 @@ class ComplaintCreateSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Complaint
-        fields = ['title', 'description', 'category', 'priority', 'location', 
+        fields = ['title', 'description', 'category', 'priority', 'location',
                  'contact_info', 'offline_id']
-    
+
+    def validate(self, data):
+        # Add any custom validation here
+        user = self.context['request'].user
+        
+        # Example: Check if user has too many pending complaints (optional)
+        if user.role == 'user':
+            pending_count = Complaint.objects.filter(
+                submitted_by=user,
+                status__in=['pending', 'assigned', 'in_progress']
+            ).count()
+            
+            # Allow up to 5 pending complaints per user
+            if pending_count >= 5:
+                raise serializers.ValidationError(
+                    "You have too many pending complaints. Please wait for some to be resolved."
+                )
+        
+        return data
+
     def create(self, validated_data):
         # Set the submitted_by field to the current user
         validated_data['submitted_by'] = self.context['request'].user
-        return super().create(validated_data)
+        
+        try:
+            complaint = super().create(validated_data)
+            
+            # Create initial activity log
+            ComplaintUpdate.objects.create(
+                complaint=complaint,
+                updated_by=validated_data['submitted_by'],
+                update_type='creation',
+                message=f"Complaint created: {complaint.title}"
+            )
+            
+            return complaint
+            
+        except Exception as e:
+            raise serializers.ValidationError(f"Error creating complaint: {str(e)}")
+
 
 class ComplaintUpdateSerializer(serializers.ModelSerializer):
     """Serializer for updating complaint status, assignment, etc."""
@@ -193,3 +228,81 @@ class BulkSyncSerializer(serializers.Serializer):
             created_complaints.append(complaint)
         
         return {'complaints': created_complaints}
+
+
+class ComplaintStatusUpdateSerializer(serializers.ModelSerializer):
+    """Serializer for updating complaint status, assignment, etc."""
+    
+    class Meta:
+        model = Complaint
+        fields = ['status', 'assigned_to', 'resolution_notes', 'admin_notes', 'priority']
+
+    def update(self, instance, validated_data):
+        # Track status changes
+        old_status = instance.status
+        new_status = validated_data.get('status', instance.status)
+
+        # Track assignment changes
+        old_assigned = instance.assigned_to
+        new_assigned = validated_data.get('assigned_to', instance.assigned_to)
+        
+        # Track priority changes
+        old_priority = instance.priority
+        new_priority = validated_data.get('priority', instance.priority)
+
+        # Update timestamps
+        if new_status == 'assigned' and old_status != 'assigned':
+            validated_data['assigned_at'] = timezone.now()
+        elif new_status == 'resolved' and old_status != 'resolved':
+            validated_data['resolved_at'] = timezone.now()
+
+        # Update the instance
+        instance = super().update(instance, validated_data)
+
+        # Create update records for tracking
+        request_user = self.context['request'].user
+
+        # Log status change
+        if old_status != new_status:
+            ComplaintUpdate.objects.create(
+                complaint=instance,
+                updated_by=request_user,
+                update_type='status_change',
+                message=f"Status changed from {old_status} to {new_status}",
+                old_status=old_status,
+                new_status=new_status
+            )
+
+        # Log assignment change
+        if old_assigned != new_assigned:
+            if new_assigned:
+                message = f"Assigned to {new_assigned.get_full_name()}"
+            else:
+                message = "Assignment removed"
+            
+            ComplaintUpdate.objects.create(
+                complaint=instance,
+                updated_by=request_user,
+                update_type='assignment',
+                message=message
+            )
+
+        # Log priority change
+        if old_priority != new_priority:
+            ComplaintUpdate.objects.create(
+                complaint=instance,
+                updated_by=request_user,
+                update_type='priority_change',
+                message=f"Priority changed from {old_priority} to {new_priority}"
+            )
+
+        # Log resolution
+        if new_status == 'resolved' and old_status != 'resolved':
+            ComplaintUpdate.objects.create(
+                complaint=instance,
+                updated_by=request_user,
+                update_type='resolution',
+                message="Complaint marked as resolved"
+            )
+
+        return instance
