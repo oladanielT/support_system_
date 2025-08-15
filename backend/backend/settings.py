@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-eo%xmw#!#rip_7=k23x3526(03-gxf8dji)e#q^7owhl76(hz5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     #custom app
     'users',
+    'notifications',
     'rest_framework',
     'rest_framework_simplejwt',
     'complaints',

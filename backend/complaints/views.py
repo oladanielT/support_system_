@@ -7,6 +7,7 @@ from django.utils import timezone
 from datetime import timedelta
 from users.models import User
 from .models import Complaint, ComplaintUpdate, ComplaintAttachment
+from notifications.utils import create_notification
 from .serializers import (
     ComplaintListSerializer,
     ComplaintDetailSerializer,
@@ -20,80 +21,83 @@ from .serializers import (
 
 
 class ComplaintListCreateView(generics.ListCreateAPIView):
-    """List all complaints or create a new complaint"""
     permission_classes = [permissions.IsAuthenticated]
 
     def get_serializer_class(self):
-        if self.request.method == 'POST':
-            return ComplaintCreateSerializer
-        return ComplaintListSerializer
+        return ComplaintCreateSerializer if self.request.method == "POST" else ComplaintListSerializer
 
     def get_queryset(self):
-        """FIXED: Admin can now see all complaints"""
         user = self.request.user
         queryset = Complaint.objects.select_related('submitted_by', 'assigned_to')
 
-        # Role-based filtering - FIXED ADMIN ACCESS
-        if user.role == 'user':
+        if user.role == "user":
             queryset = queryset.filter(submitted_by=user)
-        elif user.role == 'engineer':
+        elif user.role == "engineer":
             queryset = queryset.filter(assigned_to=user)
-        # ADMINS can see all complaints - no filtering
 
-        # Apply filters from query parameters
-        status_filter = self.request.query_params.get('status')
-        if status_filter:
-            queryset = queryset.filter(status=status_filter)
-
-        priority_filter = self.request.query_params.get('priority')
-        if priority_filter:
-            queryset = queryset.filter(priority=priority_filter)
-
-        category_filter = self.request.query_params.get('category')
-        if category_filter:
-            queryset = queryset.filter(category=category_filter)
-
-        search = self.request.query_params.get('search')
-        if search:
+        # filters
+        q = self.request.query_params
+        if q.get("status"):
+            queryset = queryset.filter(status=q.get("status"))
+        if q.get("priority"):
+            queryset = queryset.filter(priority=q.get("priority"))
+        if q.get("category"):
+            queryset = queryset.filter(category=q.get("category"))
+        if q.get("search"):
+            s = q.get("search")
             queryset = queryset.filter(
-                Q(title__icontains=search) |
-                Q(description__icontains=search) |
-                Q(location__icontains=search)
+                Q(title__icontains=s)
+                | Q(description__icontains=s)
+                | Q(location__icontains=s)
             )
 
-        return queryset.order_by('-created_at')
+        return queryset.order_by("-created_at")
+
+    def perform_create(self, serializer):
+        complaint = serializer.save(submitted_by=self.request.user)
+        # Notify all admins
+        admins = User.objects.filter(role="admin")
+        for admin in admins:
+            create_notification(admin, f"New complaint created: {complaint.title}")
 
 class ComplaintDetailView(generics.RetrieveUpdateDestroyAPIView):
-    """Retrieve, update or delete a complaint"""
     permission_classes = [permissions.IsAuthenticated]
 
     def get_serializer_class(self):
-        if self.request.method in ['PUT', 'PATCH']:
-            return ComplaintStatusUpdateSerializer  # CHANGED: Updated name
-        return ComplaintDetailSerializer
+        return ComplaintStatusUpdateSerializer if self.request.method in ["PUT", "PATCH"] else ComplaintDetailSerializer
 
     def get_queryset(self):
-        """FIXED: Admin access"""
         user = self.request.user
-        queryset = Complaint.objects.select_related('submitted_by', 'assigned_to')
+        qs = Complaint.objects.select_related("submitted_by", "assigned_to")
+        if user.role == "user":
+            return qs.filter(submitted_by=user)
+        if user.role == "engineer":
+            return qs.filter(assigned_to=user)
+        return qs
 
-        if user.role == 'user':
-            return queryset.filter(submitted_by=user)
-        elif user.role == 'engineer':
-            return queryset.filter(assigned_to=user)
-        # ADMINS can access all complaints
-
-        return queryset
-    
     def perform_destroy(self, instance):
-        """ENHANCED: Proper deletion logging"""
+        """
+        Delete a complaint → log the change → notify admins + engineer (if assigned)
+        """
+        # Notify admins
+        admins = User.objects.filter(role="admin")
+        for admin in admins:
+            create_notification(admin, f"Complaint '{instance.title}' has been deleted by the user.")
+
+        # notify assigned engineer (if any)
+        if instance.assigned_to:
+            create_notification(
+                instance.assigned_to,
+                f"Complaint '{instance.title}' has been deleted by the user."
+            )
+
         ComplaintUpdate.objects.create(
             complaint=instance,
             updated_by=self.request.user,
-            update_type='status_change',
+            update_type="status_change",
             message=f"Complaint deleted by {self.request.user.get_full_name()}",
             old_status=instance.status,
-            new_status='deleted'
+            new_status="deleted",
         )
         super().perform_destroy(instance)
 
@@ -121,117 +125,107 @@ class AssignedComplaintsView(generics.ListAPIView):
             assigned_to=user
         ).select_related('submitted_by', 'assigned_to').order_by('-created_at')
 
-@api_view(['POST', 'PATCH'])
+@api_view(["POST", "PATCH"])
 @permission_classes([permissions.IsAuthenticated])
 def assign_complaint(request, complaint_id):
-    """ENHANCED: Better error handling"""
-    if request.user.role != 'admin':
-        return Response(
-            {
-                'error': 'Access denied',
-                'message': 'Only administrators can assign complaints'
-            },
-            status=status.HTTP_403_FORBIDDEN
-        )
+    if request.user.role != "admin":
+        return Response({"error": "Access denied"}, status=status.HTTP_403_FORBIDDEN)
 
     try:
         complaint = Complaint.objects.get(id=complaint_id)
     except Complaint.DoesNotExist:
-        return Response(
-            {'error': 'Complaint not found'},
-            status=status.HTTP_404_NOT_FOUND
-        )
+        return Response({"error": "Complaint not found"}, status=status.HTTP_404_NOT_FOUND)
 
-    engineer_id = request.data.get('engineer_id')
+    engineer_id = request.data.get("engineer_id")
     if not engineer_id:
-        return Response(
-            {'error': 'Engineer ID is required'},
-            status=status.HTTP_400_BAD_REQUEST
-        )
+        return Response({"error": "Engineer ID is required"}, status=status.HTTP_400_BAD_REQUEST)
 
     try:
-        from users.models import User
-        engineer = User.objects.get(id=engineer_id, role='engineer')
+        engineer = User.objects.get(id=engineer_id, role="engineer")
     except User.DoesNotExist:
-        return Response(
-            {'error': 'Engineer not found'},
-            status=status.HTTP_404_NOT_FOUND
-        )
+        return Response({"error": "Engineer not found"}, status=status.HTTP_404_NOT_FOUND)
 
-    # Update complaint
     complaint.assigned_to = engineer
-    complaint.status = 'assigned'
+    complaint.status = "assigned"
     complaint.assigned_at = timezone.now()
     complaint.save()
 
-    # Create update record
+    # ✅ notify only engineer
+    create_notification(engineer, f"You have been assigned to complaint '{complaint.title}'")
+
     ComplaintUpdate.objects.create(
         complaint=complaint,
         updated_by=request.user,
-        update_type='assignment',
-        message=f"Assigned to {engineer.get_full_name()}"
+        update_type="assignment",
+        message=f"Assigned to {engineer.get_full_name()}",
     )
 
     return Response({
-        'success': True,
-        'message': f'Complaint assigned to {engineer.get_full_name()}',
-        'complaint': ComplaintDetailSerializer(complaint).data
+        "success": True,
+        "message": f"Complaint assigned to {engineer.get_full_name()}",
+        "complaint": ComplaintDetailSerializer(complaint).data
     }, status=status.HTTP_200_OK)
 
-@api_view(['POST', 'PATCH'])
+
+
+@api_view(["POST", "PATCH"])
 @permission_classes([permissions.IsAuthenticated])
 def update_complaint_status(request, complaint_id):
-    """Update complaint status"""
     try:
         complaint = Complaint.objects.get(id=complaint_id)
     except Complaint.DoesNotExist:
-        return Response(
-            {'error': 'Complaint not found'}, 
-            status=status.HTTP_404_NOT_FOUND
-        )
-    
-    # Check permissions
+        return Response({"error": "Complaint not found"}, status=status.HTTP_404_NOT_FOUND)
+
     user = request.user
-    if (user.role == 'user' and complaint.submitted_by != user) or \
-       (user.role == 'engineer' and complaint.assigned_to != user):
-        return Response(
-            {'error': 'Permission denied'}, 
-            status=status.HTTP_403_FORBIDDEN
-        )
-    
-    new_status = request.data.get('status')
-    resolution_notes = request.data.get('resolution_notes', '')
-    
+    # permission check
+    if (user.role == "user" and complaint.submitted_by != user) or (
+        user.role == "engineer" and complaint.assigned_to != user
+    ):
+        return Response({"error": "Permission denied"}, status=status.HTTP_403_FORBIDDEN)
+
+    new_status = request.data.get("status")
+    resolution_notes = request.data.get("resolution_notes", "")
+
     if not new_status:
-        return Response(
-            {'error': 'Status is required'}, 
-            status=status.HTTP_400_BAD_REQUEST
-        )
-    
+        return Response({"error": "Status is required"}, status=status.HTTP_400_BAD_REQUEST)
+
     old_status = complaint.status
     complaint.status = new_status
-    
+
     if resolution_notes:
         complaint.resolution_notes = resolution_notes
-    
-    if new_status == 'resolved':
+    if new_status == "resolved":
         complaint.resolved_at = timezone.now()
-    
+
     complaint.save()
-    
-    # Create update record
+
+    # ✅ STATUS UPDATED BY ENGINEER → notify user
+    if user.role == "engineer":
+        create_notification(
+            complaint.submitted_by,
+            f"Status of your complaint '{complaint.title}' updated to {new_status}"
+        )
+
+    # ✅ USER UPDATED THE COMPLAINT → notify admins + assigned engineer
+    if user.role == "user":
+        admins = User.objects.filter(role="admin")
+        for admin in admins:
+            create_notification(admin, f"Complaint '{complaint.title}' has been updated by the user.")
+        if complaint.assigned_to:
+            create_notification(complaint.assigned_to, f"Complaint '{complaint.title}' has been updated by the user.")
+
     ComplaintUpdate.objects.create(
         complaint=complaint,
         updated_by=user,
-        update_type='status_change',
+        update_type="status_change",
         message=f"Status changed from {old_status} to {new_status}",
         old_status=old_status,
-        new_status=new_status
+        new_status=new_status,
     )
-    
+
     return Response({
-        'message': 'Complaint status updated successfully',
-        'complaint': ComplaintDetailSerializer(complaint).data
+        "message": "Complaint status updated successfully",
+        "complaint": ComplaintDetailSerializer(complaint).data,
     }, status=status.HTTP_200_OK)
 
 @api_view(['POST'])
