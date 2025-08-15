@@ -1,40 +1,42 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext.jsx";
-import { Menu, X, Bell, User, LogOut, Settings } from "lucide-react";
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../../contexts/AuthContext.jsx'
+import { Menu, X, Bell, User, LogOut, Settings } from 'lucide-react'
 
 const Navbar = () => {
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, logout } = useAuth()
+  const navigate = useNavigate()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const handleLogout = () => {
-    logout();
-    navigate("/login");
-  };
+    logout()
+    navigate('/login')
+  }
 
   const getNavLinks = () => {
-    if (!user) return [];
+    if (!user) return []
 
     switch (user.role) {
-      case "user":
+      case 'user':
         return [
-          { to: "/user/dashboard", label: "Dashboard" },
-          { to: "/user/complaints/new", label: "New Complaint" },
-        ];
-      case "engineer":
-        return [{ to: "/engineer/dashboard", label: "Dashboard" }];
-      case "admin":
+          { to: '/user/dashboard', label: 'Dashboard' },
+          { to: '/user/complaints/new', label: 'New Complaint' },
+        ]
+      case 'engineer':
         return [
-          { to: "/admin/dashboard", label: "Dashboard" },
-          { to: "/admin/users", label: "Manage Users" },
-        ];
+          { to: '/engineer/dashboard', label: 'Dashboard' },
+        ]
+      case 'admin':
+        return [
+          { to: '/admin/dashboard', label: 'Dashboard' },
+          { to: '/admin/users', label: 'Manage Users' },
+        ]
       default:
-        return [];
+        return []
     }
-  };
+  }
 
-  if (!user) return null;
+  if (!user) return null
 
   return (
     <nav className="bg-white shadow-lg border-b">
@@ -46,7 +48,7 @@ const Navbar = () => {
                 Network Support
               </h1>
             </Link>
-
+            
             <div className="hidden md:ml-6 md:flex md:space-x-8">
               {getNavLinks().map((link) => (
                 <Link
@@ -64,7 +66,7 @@ const Navbar = () => {
             <button className="text-gray-500 hover:text-gray-700 p-2">
               <Bell size={20} />
             </button>
-
+            
             <div className="relative">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -73,7 +75,7 @@ const Navbar = () => {
                 <User size={20} />
                 <span className="hidden md:block">Profile</span>
               </button>
-
+              
               {isMenuOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
                   <button className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
@@ -94,7 +96,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

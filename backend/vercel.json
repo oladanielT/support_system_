@@ -1,9 +1,15 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "backend/wsgi.py", "use": "@vercel/python" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "backend/wsgi.py" }
+  "projects": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "backend/manage.py",
+      "use": "@vercel/python"
+    }
   ]
 }

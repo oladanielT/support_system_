@@ -41,14 +41,21 @@ export default function SubmitComplaint() {
     setLoading(true);
     setError(null);
 
-    try {
-      await complaintService.createComplaint(formData);
-      navigate("/user/dashboard");
-    } catch (err) {
-      console.error("Failed to submit complaint:", err);
-      setError("Failed to submit complaint. Please try again.");
-    } finally {
-      setLoading(false);
+    if (navigator.onLine) {
+      try {
+        await complaintService.createComplaint(formData);
+        navigate("/user/dashboard");
+      } catch (err) {
+        console.error("Failed to submit complaint:", err);
+        setError("Failed to submit complaint. Please try again.");
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      await saveComplaintOffline(data);
+      alert(
+        "No internet: complaint saved offline and will sync automatically when back online."
+      );
     }
   };
 

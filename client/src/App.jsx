@@ -5,9 +5,40 @@ import { useToast } from "./components/hooks/useToast.js";
 import { Toaster } from "./components/ui/Toast.jsx";
 import { LoadingSpinner } from "./components/ui/LoadingSpinner.jsx";
 
+import { useEffect } from "react";
+import {
+  getOfflineComplaints,
+  clearOfflineComplaints,
+} from "./lib/offlineDB.js";
+import { complaintService } from "./services/complaintService.js";
+
 function App() {
   const { loading } = useAuth();
   const { toasts, dismiss } = useToast();
+
+  useEffect(() => {
+    async function syncComplaints() {
+      if (navigator.onLine) {
+        const offlineComplaints = await getOfflineComplaints();
+        for (const complaint of offlineComplaints) {
+          try {
+            await complaintService.createComplaint(complaint);
+          } catch (e) {
+            console.error("Failed to sync complaint:", complaint, e);
+          }
+        }
+        if (offlineComplaints.length) {
+          await clearOfflineComplaints();
+          alert("Offline complaints synced successfully!");
+        }
+      }
+    }
+
+    window.addEventListener("online", syncComplaints);
+    syncComplaints(); // Try syncing once on app start if online
+
+    return () => window.removeEventListener("online", syncComplaints);
+  }, []);
 
   if (loading) {
     return (
@@ -46,11 +77,3 @@ function App() {
 }
 
 export default App;
-
-// export default function App() {
-//   return (
-//     <div className="bg-red-500 text-white p-10 text-2xl">
-//       Tailwind is working 🎉
-//     </div>
-//   );
-// }

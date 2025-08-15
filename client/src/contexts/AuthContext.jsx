@@ -12,7 +12,7 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // stores the full user object
+  const [user, setUser] = useState(null);
   const [loading, setIsLoading] = useState(true);
 
   // Run once on app load to restore auth
