@@ -64,7 +64,16 @@ class ComplaintDetailView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_serializer_class(self):
-        return ComplaintStatusUpdateSerializer if self.request.method in ["PUT", "PATCH"] else ComplaintDetailSerializer
+        """
+        - PUT  → user editing complaint → use full serializer (all fields)
+        - PATCH → status-only update (engineer/admin) → use status serializer
+        - GET → detail serializer
+        """
+        if self.request.method == "PUT":
+            return ComplaintCreateSerializer        
+        if self.request.method == "PATCH":
+            return ComplaintStatusUpdateSerializer  
+        return ComplaintDetailSerializer
 
     def get_queryset(self):
         user = self.request.user
@@ -76,21 +85,15 @@ class ComplaintDetailView(generics.RetrieveUpdateDestroyAPIView):
         return qs
 
     def perform_destroy(self, instance):
-        """
-        Delete a complaint → log the change → notify admins + engineer (if assigned)
-        """
-        # Notify admins
+        # (unchanged) notify & log when user deletes complaint
         admins = User.objects.filter(role="admin")
         for admin in admins:
             create_notification(admin, f"Complaint '{instance.title}' has been deleted by the user.")
-
-        # notify assigned engineer (if any)
         if instance.assigned_to:
             create_notification(
                 instance.assigned_to,
                 f"Complaint '{instance.title}' has been deleted by the user."
             )
-
         ComplaintUpdate.objects.create(
             complaint=instance,
             updated_by=self.request.user,

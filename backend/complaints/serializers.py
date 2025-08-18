@@ -32,7 +32,7 @@ class ComplaintListSerializer(serializers.ModelSerializer):
         model = Complaint
         fields = ['id', 'title', 'category', 'priority', 'status', 'location',
                  'submitted_by', 'assigned_to', 'created_at', 'updated_at', 
-                 'time_since_created']
+                 'time_since_created', 'resolved_at']
     
     def get_time_since_created(self, obj):
         delta = timezone.now() - obj.created_at
@@ -101,18 +101,17 @@ class ComplaintCreateSerializer(serializers.ModelSerializer):
                  'contact_info', 'offline_id']
 
     def validate(self, data):
-        # Add any custom validation here
+        """ENHANCED: Better validation"""
         user = self.context['request'].user
         
-        # Example: Check if user has too many pending complaints (optional)
+        # Check if user has too many pending complaints
         if user.role == 'user':
             pending_count = Complaint.objects.filter(
                 submitted_by=user,
                 status__in=['pending', 'assigned', 'in_progress']
             ).count()
             
-            # Allow up to 5 pending complaints per user
-            if pending_count >= 5:
+            if pending_count >= 10:  # Allow up to 10 pending
                 raise serializers.ValidationError(
                     "You have too many pending complaints. Please wait for some to be resolved."
                 )
@@ -120,7 +119,7 @@ class ComplaintCreateSerializer(serializers.ModelSerializer):
         return data
 
     def create(self, validated_data):
-        # Set the submitted_by field to the current user
+        """ENHANCED: Better creation with logging"""
         validated_data['submitted_by'] = self.context['request'].user
         
         try:
@@ -138,65 +137,63 @@ class ComplaintCreateSerializer(serializers.ModelSerializer):
             
         except Exception as e:
             raise serializers.ValidationError(f"Error creating complaint: {str(e)}")
-
-
-class ComplaintUpdateSerializer(serializers.ModelSerializer):
-    """Serializer for updating complaint status, assignment, etc."""
+# class ComplaintUpdateSerializer(serializers.ModelSerializer):
+#     """Serializer for updating complaint status, assignment, etc."""
     
-    class Meta:
-        model = Complaint
-        fields = ['status', 'assigned_to', 'resolution_notes', 'admin_notes', 'priority']
+#     class Meta:
+#         model = Complaint
+#         fields = ['status', 'assigned_to', 'resolution_notes', 'admin_notes', 'priority']
     
-    def update(self, instance, validated_data):
-        # Track status changes
-        old_status = instance.status
-        new_status = validated_data.get('status', instance.status)
+#     def update(self, instance, validated_data):
+#         # Track status changes
+#         old_status = instance.status
+#         new_status = validated_data.get('status', instance.status)
         
-        # Track assignment changes
-        old_assigned = instance.assigned_to
-        new_assigned = validated_data.get('assigned_to', instance.assigned_to)
+#         # Track assignment changes
+#         old_assigned = instance.assigned_to
+#         new_assigned = validated_data.get('assigned_to', instance.assigned_to)
         
-        # Update the instance
-        instance = super().update(instance, validated_data)
+#         # Update the instance
+#         instance = super().update(instance, validated_data)
         
-        # Create update records for tracking
-        request_user = self.context['request'].user
+#         # Create update records for tracking
+#         request_user = self.context['request'].user
         
-        # Log status change
-        if old_status != new_status:
-            ComplaintUpdate.objects.create(
-                complaint=instance,
-                updated_by=request_user,
-                update_type='status_change',
-                message=f"Status changed from {old_status} to {new_status}",
-                old_status=old_status,
-                new_status=new_status
-            )
+#         # Log status change
+#         if old_status != new_status:
+#             ComplaintUpdate.objects.create(
+#                 complaint=instance,
+#                 updated_by=request_user,
+#                 update_type='status_change',
+#                 message=f"Status changed from {old_status} to {new_status}",
+#                 old_status=old_status,
+#                 new_status=new_status
+#             )
         
-        # Log assignment change
-        if old_assigned != new_assigned:
-            if new_assigned:
-                message = f"Assigned to {new_assigned.get_full_name()}"
-            else:
-                message = "Assignment removed"
+#         # Log assignment change
+#         if old_assigned != new_assigned:
+#             if new_assigned:
+#                 message = f"Assigned to {new_assigned.get_full_name()}"
+#             else:
+#                 message = "Assignment removed"
             
-            ComplaintUpdate.objects.create(
-                complaint=instance,
-                updated_by=request_user,
-                update_type='assignment',
-                message=message
-            )
+#             ComplaintUpdate.objects.create(
+#                 complaint=instance,
+#                 updated_by=request_user,
+#                 update_type='assignment',
+#                 message=message
+#             )
         
-        # Log resolution
-        if new_status == 'resolved' and old_status != 'resolved':
-            ComplaintUpdate.objects.create(
-                complaint=instance,
-                updated_by=request_user,
-                update_type='resolution',
-                message="Complaint marked as resolved"
-            )
+#         # Log resolution
+#         if new_status == 'resolved' and old_status != 'resolved':
+#             ComplaintUpdate.objects.create(
+#                 complaint=instance,
+#                 updated_by=request_user,
+#                 update_type='resolution',
+#                 message="Complaint marked as resolved"
+#             )
         
-        return instance
+#         return instance
 
 class ComplaintStatsSerializer(serializers.Serializer):
     """Serializer for complaint statistics dashboard"""

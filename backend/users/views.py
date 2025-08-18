@@ -13,6 +13,7 @@ from .serializers import (
     UserLoginSerializer,
     UserProfileSerializer,
     UserListSerializer,
+    AdminUserUpdateSerializer
 )
 
 class RegisterView(generics.CreateAPIView):
@@ -164,3 +165,13 @@ def get_engineers(request):
         import traceback
         traceback.print_exc()
         return Response({"error": str(e)}, status=500)
+
+
+
+class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method in ['PUT', 'PATCH']:
+            return AdminUserUpdateSerializer
+        return UserProfileSerializer

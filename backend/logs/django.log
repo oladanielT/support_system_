@@ -3934,3 +3934,184 @@ INFO 2025-08-15 11:23:43,896 autoreload 2181 126566949920768 /home/oladan/suppor
 INFO 2025-08-15 11:23:46,631 autoreload 23316 132733159383040 Watching for file changes with StatReloader
 INFO 2025-08-15 11:40:19,699 autoreload 23316 132733159383040 /home/oladan/support_system_/backend/backend/settings.py changed, reloading.
 INFO 2025-08-15 11:40:22,483 autoreload 26623 137583750365184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:58:57,197 autoreload 32281 137677231075328 Watching for file changes with StatReloader
+ERROR 2025-08-15 13:00:11,674 exception 32281 137677155321408 Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+ERROR 2025-08-15 13:00:11,688 exception 32281 137677163714112 Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+WARNING 2025-08-15 13:00:11,915 log 32281 137677163714112 Bad Request: /api/complaints/
+WARNING 2025-08-15 13:00:11,937 log 32281 137677155321408 Bad Request: /api/notifications/
+ERROR 2025-08-15 13:00:12,003 exception 32281 137677172106816 Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+ERROR 2025-08-15 13:00:12,005 exception 32281 137677146928704 Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+ERROR 2025-08-15 13:00:12,177 exception 32281 137677137487424 Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+WARNING 2025-08-15 13:00:12,268 log 32281 137677172106816 Bad Request: /api/complaints/
+WARNING 2025-08-15 13:00:12,308 log 32281 137677146928704 Bad Request: /api/notifications/
+WARNING 2025-08-15 13:00:12,380 log 32281 137677137487424 Bad Request: /api/notifications/unread-count/
+ERROR 2025-08-15 13:00:12,413 exception 32281 137677155321408 Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+WARNING 2025-08-15 13:00:12,547 log 32281 137677155321408 Bad Request: /api/notifications/unread-count/
+INFO 2025-08-15 13:01:04,838 autoreload 32281 137677231075328 /home/oladan/support_system_/backend/backend/settings.py changed, reloading.
+INFO 2025-08-15 13:03:20,129 autoreload 32744 125016383209472 Watching for file changes with StatReloader
+WARNING 2025-08-15 13:06:10,959 log 32744 125016323647040 Bad Request: /api/complaints/
+WARNING 2025-08-15 15:13:17,466 log 32744 125016323647040 Unauthorized: /api/notifications/
+WARNING 2025-08-15 15:13:19,756 log 32744 125016323647040 Unauthorized: /api/notifications/unread-count/
+INFO 2025-08-16 11:55:02,933 autoreload 2133 129183993147392 Watching for file changes with StatReloader
+WARNING 2025-08-16 12:07:06,919 log 2133 129183932999232 Bad Request: /api/auth/login/
+WARNING 2025-08-16 12:57:42,753 log 2133 129183924606528 Bad Request: /api/complaints/
+WARNING 2025-08-16 13:05:27,872 log 2133 129183915165248 Bad Request: /api/complaints/
+WARNING 2025-08-16 14:08:17,427 log 2133 129183924606528 Unauthorized: /api/notifications/
+WARNING 2025-08-16 14:08:17,716 log 2133 129183924606528 Unauthorized: /api/notifications/unread-count/
+WARNING 2025-08-16 15:38:52,688 log 2133 129183932999232 Bad Request: /api/complaints/7/
+INFO 2025-08-16 16:09:39,520 autoreload 2133 129183993147392 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-16 16:09:44,543 autoreload 48302 129153369636864 Watching for file changes with StatReloader
+INFO 2025-08-16 16:10:24,557 autoreload 48302 129153369636864 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-16 16:10:26,507 autoreload 48440 133025277202432 Watching for file changes with StatReloader
+WARNING 2025-08-16 16:20:49,273 log 48440 133025119589952 Unauthorized: /api/notifications/
+WARNING 2025-08-16 16:20:49,373 log 48440 133025119589952 Unauthorized: /api/notifications/unread-count/
+WARNING 2025-08-16 19:21:10,278 log 48440 133025119589952 Unauthorized: /api/notifications/
+WARNING 2025-08-16 19:21:10,280 log 48440 133025127982656 Unauthorized: /api/complaints/
+WARNING 2025-08-16 19:21:10,359 log 48440 133025119589952 Unauthorized: /api/notifications/
+WARNING 2025-08-16 19:21:10,366 log 48440 133025127982656 Unauthorized: /api/complaints/
+WARNING 2025-08-16 19:21:10,585 log 48440 133025127982656 Unauthorized: /api/notifications/unread-count/
+WARNING 2025-08-16 19:21:10,714 log 48440 133025127982656 Unauthorized: /api/notifications/unread-count/
+INFO 2025-08-18 12:18:53,325 autoreload 3048 127572114153472 Watching for file changes with StatReloader
+INFO 2025-08-18 12:30:30,580 autoreload 4744 137163503669248 Watching for file changes with StatReloader
+WARNING 2025-08-18 12:31:10,048 log 4744 137163445364288 Unauthorized: /api/notifications/
+WARNING 2025-08-18 12:31:10,203 log 4744 137163445364288 Unauthorized: /api/notifications/unread-count/
+INFO 2025-08-18 12:31:29,043 autoreload 5162 139026488623104 Watching for file changes with StatReloader
+INFO 2025-08-18 12:31:39,826 autoreload 5217 128118915727360 Watching for file changes with StatReloader
+WARNING 2025-08-18 12:31:55,771 log 5217 128118856607296 Bad Request: /api/auth/login/
+WARNING 2025-08-18 13:21:35,816 log 5217 128118848214592 Unauthorized: /api/notifications/
+WARNING 2025-08-18 13:21:35,986 log 5217 128118848214592 Unauthorized: /api/notifications/unread-count/
+WARNING 2025-08-18 13:43:01,744 log 5217 128118856607296 Unauthorized: /api/notifications/
+WARNING 2025-08-18 13:43:01,870 log 5217 128118856607296 Unauthorized: /api/notifications/unread-count/
+WARNING 2025-08-18 15:45:16,834 log 5217 128118848214592 Unauthorized: /api/notifications/
+WARNING 2025-08-18 15:45:16,995 log 5217 128118848214592 Unauthorized: /api/notifications/unread-count/
+WARNING 2025-08-18 15:45:32,089 log 5217 128118848214592 Bad Request: /api/auth/login/
+INFO 2025-08-18 15:53:00,676 autoreload 5217 128118915727360 /home/oladan/support_system_/backend/complaints/serializers.py changed, reloading.
+INFO 2025-08-18 15:53:05,285 autoreload 1687 134806734585856 Watching for file changes with StatReloader
+INFO 2025-08-18 16:44:58,084 autoreload 1687 134806734585856 /home/oladan/support_system_/backend/users/serializers.py changed, reloading.
+INFO 2025-08-18 16:45:01,653 autoreload 8042 128292131528704 Watching for file changes with StatReloader
+INFO 2025-08-18 16:45:40,032 autoreload 8042 128292131528704 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-18 16:45:41,003 autoreload 8163 133815881224192 Watching for file changes with StatReloader
+INFO 2025-08-18 16:54:00,243 autoreload 8163 133815881224192 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-18 16:54:04,038 autoreload 9138 131343984959488 Watching for file changes with StatReloader
+INFO 2025-08-18 16:54:22,794 autoreload 9138 131343984959488 /home/oladan/support_system_/backend/users/urls.py changed, reloading.
+INFO 2025-08-18 16:54:25,272 autoreload 9221 137680513318912 Watching for file changes with StatReloader
+INFO 2025-08-18 16:55:10,189 autoreload 9221 137680513318912 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-18 16:55:11,450 autoreload 9351 128869119963136 Watching for file changes with StatReloader
+INFO 2025-08-18 16:55:41,374 autoreload 9351 128869119963136 /home/oladan/support_system_/backend/users/urls.py changed, reloading.
+INFO 2025-08-18 16:55:42,426 autoreload 9449 129491494514688 Watching for file changes with StatReloader
+ERROR 2025-08-18 16:56:12,298 log 9449 129491436299840 Internal Server Error: /api/users/16/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/mixins.py", line 66, in update
+    serializer = self.get_serializer(instance, data=request.data, partial=partial)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/generics.py", line 112, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/home/oladan/support_system_/backend/users/views.py", line 175, in get_serializer_class
+    return AdminUserUpdateSerializer
+NameError: name 'AdminUserUpdateSerializer' is not defined
+ERROR 2025-08-18 16:56:15,634 log 9449 129491436299840 Internal Server Error: /api/users/16/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/mixins.py", line 66, in update
+    serializer = self.get_serializer(instance, data=request.data, partial=partial)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/generics.py", line 112, in get_serializer
+    serializer_class = self.get_serializer_class()
+  File "/home/oladan/support_system_/backend/users/views.py", line 175, in get_serializer_class
+    return AdminUserUpdateSerializer
+NameError: name 'AdminUserUpdateSerializer' is not defined
+INFO 2025-08-18 16:59:36,401 autoreload 9449 129491494514688 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-18 16:59:40,496 autoreload 10008 128753205903360 Watching for file changes with StatReloader

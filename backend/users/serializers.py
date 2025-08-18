@@ -67,3 +67,9 @@ class UserListSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'email', 'full_name', 'role', 'department', 'is_active', 'created_at')
+
+
+class AdminUserUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email', 'role', 'department', 'phone_number', 'is_active')
