@@ -61,9 +61,9 @@ export default function AdminDashboard() {
 
         setStats({
           total_complaints: realStats.total_complaints,
-          pending_assignments: realStats.pending_complaints, // backend uses 'pending_complaints'
-          active_engineers: realStats.active_engineers || 0, // you might want to add this in backend or fetch separately
-          resolution_rate: calculateResolutionRate(realStats), // function to compute % resolution rate
+          pending_assignments: realStats.pending_complaints,
+          active_engineers: realStats.active_engineers || 0,
+          resolution_rate: calculateResolutionRate(realStats),
         });
       } catch (err) {
         setError("Failed to load dashboard data");

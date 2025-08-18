@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { complaintService } from "../../services/complaintService.js";
 import Navbar from "../../components/layout/Navbar.jsx";
 import { ArrowLeft, Clock, User, MapPin, Save } from "lucide-react";
+import { toast } from "react-toastify";
 
 const statusOptions = [
   { value: "pending", label: "Pending" },
@@ -27,6 +28,7 @@ export default function EngineerComplaintDetails() {
         setComplaint(data);
         setStatus(data.status);
         setNotes(data.resolution_notes || "");
+        console.log(data);
       } catch (err) {
         setError("Failed to load complaint details");
         console.error(err);
@@ -49,8 +51,8 @@ export default function EngineerComplaintDetails() {
         status,
         notes
       );
-      setComplaint(updatedComplaint);
-      alert("Complaint updated successfully!");
+      setComplaint(updatedComplaint.complaint);
+      toast.success("Complaint updated successfully!");
     } catch (err) {
       console.error("Failed to update complaint:", err);
       setError("Failed to update complaint. Please try again.");
@@ -112,10 +114,10 @@ export default function EngineerComplaintDetails() {
             <div className="card">
               <div className="border-b border-gray-200 pb-4 mb-4">
                 <h2 className="text-xl font-semibold text-gray-900">
-                  {complaint.title}
+                  {complaint?.title}
                 </h2>
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mt-2">
-                  {complaint.status.replace("_", " ")}
+                  {complaint?.status?.replace("_", " ")}
                 </span>
               </div>
 
@@ -125,7 +127,7 @@ export default function EngineerComplaintDetails() {
                     <Clock className="mr-2 h-4 w-4 text-gray-400" />
                     <span className="font-medium">Created:</span>
                     <span className="ml-2">
-                      {new Date(complaint.created_at).toLocaleDateString()}
+                      {new Date(complaint?.created_at).toLocaleDateString()}
                     </span>
                   </div>
                   <div className="flex items-center">

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { userService } from "../../services/userService.js";
 import Navbar from "../../components/layout/Navbar.jsx";
-import { Users, UserPlus, Edit, Trash2, Search } from "lucide-react";
+import { Users, UserPlus, Edit, Trash2, Search, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function ManageUsers() {
@@ -88,6 +88,13 @@ export default function ManageUsers() {
       <Navbar />
 
       <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <Link
+          to="/admin/dashboard"
+          className="inline-flex items-center text-blue-600 hover:text-blue-500 mb-4"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Back to Dashboard
+        </Link>
         <div className="px-4 py-6 sm:px-0">
           <div className="mb-8">
             <div className="flex items-center justify-between">
@@ -101,7 +108,7 @@ export default function ManageUsers() {
               </div>
               <button className="btn-primary flex items-center">
                 <UserPlus className="mr-2 h-4 w-4" />
-                Add New User
+                Add New Engineer
               </button>
             </div>
           </div>

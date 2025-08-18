@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext.jsx";
 import { complaintService } from "../../services/complaintService.js";
 import Navbar from "../../components/layout/Navbar.jsx";
@@ -11,6 +11,7 @@ export default function EngineerDashboard() {
   const [stats, setStats] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const location = useLocation();
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -47,19 +48,53 @@ export default function EngineerDashboard() {
       try {
         const complaintsData = await complaintService.getComplaints({
           assigned_to: user.id,
-          limit: 10,
+        });
+        console.log(complaintsData);
+        const complaintsArray = complaintsData.results || complaintsData;
+        setComplaints(complaintsArray);
+
+        const resolvedToday = complaintsArray.filter((c) => {
+          console.log(c.status);
+          return (
+            c.status === "resolved" &&
+            new Date(c.resolved_at).toDateString() === new Date().toDateString()
+          );
+        }).length;
+
+        console.log(resolvedToday);
+
+        // const resolvedComplaints = complaintsArray.filter(
+        //   (c) => c.status === "resolved"
+        // );
+
+        const resolvedComplaints = complaintsArray.filter((c) => {
+          return (
+            c.status === "resolved" &&
+            new Date(c.resolved_at).toDateString() === new Date().toDateString()
+          );
         });
 
-        const complaintsArray = complaintsData.results || complaintsData;
+        let avgResolution = "N/A";
+        if (resolvedComplaints.length > 0) {
+          const startOfToday = new Date();
+          startOfToday.setHours(0, 0, 0, 0);
 
-        setComplaints(complaintsArray);
+          const totalMs = resolvedComplaints.reduce((acc, c) => {
+            const resolved = new Date(c.resolved_at);
+            return acc + (resolved - startOfToday);
+          }, 0);
+
+          const avgHours =
+            totalMs / resolvedComplaints.length / (1000 * 60 * 60);
+          avgResolution = `${avgHours.toFixed(1)}h`;
+        }
 
         setStats({
           assigned: complaintsArray.length,
           in_progress: complaintsArray.filter((c) => c.status === "in_progress")
             .length,
-          resolved_today: 3,
-          avg_resolution: "2.4h",
+          resolved_today: resolvedToday,
+          avg_resolution: avgResolution,
         });
       } catch (err) {
         setError("Failed to load dashboard data");
@@ -70,7 +105,71 @@ export default function EngineerDashboard() {
     };
 
     fetchData();
-  }, [user.id]);
+  }, [user.id, location.key]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const complaintsData = await complaintService.getComplaints({
+  //         assigned_to: user.id,
+  //         limit: 10,
+  //       });
+
+  //       const complaintsArray = complaintsData.results || complaintsData;
+
+  //       setComplaints(complaintsArray);
+
+  //       const resolvedToday = complaintsArray.filter((c) => {
+  //         return (
+  //           c.status === "resolved" &&
+  //           new Date(c.resolved_at).toDateString() === new Date().toDateString()
+  //         );
+  //       }).length;
+  //       console.log(resolvedToday);
+
+  //       const resolvedComplaints = complaintsArray.filter(
+  //         (c) => c.status === "resolved"
+  //       );
+
+  //       let avgResolution = "N/A";
+  //       if (resolvedComplaints.length > 0) {
+  //         const totalMs = resolvedComplaints.reduce((acc, c) => {
+  //           const created = new Date(c.created_at);
+  //           const resolved = new Date(c.resolved_at);
+  //           return acc + (resolved - created);
+  //         }, 0);
+
+  //         // average in hours
+  //         const avgHours =
+  //           totalMs / resolvedComplaints.length / (1000 * 60 * 60);
+  //         avgResolution = `${avgHours.toFixed(1)}h`;
+  //       }
+
+  //       setStats({
+  //         assigned: complaintsArray.length,
+  //         in_progress: complaintsArray.filter((c) => c.status === "in_progress")
+  //           .length,
+  //         resolved_today: resolvedToday,
+  //         avg_resolution: avgResolution,
+  //       });
+
+  //       // setStats({
+  //       //   assigned: complaintsArray.length,
+  //       //   in_progress: complaintsArray.filter((c) => c.status === "in_progress")
+  //       //     .length,
+  //       //   resolved_today: 3,
+  //       //   avg_resolution: "2.4h",
+  //       // });
+  //     } catch (err) {
+  //       setError("Failed to load dashboard data");
+  //       console.error(err);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, [user.id]);
 
   const getPriorityColor = (priority) => {
     switch (priority) {

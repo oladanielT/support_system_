@@ -4,6 +4,7 @@ import { complaintService } from "../../services/complaintService.js";
 import { userService } from "../../services/userService.js";
 import Navbar from "../../components/layout/Navbar.jsx";
 import { ArrowLeft, Clock, User, MapPin, UserCheck } from "lucide-react";
+import { toast } from "react-toastify";
 
 export default function AdminComplaintDetails() {
   const { id } = useParams();
@@ -51,7 +52,7 @@ export default function AdminComplaintDetails() {
         selectedEngineer
       );
       setComplaint(updatedComplaint.complaint);
-      alert("Engineer assigned successfully!");
+      toast.success("Engineer assigned successfully!");
     } catch (err) {
       console.error("Failed to assign engineer:", err);
       setError("Failed to assign engineer. Please try again.");

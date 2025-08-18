@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/layout/Navbar";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { complaintService } from "../../services/complaintService";
 import {
   PieChart,
@@ -23,7 +23,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-const COLORS = ["#fbbf24", "#3b82f6", "#10b981", "#ef4444"]; // Yellow, Blue, Green, Red
+const COLORS = ["#fbbf24", "#3b82f6", "#10b981", "#ef4444"];
 
 export default function ViewAnalytics() {
   const navigate = useNavigate();
@@ -79,13 +79,13 @@ export default function ViewAnalytics() {
       <Navbar />
       <div className="p-6 space-y-6 max-w-6xl mx-auto">
         {/* Back button */}
-        <button
-          onClick={() => navigate("/admin/dashboard")}
-          className="flex items-center space-x-2 text-gray-700 hover:text-gray-900 mb-4"
+        <Link
+          to="/admin/dashboard"
+          className="inline-flex items-center text-blue-600 hover:text-blue-500 mb-4"
         >
-          <ArrowLeft className="w-5 h-5" />
-          <span>Back to Dashboard</span>
-        </button>
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Back to Dashboard
+        </Link>
 
         <h2 className="text-3xl font-bold mb-6">Analytics Overview</h2>
 
@@ -127,13 +127,13 @@ export default function ViewAnalytics() {
               </h3>
             </div>
           </div>
-          <div className="p-6 rounded-lg shadow text-white bg-purple-600 flex items-center space-x-4">
+          {/* <div className="p-6 rounded-lg shadow text-white bg-purple-600 flex items-center space-x-4">
             <AlertCircle className="w-8 h-8" />
             <div>
               <p className="text-lg font-semibold">My Complaints</p>
               <h3 className="text-3xl font-bold">{stats.my_complaints}</h3>
             </div>
-          </div>
+          </div> */}
           <div className="p-6 rounded-lg shadow text-white bg-indigo-600 flex items-center space-x-4">
             <Clock className="w-8 h-8" />
             <div>

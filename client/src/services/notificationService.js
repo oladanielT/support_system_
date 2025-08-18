@@ -29,7 +29,7 @@ export const markNotificationRead = async (id) => {
   }
 };
 
-// ✅ Mark ALL notifications as read
+// Mark ALL notifications as read
 export const markAllNotificationsRead = async () => {
   try {
     await API.post("/notifications/mark-all-read/");
@@ -40,7 +40,7 @@ export const markAllNotificationsRead = async () => {
   }
 };
 
-// ✅ Get unread count for the current user
+// Get unread count for the current user
 export const getUnreadCount = async () => {
   try {
     const res = await API.get("/notifications/unread-count/");
@@ -48,5 +48,17 @@ export const getUnreadCount = async () => {
   } catch (error) {
     console.error("Error fetching unread count:", error);
     return 0;
+  }
+};
+
+
+// Delete all notifications
+export const clearNotifications = async () => {
+  try {
+    await API.delete("/notifications/clear/");
+    return true;
+  } catch (error) {
+    console.error("Error clearing notifications:", error);
+    return false;
   }
 };

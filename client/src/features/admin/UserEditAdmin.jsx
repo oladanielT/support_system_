@@ -1,7 +1,8 @@
 // src/features/admin/UserEditAdmin.jsx
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { userService } from "../../services/userService";
+import { ArrowLeft } from "lucide-react";
 
 export default function UserEditAdmin() {
   const { id } = useParams();
@@ -34,10 +35,19 @@ export default function UserEditAdmin() {
     navigate("/admin/users");
   }
 
+  console.log(formData);
+
   if (!formData) return <p>Loading...</p>;
 
   return (
     <form onSubmit={handleSubmit} className="p-6 space-y-4">
+      <Link
+        to="/admin/dashboard"
+        className="inline-flex items-center text-blue-600 hover:text-blue-500 mb-4"
+      >
+        <ArrowLeft className="mr-2 h-4 w-4" />
+        Back to Dashboard
+      </Link>
       <h2 className="text-xl font-bold">Edit User</h2>
 
       <input

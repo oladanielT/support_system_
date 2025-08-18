@@ -2,13 +2,15 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { complaintService } from "../../services/complaintService.js";
 import Navbar from "../../components/layout/Navbar.jsx";
+import { toast } from "react-toastify";
 
 const categories = [
+  { value: "network_slow", label: "Network Slow" },
+  { value: "network_down", label: "Network Down" },
+  { value: "wifi_issues", label: "WiFi Issues" },
+  { value: "server_issues", label: "Server Issues" },
+  { value: "email_issues", label: "Email Issues" },
   { value: "internet", label: "Internet Connectivity" },
-  { value: "wifi", label: "WiFi Issues" },
-  { value: "email", label: "Email Problems" },
-  { value: "vpn", label: "VPN Access" },
-  { value: "hardware", label: "Network Hardware" },
   { value: "other", label: "Other" },
 ];
 
@@ -52,10 +54,18 @@ export default function SubmitComplaint() {
         setLoading(false);
       }
     } else {
-      await saveComplaintOffline(data);
-      alert(
-        "No internet: complaint saved offline and will sync automatically when back online."
-      );
+      try {
+        await saveComplaintOffline(formData);
+        toast.info(
+          "No internet connection: complaint saved offline and will sync automatically when back online."
+        );
+        setLoading(false);
+        navigate("/user/dashboard");
+      } catch (err) {
+        console.error("Failed to save complaint offline:", err);
+        setError("Failed to save complaint offline. Please try again.");
+        setLoading(false);
+      }
     }
   };
 
