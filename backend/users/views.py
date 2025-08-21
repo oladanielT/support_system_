@@ -7,7 +7,12 @@ from rest_framework.permissions import IsAdminUser
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
 from django.db import models
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes, force_str
+from django.core.mail import send_mail
 from .models import User
+from django.conf import settings
 from .serializers import (
     UserRegistrationSerializer,
     UserLoginSerializer,
@@ -175,3 +180,50 @@ class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
         if self.request.method in ['PUT', 'PATCH']:
             return AdminUserUpdateSerializer
         return UserProfileSerializer
+
+
+@api_view(["POST"])
+@permission_classes([permissions.AllowAny])
+def password_reset_request(request):
+    email = request.data.get("email")
+    try:
+        user = User.objects.get(email=email)
+    except User.DoesNotExist:
+        return Response({"detail": "User with this email does not exist"}, status=404)
+
+    uid = urlsafe_base64_encode(force_bytes(user.pk))
+    token = default_token_generator.make_token(user)
+
+    # put your frontend URL here:
+    reset_link = f"http://localhost:5173/reset-password/{uid}/{token}"
+
+    send_mail(
+    subject="Password Reset",
+    message=f"Click the link to reset your password: {reset_link}",
+    from_email=settings.DEFAULT_FROM_EMAIL,
+    # from_email=settings.EMAIL_HOST_USER,
+    recipient_list=[user.email],
+    )
+
+    return Response({"detail": "Password reset email sent."})
+
+
+@api_view(["POST"])
+@permission_classes([permissions.AllowAny])
+def password_reset_confirm(request):
+    uidb64 = request.data.get("uid")
+    token = request.data.get("token")
+    new_password = request.data.get("password")
+
+    try:
+        uid = force_str(urlsafe_base64_decode(uidb64))
+        user = User.objects.get(pk=uid)
+    except (ValueError, User.DoesNotExist):
+        return Response({"detail": "Invalid user."}, status=400)
+
+    if not default_token_generator.check_token(user, token):
+        return Response({"detail": "Invalid or expired token."}, status=400)
+
+    user.set_password(new_password)
+    user.save()
+    return Response({"detail": "Password has been reset successfully."})

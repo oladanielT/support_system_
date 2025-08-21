@@ -4115,3 +4115,344 @@ Traceback (most recent call last):
 NameError: name 'AdminUserUpdateSerializer' is not defined
 INFO 2025-08-18 16:59:36,401 autoreload 9449 129491494514688 /home/oladan/support_system_/backend/users/views.py changed, reloading.
 INFO 2025-08-18 16:59:40,496 autoreload 10008 128753205903360 Watching for file changes with StatReloader
+INFO 2025-08-19 08:47:35,656 autoreload 1431 132800453447680 Watching for file changes with StatReloader
+INFO 2025-08-19 09:21:54,055 autoreload 3732 130199425155072 Watching for file changes with StatReloader
+INFO 2025-08-19 13:11:54,670 autoreload 3804 131550523338752 Watching for file changes with StatReloader
+INFO 2025-08-19 13:12:32,885 autoreload 4254 139691856130048 Watching for file changes with StatReloader
+INFO 2025-08-19 17:36:10,285 autoreload 1397 129248094760960 Watching for file changes with StatReloader
+INFO 2025-08-19 17:37:49,754 autoreload 1941 140586875498496 Watching for file changes with StatReloader
+INFO 2025-08-19 19:04:46,217 autoreload 1941 140586875498496 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-19 19:04:49,204 autoreload 24110 134001291550720 Watching for file changes with StatReloader
+INFO 2025-08-19 19:05:14,579 autoreload 24110 134001291550720 /home/oladan/support_system_/backend/users/urls.py changed, reloading.
+INFO 2025-08-19 19:05:15,128 autoreload 24245 140339675340800 Watching for file changes with StatReloader
+INFO 2025-08-19 19:05:35,124 autoreload 24245 140339675340800 /home/oladan/support_system_/backend/users/urls.py changed, reloading.
+INFO 2025-08-19 19:05:35,815 autoreload 24340 124164543856640 Watching for file changes with StatReloader
+INFO 2025-08-19 19:05:55,861 autoreload 24340 124164543856640 /home/oladan/support_system_/backend/users/urls.py changed, reloading.
+INFO 2025-08-19 19:05:56,342 autoreload 24447 130037859360768 Watching for file changes with StatReloader
+INFO 2025-08-19 19:06:06,832 autoreload 24447 130037859360768 /home/oladan/support_system_/backend/users/urls.py changed, reloading.
+INFO 2025-08-19 19:06:07,478 autoreload 24518 140499296677888 Watching for file changes with StatReloader
+ERROR 2025-08-19 19:31:47,454 log 24518 140499238250048 Internal Server Error: /api/auth/password-reset/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 202, in password_reset_request
+    from_email=DEFAULT_FROM_EMAIL,
+NameError: name 'DEFAULT_FROM_EMAIL' is not defined
+INFO 2025-08-19 19:37:38,175 autoreload 24518 140499296677888 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-19 19:37:40,012 autoreload 32012 127837549023232 Watching for file changes with StatReloader
+ERROR 2025-08-19 19:37:49,123 log 32012 127837419861568 Internal Server Error: /api/auth/password-reset/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 200, in password_reset_request
+    send_mail(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/__init__.py", line 88, in send_mail
+    return mail.send()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 136, in send_messages
+    sent = self._send(message)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 155, in _send
+    self.connection.sendmail(
+  File "/usr/lib/python3.10/smtplib.py", line 887, in sendmail
+    raise SMTPSenderRefused(code, resp, from_addr)
+smtplib.SMTPSenderRefused: (530, b'5.7.0 Authentication Required. For more information, go to\n5.7.0  https://support.google.com/accounts/troubleshooter/2402620. 5b1f17b1804b1-45b43e11c93sm17901265e9.8 - gsmtp', 'noreply@oauife.edu.ng')
+INFO 2025-08-19 19:42:53,049 autoreload 32012 127837549023232 /home/oladan/support_system_/backend/backend/settings.py changed, reloading.
+INFO 2025-08-19 19:42:53,994 autoreload 818 127895889903616 Watching for file changes with StatReloader
+INFO 2025-08-19 19:43:43,623 autoreload 818 127895889903616 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-19 19:43:44,117 autoreload 1092 138502142115840 Watching for file changes with StatReloader
+WARNING 2025-08-19 19:44:12,167 log 1092 138502082651712 Unauthorized: /api/notifications/
+WARNING 2025-08-19 19:44:12,217 log 1092 138502082651712 Unauthorized: /api/notifications/
+WARNING 2025-08-19 19:44:12,250 log 1092 138502074259008 Unauthorized: /api/notifications/unread-count/
+WARNING 2025-08-19 19:44:12,319 log 1092 138502074259008 Unauthorized: /api/notifications/unread-count/
+WARNING 2025-08-19 19:50:37,417 log 1092 138502074259008 Bad Request: /api/auth/login/
+WARNING 2025-08-19 19:50:55,349 log 1092 138502074259008 Bad Request: /api/auth/login/
+INFO 2025-08-19 19:58:28,037 autoreload 1092 138502142115840 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-19 19:58:29,409 autoreload 4894 129238881984512 Watching for file changes with StatReloader
+INFO 2025-08-19 19:58:42,566 autoreload 4894 129238881984512 /home/oladan/support_system_/backend/backend/settings.py changed, reloading.
+INFO 2025-08-19 19:58:43,080 autoreload 4991 132946544054272 Watching for file changes with StatReloader
+ERROR 2025-08-19 19:59:10,683 log 4991 132946417677888 Internal Server Error: /api/auth/password-reset/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 200, in password_reset_request
+    send_mail(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/__init__.py", line 88, in send_mail
+    return mail.send()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 95, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python3.10/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.10/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "/usr/lib/python3.10/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-3c074d43c77sm5055755f8f.23 - gsmtp')
+WARNING 2025-08-19 19:59:25,696 log 4991 132946417677888 Unauthorized: /api/notifications/
+WARNING 2025-08-19 19:59:25,831 log 4991 132946417677888 Unauthorized: /api/notifications/unread-count/
+ERROR 2025-08-19 20:06:12,629 log 4991 132946399843904 Internal Server Error: /api/auth/password-reset/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 200, in password_reset_request
+    send_mail(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/__init__.py", line 88, in send_mail
+    return mail.send()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 95, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python3.10/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.10/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "/usr/lib/python3.10/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-3c07778939bsm4647704f8f.46 - gsmtp')
+ERROR 2025-08-19 20:14:38,429 log 4991 132946409285184 Internal Server Error: /api/auth/password-reset/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 200, in password_reset_request
+    send_mail(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/__init__.py", line 88, in send_mail
+    return mail.send()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 95, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python3.10/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.10/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "/usr/lib/python3.10/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-45b47cad24esm328125e9.23 - gsmtp')
+ERROR 2025-08-19 20:15:37,574 log 4991 132946399843904 Internal Server Error: /api/auth/password-reset/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 200, in password_reset_request
+    send_mail(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/__init__.py", line 88, in send_mail
+    return mail.send()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 95, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python3.10/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.10/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "/usr/lib/python3.10/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-45b47c28644sm739725e9.5 - gsmtp')
+ERROR 2025-08-19 20:18:33,112 log 4991 132946409285184 Internal Server Error: /api/auth/password-reset/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 200, in password_reset_request
+    send_mail(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/__init__.py", line 88, in send_mail
+    return mail.send()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 95, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python3.10/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.10/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "/usr/lib/python3.10/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-45b47c412besm728645e9.10 - gsmtp')
+INFO 2025-08-20 07:33:33,691 autoreload 1587 139471713271808 Watching for file changes with StatReloader
+INFO 2025-08-20 07:34:02,899 autoreload 2010 130835870011392 Watching for file changes with StatReloader
+INFO 2025-08-20 08:25:06,333 autoreload 2010 130835870011392 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-20 08:25:07,754 autoreload 19507 124124451586048 Watching for file changes with StatReloader
+INFO 2025-08-20 08:29:50,478 autoreload 19507 124124451586048 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-20 08:29:51,056 autoreload 21171 135651676442624 Watching for file changes with StatReloader
+WARNING 2025-08-20 08:50:34,668 log 21171 135651616876096 Bad Request: /api/auth/login/
+WARNING 2025-08-20 09:17:09,222 log 21171 135651599042112 Bad Request: /api/auth/login/
+WARNING 2025-08-20 09:49:16,580 log 21171 135651608483392 Bad Request: /api/auth/login/
+WARNING 2025-08-20 10:17:12,492 log 21171 135651608483392 Bad Request: /api/auth/login/
+WARNING 2025-08-20 11:10:31,208 log 21171 135651608483392 Bad Request: /api/auth/login/
+WARNING 2025-08-20 12:36:35,217 log 21171 135651608483392 Bad Request: /api/auth/login/
+ERROR 2025-08-20 12:37:49,211 log 21171 135651616876096 Internal Server Error: /api/complaints/8/assign/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/complaints/views.py", line 173, in assign_complaint
+    html_content = render_to_string(
+NameError: name 'render_to_string' is not defined
+ERROR 2025-08-20 12:38:09,161 log 21171 135651616876096 Internal Server Error: /api/complaints/8/assign/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/complaints/views.py", line 173, in assign_complaint
+    html_content = render_to_string(
+NameError: name 'render_to_string' is not defined
+INFO 2025-08-20 12:47:02,178 autoreload 21171 135651676442624 /home/oladan/support_system_/backend/complaints/views.py changed, reloading.
+INFO 2025-08-20 12:47:04,187 autoreload 14854 131705989328896 Watching for file changes with StatReloader
+WARNING 2025-08-20 14:37:31,210 log 14854 131705921852992 Unauthorized: /api/complaints/
+WARNING 2025-08-20 14:37:31,204 log 14854 131705930245696 Unauthorized: /api/notifications/
+WARNING 2025-08-20 14:37:31,342 log 14854 131705921852992 Unauthorized: /api/complaints/
+WARNING 2025-08-20 14:37:31,482 log 14854 131705930245696 Unauthorized: /api/notifications/
+WARNING 2025-08-20 14:37:31,650 log 14854 131705921852992 Unauthorized: /api/notifications/unread-count/
+WARNING 2025-08-20 14:37:31,705 log 14854 131705921852992 Unauthorized: /api/notifications/unread-count/

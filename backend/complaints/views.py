@@ -8,6 +8,8 @@ from datetime import timedelta
 from users.models import User
 from .models import Complaint, ComplaintUpdate, ComplaintAttachment
 from notifications.utils import create_notification
+from django.template.loader import render_to_string
+
 from .serializers import (
     ComplaintListSerializer,
     ComplaintDetailSerializer,
@@ -128,6 +130,9 @@ class AssignedComplaintsView(generics.ListAPIView):
             assigned_to=user
         ).select_related('submitted_by', 'assigned_to').order_by('-created_at')
 
+from django.core.mail import send_mail
+from django.conf import settings
+
 @api_view(["POST", "PATCH"])
 @permission_classes([permissions.IsAuthenticated])
 def assign_complaint(request, complaint_id):
@@ -141,20 +146,44 @@ def assign_complaint(request, complaint_id):
 
     engineer_id = request.data.get("engineer_id")
     if not engineer_id:
-        return Response({"error": "Engineer ID is required"}, status=status.HTTP_400_BAD_REQUEST)
+        return Response(
+            {"error": "Engineer ID is required"}, 
+            status=status.HTTP_400_BAD_REQUEST
+        )
 
     try:
         engineer = User.objects.get(id=engineer_id, role="engineer")
     except User.DoesNotExist:
-        return Response({"error": "Engineer not found"}, status=status.HTTP_404_NOT_FOUND)
+        return Response(
+            {"error": "Engineer not found"}, 
+            status=status.HTTP_404_NOT_FOUND
+        )
 
+    # Update the complaint and assign engineer
     complaint.assigned_to = engineer
     complaint.status = "assigned"
     complaint.assigned_at = timezone.now()
     complaint.save()
 
-    # ✅ notify only engineer
-    create_notification(engineer, f"You have been assigned to complaint '{complaint.title}'")
+    # Create in-app notification (existing behavior)
+    create_notification(
+        engineer, 
+        f"You have been assigned to complaint '{complaint.title}'"
+    )
+
+      # email notification using HTML template
+    html_content = render_to_string(
+        "emails/assigned_notification.html",
+        {"engineer": engineer, "complaint": complaint}
+    )
+    send_mail(
+        subject="New Complaint Assigned",
+        message="You have been assigned to the complaint.",
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        recipient_list=[engineer.email],
+        html_message=html_content,
+        fail_silently=True
+    )
 
     ComplaintUpdate.objects.create(
         complaint=complaint,
@@ -202,14 +231,14 @@ def update_complaint_status(request, complaint_id):
 
     complaint.save()
 
-    # ✅ STATUS UPDATED BY ENGINEER → notify user
+    # STATUS UPDATED BY ENGINEER → notify user
     if user.role == "engineer":
         create_notification(
             complaint.submitted_by,
             f"Status of your complaint '{complaint.title}' updated to {new_status}"
         )
 
-    # ✅ USER UPDATED THE COMPLAINT → notify admins + assigned engineer
+    #  USER UPDATED THE COMPLAINT → notify admins + assigned engineer
     if user.role == "user":
         admins = User.objects.filter(role="admin")
         for admin in admins:
