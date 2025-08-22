@@ -1,17 +1,14 @@
-#!/usr/bin/env bash
-set -e  # Exit immediately if a command fails
+#!/bin/bash
+set -e
 
-echo "Upgrading pip, setuptools, and wheel..."
+# Upgrade pip and build tools
 python -m pip install --upgrade pip setuptools wheel
 
-echo "Installing requirements..."
+# Install dependencies
 pip install -r requirements.txt
 
-echo "Collecting static files..."
-python manage.py collectstatic --noinput
-
-
-echo "Running migrations..."
+# Run migrations
 python manage.py migrate
 
-echo "Build complete!"
+# Collect static files
+python manage.py collectstatic --noinput

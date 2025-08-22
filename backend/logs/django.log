@@ -4989,3 +4989,283 @@ django.db.utils.OperationalError: could not translate host name "dpg-d2jejundiee
 
 INFO 2025-08-21 13:55:09,067 autoreload 32746 128210423795712 /home/oladan/support_system_/backend/backend/settings.py changed, reloading.
 INFO 2025-08-21 13:55:11,051 autoreload 3176 132815803596800 Watching for file changes with StatReloader
+INFO 2025-08-21 16:37:39,597 autoreload 24174 137821316222976 Watching for file changes with StatReloader
+WARNING 2025-08-21 16:38:48,611 log 24174 137821234914880 Unauthorized: /api/notifications/
+WARNING 2025-08-21 16:38:49,043 log 24174 137821234914880 Unauthorized: /api/notifications/unread-count/
+INFO 2025-08-22 10:55:50,669 autoreload 1198 137719776780288 Watching for file changes with StatReloader
+INFO 2025-08-22 11:03:42,169 autoreload 2447 131777691156480 Watching for file changes with StatReloader
+INFO 2025-08-22 11:05:09,652 autoreload 2692 138184562798592 Watching for file changes with StatReloader
+WARNING 2025-08-22 11:06:17,323 log 2692 138184482612800 Bad Request: /api/auth/login/
+WARNING 2025-08-22 11:07:11,535 log 2692 138184482612800 Bad Request: /api/auth/login/
+WARNING 2025-08-22 11:07:46,713 log 2692 138184398730816 Not Found: /api/auth/password-reset/
+WARNING 2025-08-22 11:07:58,240 log 2692 138184482612800 Not Found: /api/auth/password-reset/
+ERROR 2025-08-22 11:13:04,835 log 2692 138184398730816 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "dpg-d2jejundiees73c4vbag-a.oregon-postgres.render.com" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 52, in post
+    serializer.is_valid(raise_exception=True)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 445, in run_validation
+    value = self.validate(value)
+  File "/home/oladan/support_system_/backend/users/serializers.py", line 39, in validate
+    user = authenticate(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/contrib/auth/__init__.py", line 79, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/contrib/auth/backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/contrib/auth/base_user.py", line 37, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "dpg-d2jejundiees73c4vbag-a.oregon-postgres.render.com" to address: Temporary failure in name resolution
+
+ERROR 2025-08-22 11:15:03,157 log 2692 138184482612800 Internal Server Error: /api/auth/password-reset/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "dpg-d2jejundiees73c4vbag-a.oregon-postgres.render.com" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 190, in password_reset_request
+    user = User.objects.get(email=email)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "dpg-d2jejundiees73c4vbag-a.oregon-postgres.render.com" to address: Temporary failure in name resolution
+
+INFO 2025-08-22 11:24:58,421 autoreload 6594 133163408281600 Watching for file changes with StatReloader
+INFO 2025-08-22 11:25:40,559 autoreload 6741 130681259241472 Watching for file changes with StatReloader
+ERROR 2025-08-22 11:26:55,294 log 6741 130681178940992 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "dpg-d2jejundiees73c4vbag-a.oregon-postgres.render.com" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/oladan/support_system_/backend/users/views.py", line 52, in post
+    serializer.is_valid(raise_exception=True)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/rest_framework/serializers.py", line 445, in run_validation
+    value = self.validate(value)
+  File "/home/oladan/support_system_/backend/users/serializers.py", line 39, in validate
+    user = authenticate(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/views/decorators/debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/contrib/auth/__init__.py", line 79, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/contrib/auth/backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/contrib/auth/base_user.py", line 37, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/oladan/support_system_/backend/myvenv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "dpg-d2jejundiees73c4vbag-a.oregon-postgres.render.com" to address: Temporary failure in name resolution
+
+INFO 2025-08-22 11:33:13,347 autoreload 8156 125051535929344 Watching for file changes with StatReloader
+WARNING 2025-08-22 11:33:29,647 log 8156 125051456185920 Bad Request: /api/auth/login/
+WARNING 2025-08-22 11:34:02,074 log 8156 125051456185920 Bad Request: /api/auth/login/
+WARNING 2025-08-22 11:34:17,105 log 8156 125051447793216 Bad Request: /api/auth/login/
+WARNING 2025-08-22 11:34:26,786 log 8156 125051447793216 Bad Request: /api/auth/login/
+INFO 2025-08-22 11:49:48,131 autoreload 8156 125051535929344 /home/oladan/support_system_/backend/backend/settings.py changed, reloading.
+INFO 2025-08-22 11:49:53,083 autoreload 11082 123137664753664 Watching for file changes with StatReloader
+INFO 2025-08-22 12:43:00,877 autoreload 24435 130143959445504 Watching for file changes with StatReloader
+WARNING 2025-08-22 12:44:28,876 log 24435 130143878112832 Bad Request: /api/auth/login/
+INFO 2025-08-22 13:29:26,295 autoreload 24435 130143959445504 /home/oladan/support_system_/backend/backend/settings.py changed, reloading.
