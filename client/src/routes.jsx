@@ -16,11 +16,15 @@ import UserEditAdmin from "./features/admin/UserEditAdmin.jsx";
 import EditComplaint from "./features/user/EditComplaint.jsx";
 import AdminComplaintList from "./features/admin/AdminComplaintList.jsx";
 import ViewAnalytics from "./features/admin/ViewAnalytics.jsx";
+import ForgotPassword from "../src/features/auth/ForgotPassword.jsx";
+import ResetPassword from "../src/features/auth/ResetPassword.jsx";
 
 export const publicRoutes = [
   { path: "/", element: <HomePage /> },
   { path: "/login", element: <Login /> },
   { path: "/register", element: <Register /> },
+  { path: "/forgot-password", element: <ForgotPassword /> },
+  { path: "/reset-password/:uid/:token", element: <ResetPassword /> },
 ];
 
 export const privateRoutes = [

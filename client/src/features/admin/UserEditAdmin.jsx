@@ -3,11 +3,13 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { userService } from "../../services/userService";
 import { ArrowLeft } from "lucide-react";
+import { useToast } from "../../contexts/ToastContext";
 
 export default function UserEditAdmin() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState(null);
+  const { toast } = useToast();
 
   useEffect(() => {
     userService.getUser(id).then((data) => {
@@ -30,9 +32,18 @@ export default function UserEditAdmin() {
   }
 
   async function handleSubmit(e) {
-    e.preventDefault();
-    await userService.updateUser(id, formData);
-    navigate("/admin/users");
+    try {
+      e.preventDefault();
+      await userService.updateUser(id, formData);
+      navigate("/admin/users");
+    } catch (err) {
+      console.log(err);
+      toast({
+        title: "Error",
+        description: "Failed to Edit. Please try again.",
+        variant: "destructive",
+      });
+    }
   }
 
   console.log(formData);
@@ -42,11 +53,11 @@ export default function UserEditAdmin() {
   return (
     <form onSubmit={handleSubmit} className="p-6 space-y-4">
       <Link
-        to="/admin/dashboard"
+        to="/admin/users"
         className="inline-flex items-center text-blue-600 hover:text-blue-500 mb-4"
       >
         <ArrowLeft className="mr-2 h-4 w-4" />
-        Back to Dashboard
+        Back
       </Link>
       <h2 className="text-xl font-bold">Edit User</h2>
 

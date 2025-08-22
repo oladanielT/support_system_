@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { publicRoutes, privateRoutes, fallbackRoute } from "./routes.jsx";
 import { useAuth } from "./contexts/AuthContext.jsx";
-import { useToast } from "./components/hooks/useToast.js";
+import { useToast } from "./contexts/ToastContext.jsx";
 import { Toaster } from "./components/ui/Toast.jsx";
 import { LoadingSpinner } from "./components/ui/LoadingSpinner.jsx";
 
@@ -14,28 +14,35 @@ import { complaintService } from "./services/complaintService.js";
 
 function App() {
   const { loading } = useAuth();
-  const { toasts, dismiss } = useToast();
+  const { toast, toasts, dismiss } = useToast();
 
+  // Sync offline complaints when online
   useEffect(() => {
     async function syncComplaints() {
-      if (navigator.onLine) {
-        const offlineComplaints = await getOfflineComplaints();
-        for (const complaint of offlineComplaints) {
-          try {
-            await complaintService.createComplaint(complaint);
-          } catch (e) {
-            console.error("Failed to sync complaint:", complaint, e);
-          }
+      if (!navigator.onLine) return;
+
+      const offlineComplaints = await getOfflineComplaints();
+      for (const complaint of offlineComplaints) {
+        try {
+          await complaintService.createComplaint(complaint);
+        } catch (e) {
+          console.log("Failed to sync complaint:", complaint, e);
         }
-        if (offlineComplaints.length) {
-          await clearOfflineComplaints();
-          alert("Offline complaints synced successfully!");
-        }
+      }
+
+      if (offlineComplaints.length) {
+        await clearOfflineComplaints();
+        toast({
+          title: "Success",
+          description: "Offline complaints synced successfully!",
+          variant: "success",
+          duration: 5000,
+        });
       }
     }
 
     window.addEventListener("online", syncComplaints);
-    syncComplaints(); // Try syncing once on app start if online
+    syncComplaints(); // Initial sync
 
     return () => window.removeEventListener("online", syncComplaints);
   }, []);
@@ -55,21 +62,18 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gray-50">
         <Routes>
-          {/* Public Routes */}
-          {publicRoutes.map((route, index) => (
-            <Route key={index} path={route.path} element={route.element} />
+          {publicRoutes.map((route, idx) => (
+            <Route key={idx} path={route.path} element={route.element} />
           ))}
 
-          {/* Private Routes */}
-          {privateRoutes.map((route, index) => (
-            <Route key={index} path={route.path} element={route.element} />
+          {privateRoutes.map((route, idx) => (
+            <Route key={idx} path={route.path} element={route.element} />
           ))}
 
-          {/* Fallback Route */}
           <Route path={fallbackRoute.path} element={fallbackRoute.element} />
         </Routes>
 
-        {/* Toast Notifications */}
+        {/* Toast notifications */}
         <Toaster toasts={toasts} onDismiss={dismiss} />
       </div>
     </Router>

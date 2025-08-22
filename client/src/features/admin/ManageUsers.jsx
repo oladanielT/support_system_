@@ -3,6 +3,7 @@ import { userService } from "../../services/userService.js";
 import Navbar from "../../components/layout/Navbar.jsx";
 import { Users, UserPlus, Edit, Trash2, Search, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useToast } from "../../contexts/ToastContext.jsx";
 
 export default function ManageUsers() {
   const [users, setUsers] = useState([]);
@@ -10,6 +11,7 @@ export default function ManageUsers() {
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [roleFilter, setRoleFilter] = useState("all");
+  const { toast } = useToast();
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -19,7 +21,7 @@ export default function ManageUsers() {
         console.log(data.results);
       } catch (err) {
         setError("Failed to load users");
-        console.error(err);
+        console.log("Failed to load users", err);
       } finally {
         setLoading(false);
       }
@@ -67,10 +69,18 @@ export default function ManageUsers() {
       try {
         await userService.deleteUser(userId);
         setUsers(users.filter((user) => user.id !== userId));
-        alert("User deleted successfully");
+        toast({
+          title: "User Deleted",
+          description: "The user was deleted successfully.",
+          variant: "success",
+        });
       } catch (err) {
-        console.error("Failed to delete user:", err);
-        alert("Failed to delete user");
+        console.log("Failed to delete user:", err);
+        toast({
+          title: "Error",
+          description: "Failed to delete user. Please try again.",
+          variant: "destructive",
+        });
       }
     }
   };
@@ -106,10 +116,10 @@ export default function ManageUsers() {
                   Add, edit, and manage system users
                 </p>
               </div>
-              <button className="btn-primary flex items-center">
+              {/* <button className="btn-primary flex items-center">
                 <UserPlus className="mr-2 h-4 w-4" />
                 Add New Engineer
-              </button>
+              </button> */}
             </div>
           </div>
 
@@ -161,9 +171,9 @@ export default function ManageUsers() {
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Department
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Joined
-                    </th>
+                    </th> */}
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Actions
                     </th>
@@ -201,10 +211,10 @@ export default function ManageUsers() {
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         {user.department || "N/A"}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      {/* <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         {new Date(user.date_joined).toLocaleDateString()}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                      </td> */}
+                      {/* <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                         <div className="flex space-x-2">
                           <button className="text-blue-600 hover:text-blue-900">
                             <Edit className="h-4 w-4" />
@@ -216,7 +226,7 @@ export default function ManageUsers() {
                             <Trash2 className="h-4 w-4" />
                           </button>
                         </div>
-                      </td>
+                      </td> */}
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                         <div className="flex space-x-2">
                           <Link

@@ -4,10 +4,12 @@ import { complaintService } from "../../services/complaintService.js";
 import { userService } from "../../services/userService.js";
 import Navbar from "../../components/layout/Navbar.jsx";
 import { ArrowLeft, Clock, User, MapPin, UserCheck } from "lucide-react";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
+import { useToast } from "../../contexts/ToastContext.jsx";
 
 export default function AdminComplaintDetails() {
   const { id } = useParams();
+  const { toast } = useToast();
   const [complaint, setComplaint] = useState(null);
   const [engineers, setEngineers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -39,6 +41,28 @@ export default function AdminComplaintDetails() {
 
   console.log(engineers);
 
+  // const handleAssignEngineer = async (e) => {
+  //   e.preventDefault();
+  //   if (!selectedEngineer) return;
+
+  //   setAssigning(true);
+  //   setError(null);
+
+  //   try {
+  //     const updatedComplaint = await complaintService.assignComplaint(
+  //       id,
+  //       selectedEngineer
+  //     );
+  //     setComplaint(updatedComplaint.complaint);
+  //     toast.success("Engineer assigned successfully!");
+  //   } catch (err) {
+  //     console.log("Failed to assign engineer:", err);
+  //     setError("Failed to assign engineer. Please try again.");
+  //   } finally {
+  //     setAssigning(false);
+  //   }
+  // };
+
   const handleAssignEngineer = async (e) => {
     e.preventDefault();
     if (!selectedEngineer) return;
@@ -52,10 +76,21 @@ export default function AdminComplaintDetails() {
         selectedEngineer
       );
       setComplaint(updatedComplaint.complaint);
-      toast.success("Engineer assigned successfully!");
+
+      toast({
+        title: "Success",
+        description: "Engineer assigned successfully!",
+        variant: "success",
+      });
     } catch (err) {
-      console.error("Failed to assign engineer:", err);
+      console.log("Failed to assign engineer:", err);
       setError("Failed to assign engineer. Please try again.");
+
+      toast({
+        title: "Error",
+        description: "Failed to assign engineer. Please try again.",
+        variant: "destructive",
+      });
     } finally {
       setAssigning(false);
     }

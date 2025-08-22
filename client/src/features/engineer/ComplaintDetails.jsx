@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { complaintService } from "../../services/complaintService.js";
 import Navbar from "../../components/layout/Navbar.jsx";
 import { ArrowLeft, Clock, User, MapPin, Save } from "lucide-react";
-import { toast } from "react-toastify";
+import { useToast } from "../../contexts/ToastContext.jsx";
 
 const statusOptions = [
   { value: "pending", label: "Pending" },
@@ -20,6 +20,7 @@ export default function EngineerComplaintDetails() {
   const [error, setError] = useState(null);
   const [status, setStatus] = useState("");
   const [notes, setNotes] = useState("");
+  const { toast } = useToast();
 
   useEffect(() => {
     const fetchComplaint = async () => {
@@ -52,9 +53,21 @@ export default function EngineerComplaintDetails() {
         notes
       );
       setComplaint(updatedComplaint.complaint);
-      toast.success("Complaint updated successfully!");
+      toast({
+        title: "Success",
+        description: "Complaint updated successfully!",
+        variant: "success",
+        duration: 5000,
+      });
     } catch (err) {
-      console.error("Failed to update complaint:", err);
+      console.log("Failed to update complaint:", err);
+      toast({
+        title: "Error",
+        description: "Failed to update complaint. Please try again.",
+        variant: "destructive",
+        duration: 5000,
+      });
+
       setError("Failed to update complaint. Please try again.");
     } finally {
       setUpdating(false);

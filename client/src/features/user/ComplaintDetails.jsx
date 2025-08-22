@@ -3,7 +3,8 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { complaintService } from "../../services/complaintService.js";
 import Navbar from "../../components/layout/Navbar.jsx";
 import { ArrowLeft, Clock, User, MapPin, Trash2 } from "lucide-react";
-import { toast } from "react-toastify";
+import { useToast } from "../../contexts/ToastContext.jsx";
+// import { toast } from "react-toastify";
 
 export default function ComplaintDetails() {
   const { id } = useParams();
@@ -12,6 +13,7 @@ export default function ComplaintDetails() {
   const [error, setError] = useState(null);
   const [showConfirm, setShowConfirm] = useState(false);
   const navigate = useNavigate();
+  const toast = useToast();
 
   useEffect(() => {
     const fetchComplaint = async () => {
@@ -20,7 +22,7 @@ export default function ComplaintDetails() {
         setComplaint(data);
       } catch (err) {
         setError("Failed to load complaint details");
-        console.error(err);
+        console.log(err);
       } finally {
         setLoading(false);
       }
@@ -32,15 +34,36 @@ export default function ComplaintDetails() {
   const handleDelete = async () => {
     try {
       await complaintService.deleteComplaint(id);
-      toast.success("Complaint deleted successfully");
+      toast({
+        title: "Success",
+        description: "Complaint deleted successfully.",
+        variant: "success",
+      });
       navigate("/user/dashboard");
     } catch (err) {
       console.error("Failed to delete complaint:", err);
-      toast.error("Something went wrong while deleting.");
+      toast({
+        title: "Error",
+        description: "Something went wrong while deleting.",
+        variant: "destructive",
+      });
     } finally {
       setShowConfirm(false);
     }
   };
+
+  // const handleDelete = async () => {
+  //   try {
+  //     await complaintService.deleteComplaint(id);
+  //     toast.success("Complaint deleted successfully");
+  //     navigate("/user/dashboard");
+  //   } catch (err) {
+  //     console.error("Failed to delete complaint:", err);
+  //     toast.error("Something went wrong while deleting.");
+  //   } finally {
+  //     setShowConfirm(false);
+  //   }
+  // };
 
   if (loading) {
     return (
