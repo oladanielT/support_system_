@@ -32,6 +32,10 @@ DEBUG = os.environ.get("DEBUG", "False") == 'True'
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', "support-system-4b82.onrender.com", "support-system-5g34.vercel.app"]
 
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
 
 # Application definition
 
@@ -108,8 +112,9 @@ if DEBUG:
     }
 else:
     DATABASES = {
-    'default': dj_database_url.parse(
-        os.environ.get("DATABASE_URL")
+    'default': dj_database_url.config(
+        default='postgresql://support_system_db_user:5qKnLV1zcRCLSy77MYRghgU37ZA9MS6W@dpg-d2jejundiees73c4vbag-a/support_system_db',
+        conn_max_age=600
     )
 }
 
@@ -229,10 +234,32 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:8080",
     "https://support-system-5g34.vercel.app",
-    "https://support-system-4b82.onrender.com"
+    # "https://support-system-4b82.onrender.com"
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 
 # Celery Configuration (for background tasks)
 CELERY_BROKER_URL = config('REDIS_URL', default='redis://localhost:6379/0')
