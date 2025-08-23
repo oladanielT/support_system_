@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 from decouple import config
 
 
-if not DEBUG:
+if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
