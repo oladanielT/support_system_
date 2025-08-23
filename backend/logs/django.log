@@ -5269,3 +5269,9 @@ INFO 2025-08-22 11:49:53,083 autoreload 11082 123137664753664 Watching for file 
 INFO 2025-08-22 12:43:00,877 autoreload 24435 130143959445504 Watching for file changes with StatReloader
 WARNING 2025-08-22 12:44:28,876 log 24435 130143878112832 Bad Request: /api/auth/login/
 INFO 2025-08-22 13:29:26,295 autoreload 24435 130143959445504 /home/oladan/support_system_/backend/backend/settings.py changed, reloading.
+INFO 2025-08-23 14:04:39,988 autoreload 21988 134890391031808 Watching for file changes with StatReloader
+WARNING 2025-08-23 14:04:44,848 log 21988 134890217530944 Not Found: /
+WARNING 2025-08-23 14:04:57,295 log 21988 134890225923648 Unauthorized: /api/users/
+WARNING 2025-08-23 14:05:14,982 log 21988 134890225923648 Method Not Allowed: /api/auth/register/
+WARNING 2025-08-23 14:05:36,452 log 21988 134890217530944 Bad Request: /api/auth/register/
+WARNING 2025-08-23 14:05:51,463 log 21988 134890217530944 Bad Request: /api/auth/register/
