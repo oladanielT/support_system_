@@ -24,7 +24,9 @@ SECRET_KEY = config('SECRET_KEY', default='django-insecure-eo%xmw#!#rip_7=k23x35
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
+# ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
+
+ALLOWED_HOSTS=['*']
 
 # Application definition
 INSTALLED_APPS = [
@@ -49,6 +51,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -81,19 +84,27 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 # PostgreSQL Database Configuration
+# DATABASES = {
+#     "default": dj_database_url.config(
+#         default=config("DATABASE_URL"),
+#         conn_max_age=600,
+#         conn_health_checks=True,
+#     )
+# }
+
 DATABASES = {
-    "default": dj_database_url.config(
-        default=config("DATABASE_URL"),
-        conn_max_age=600,
-        conn_health_checks=True,
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgresql://support_system_db_user:5qKnLV1zcRCLSy77MYRghgU37ZA9MS6W@dpg-d2jejundiees73c4vbag-a.oregon-postgres.render.com/support_system_db',
+        conn_max_age=600
     )
 }
 
-# Ensure SSL is properly configured for production
-if not DEBUG:
-    DATABASES['default']['OPTIONS'] = {
-        'sslmode': 'require',
-    }
+# # Ensure SSL is properly configured for production
+# if not DEBUG:
+#     DATABASES['default']['OPTIONS'] = {
+#         'sslmode': 'enable',
+#     }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -123,6 +134,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'static'] if (BASE_DIR / 'static').exists() else []
+
+if not DEBUG:
+    # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
+    # and renames the files with unique names for each version to support long-term caching
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files
 MEDIA_URL = '/media/'

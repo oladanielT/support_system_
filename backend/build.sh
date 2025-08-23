@@ -1,14 +1,12 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+# Exit on error
+set -o errexit
 
-# Upgrade pip and build tools
-python -m pip install --upgrade pip setuptools wheel
-
-# Install dependencies
+# Modify this line as needed for your package manager (pip, poetry, etc.)
 pip install -r requirements.txt
 
-# Run migrations
-python manage.py migrate
+# Convert static asset files
+python manage.py collectstatic --no-input
 
-# Collect static files
-python manage.py collectstatic --noinput
+# Apply any outstanding database migrations
+python manage.py migrate
