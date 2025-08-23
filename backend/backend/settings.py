@@ -233,8 +233,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:8080",
-    "https://support-system-5g34.vercel.app",
-    # "https://support-system-4b82.onrender.com"
+    "https://support-system-rho.vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
