@@ -94,9 +94,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://support_system_db_user:5qKnLV1zcRCLSy77MYRghgU37ZA9MS6W@dpg-d2jejundiees73c4vbag-a.oregon-postgres.render.com/support_system_db',
-        conn_max_age=600
+        default='postgresql://support_system_db_user:5qKnLV1zcRCLSy77MYRghgU37ZA9MS6W@dpg-d2jejundiees73c4vbag-a.oregon-postgres.render.com/support_system_db?sslmode=require',
+        conn_max_age=600,
+        conn_health_checks=True,
     )
 }
 
