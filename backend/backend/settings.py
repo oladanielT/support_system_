@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_filters',
     'notifications',
+    'drf_yasg',
 
     
 ]
@@ -234,6 +235,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:8080",
     "https://support-system-rho.vercel.app",
+    'https://support-system-rho-swart.vercel.app',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
