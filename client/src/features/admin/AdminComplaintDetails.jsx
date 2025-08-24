@@ -22,7 +22,7 @@ export default function AdminComplaintDetails() {
       try {
         const [complaintData, engineersData] = await Promise.all([
           complaintService.getComplaint(id),
-          userService.getEngineers(),
+          userService.getEngineers().catch(() => []),
         ]);
         setComplaint(complaintData);
         setEngineers(engineersData);

@@ -27,9 +27,15 @@ export const userService = {
   },
 
   // Get engineers
+  // async getEngineers() {
+  //   const response = await API.get("/users/engineers/");
+  //   console.log("Raw engineers response:", response.data);
+  //   return response.data;
+  // },
+
   async getEngineers() {
-    const response = await API.get("/users/engineers/");
+    const response = await API.get("/users/?role=engineer");
     console.log("Raw engineers response:", response.data);
-    return response.data;
+    return response.data.results;
   },
 };
