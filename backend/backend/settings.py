@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-eo%xmw#!#rip_7=k23x35
 # DEBUG = os.environ.get("DEBUG", "False") == 'True'
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', "support-system-4b82.onrender.com", "support-system-5g34.vercel.app"]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', "support-system-4b82.onrender.com", "support-system-5g34.vercel.app", "network-support-system.vercel.app"]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
