@@ -5278,3 +5278,7 @@ WARNING 2025-08-23 14:05:51,463 log 21988 134890217530944 Bad Request: /api/auth
 INFO 2025-08-23 23:14:33,782 autoreload 7733 126227847892992 Watching for file changes with StatReloader
 INFO 2025-08-23 23:15:15,310 autoreload 8036 137776074043392 Watching for file changes with StatReloader
 INFO 2025-08-24 19:22:06,612 autoreload 21375 136656065613824 Watching for file changes with StatReloader
+INFO 2025-08-24 20:19:44,841 autoreload 21375 136656065613824 /home/oladan/support_system_/backend/users/views.py changed, reloading.
+INFO 2025-08-24 20:19:50,659 autoreload 28478 134662786695168 Watching for file changes with StatReloader
+INFO 2025-08-24 21:06:15,127 autoreload 28478 134662786695168 /home/oladan/support_system_/backend/backend/settings.py changed, reloading.
+INFO 2025-08-24 21:06:19,369 autoreload 2449 129216992825344 Watching for file changes with StatReloader
