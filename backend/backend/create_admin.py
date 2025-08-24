@@ -1,9 +1,15 @@
+import os
+import django
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
+django.setup()
+
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
 email = "Admin@gmail.com"       # Change to your preferred email
-password = "Admin"         # Change to your preferred password
+password = "Admin"              # Change to your preferred password
 first_name = "Admin"
 last_name = "User"
 
@@ -18,4 +24,4 @@ if not User.objects.filter(email=email).exists():
     )
     print(f"✅ Superuser {email} created successfully!")
 else:
-    print(f"ℹ Superuser {email} already exists.")
+    print(f"ℹ Superuser {email} already exists.")
