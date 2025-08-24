@@ -5,8 +5,9 @@ import "./index.css";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
 import AuthWrapper from "./contexts/AuthWrapper.jsx";
 import { ToastProvider } from "./contexts/ToastContext.jsx";
+import { ThemeProvider } from "./contexts/ThemeContext.jsx";
 
-// 👇 import registerSW from vite-plugin-pwa
+// import registerSW from vite-plugin-pwa
 import { registerSW } from "virtual:pwa-register";
 
 const updateSW = registerSW({
@@ -22,12 +23,14 @@ const updateSW = registerSW({
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider>
-      <ToastProvider>
-        <AuthWrapper>
-          <App />
-        </AuthWrapper>
-      </ToastProvider>
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <ToastProvider>
+          <AuthWrapper>
+            <App />
+          </AuthWrapper>
+        </ToastProvider>
+      </AuthProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );

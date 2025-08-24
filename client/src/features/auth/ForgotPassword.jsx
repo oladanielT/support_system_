@@ -1,20 +1,32 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
+import { useToast } from "../../contexts/ToastContext.jsx";
 import API from "../../services/api"; // 👈 import your configured axios instance
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const toast = useToast();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       await API.post("/auth/password-reset/", { email });
-      toast.success("Password reset email sent!");
+      toast({
+        title: "Success",
+        description: "Password reset email sent!",
+        variant: "success",
+      });
     } catch (err) {
-      toast.error(
-        err.response?.data?.detail || "Failed to send password reset email"
-      );
+      toast({
+        title: "Error",
+        description:
+          err.response?.data?.detail || "Failed to send password reset email",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -33,9 +45,10 @@ export default function ForgotPassword() {
         />
         <button
           type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded w-full"
+          disabled={loading}
+          className="bg-blue-600 text-white px-4 py-2 rounded w-full disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Send Reset Link
+          {loading ? "Sending..." : "Send Reset Link"}
         </button>
       </form>
 

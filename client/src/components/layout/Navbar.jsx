@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext.jsx";
 import { useNotifications } from "../../contexts/NotificationContext.jsx"; // Add this import
-import { Menu, X, Bell, User, LogOut, Settings } from "lucide-react";
+import { Menu, X, Bell, User, LogOut, Settings, Sun, Moon } from "lucide-react";
+import { useTheme } from "../../contexts/ThemeContext.jsx";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -17,6 +18,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNotifOpen, setIsNotifOpen] = useState(false);
   const [loadingNotif, setLoadingNotif] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const handleLogout = () => {
     logout();
@@ -146,9 +148,25 @@ const Navbar = () => {
 
               {isMenuOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
-                  <button className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  {/* <button className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                     <Settings size={16} className="mr-2" />
                     Settings
+                  </button> */}
+                  <button
+                    onClick={toggleTheme}
+                    className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    {theme === "dark" ? (
+                      <>
+                        <Sun size={16} className="mr-2" />
+                        Light Mode
+                      </>
+                    ) : (
+                      <>
+                        <Moon size={16} className="mr-2" />
+                        Dark Mode
+                      </>
+                    )}
                   </button>
                   <button
                     onClick={handleLogout}

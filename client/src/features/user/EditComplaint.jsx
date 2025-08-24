@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { complaintService } from "../../services/complaintService";
 import Navbar from "../../components/layout/Navbar.jsx";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ArrowLeft } from "lucide-react";
+import { useToast } from "../../contexts/ToastContext.jsx";
 
 export default function EditComplaint() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     title: "",
     location: "",
@@ -36,10 +37,18 @@ export default function EditComplaint() {
     e.preventDefault();
     try {
       await complaintService.updateComplaint(id, formData);
-      toast.success("Complaint updated successfully");
+      toast({
+        title: "Success",
+        description: "Complaint updated successfully",
+        variant: "success",
+      });
       navigate(`/user/complaints/${id}`);
     } catch (err) {
-      toast.error("Error updating complaint");
+      toast({
+        title: "Error",
+        description: "Error updating complaint",
+        variant: "destructive",
+      });
       console.error("Error updating complaint", err);
     }
   };
@@ -50,6 +59,13 @@ export default function EditComplaint() {
       <main className="max-w-3xl mx-auto py-6 sm:px-6 lg:px-8">
         <div className="px-4 py-6 sm:px-0">
           <div className="mb-8">
+            <Link
+              to={`/user/complaints/${id}`}
+              className="inline-flex items-center text-blue-600 hover:text-blue-500 mb-4"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Complaint Details
+            </Link>
             <h1 className="text-3xl font-bold text-gray-900">Edit Complaint</h1>
             <p className="mt-2 text-gray-600">
               Update your complaint details below

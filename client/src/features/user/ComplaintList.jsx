@@ -1,16 +1,38 @@
 import { useEffect, useState } from "react";
 import API from "../../services/api";
 import { Link } from "react-router-dom";
+import { Clock10 } from "lucide-react";
+import { getOfflineComplaints } from "../../lib/offlineDB.js";
+
 export default function ComplaintList() {
   const [complaints, setComplaints] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [offlineComplaints, setOfflineComplaints] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchComplaints = async () => {
+  //     try {
+  //       const res = await API.get("/complaints/");
+  //       setComplaints(res.data);
+  //     } catch (err) {
+  //       setError("Failed to load complaints");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchComplaints();
+  // }, []);
 
   useEffect(() => {
     const fetchComplaints = async () => {
       try {
         const res = await API.get("/complaints/");
         setComplaints(res.data);
+        // Fetch offline complaints
+        const offline = await getOfflineComplaints();
+        setOfflineComplaints(offline);
       } catch (err) {
         setError("Failed to load complaints");
       } finally {
@@ -27,6 +49,31 @@ export default function ComplaintList() {
   return (
     <div className="p-6 max-w-4xl mx-auto">
       <h2 className="text-xl font-semibold mb-4">My Complaints</h2>
+      {offlineComplaints.length > 0 && (
+        <div className="mt-8">
+          <h2 className="text-xl font-semibold mb-4">Pending Sync</h2>
+          <div className="space-y-4">
+            {offlineComplaints.map((c, idx) => (
+              <div
+                key={c.id || idx}
+                className="bg-yellow-50 p-4 rounded shadow flex items-center justify-between"
+              >
+                <div>
+                  <h3 className="text-lg font-bold flex items-center">
+                    <Clock10 className="h-5 w-5 text-yellow-500 mr-2" />
+                    {c.title || "(No Title)"}
+                  </h3>
+                  <p className="text-sm text-gray-600">{c.category}</p>
+                  <p className="text-xs text-yellow-700 mt-1 font-semibold">
+                    Pending Sync
+                  </p>
+                </div>
+                <span className="text-xs text-gray-400">(Offline)</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
       {complaints.length === 0 ? (
         <p>No complaints submitted yet.</p>
       ) : (

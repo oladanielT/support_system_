@@ -1,21 +1,45 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext.jsx";
 import { complaintService } from "../../services/complaintService.js";
 import Navbar from "../../components/layout/Navbar.jsx";
-import { Plus, AlertCircle, Clock, CheckCircle } from "lucide-react";
+import { Plus, AlertCircle, Clock, CheckCircle, Clock10 } from "lucide-react";
+import { getOfflineComplaints } from "../../lib/offlineDB.js";
 
 export default function UserDashboard() {
   const { user } = useAuth();
+  const location = useLocation();
   const [complaints, setComplaints] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [offlineComplaints, setOfflineComplaints] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchComplaints = async () => {
+  //     setLoading(true);
+  //     try {
+  //       const data = await complaintService.getComplaints({ limit: 5 });
+  //       setComplaints(data.results || data);
+  //     } catch (err) {
+  //       setError("Failed to load complaints");
+  //       console.error(err);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchComplaints();
+  // }, [location]);
 
   useEffect(() => {
     const fetchComplaints = async () => {
+      setLoading(true);
       try {
         const data = await complaintService.getComplaints({ limit: 5 });
         setComplaints(data.results || data);
+        // Fetch offline complaints
+        const offline = await getOfflineComplaints();
+        setOfflineComplaints(offline);
       } catch (err) {
         setError("Failed to load complaints");
         console.error(err);
@@ -25,7 +49,7 @@ export default function UserDashboard() {
     };
 
     fetchComplaints();
-  }, []);
+  }, [location]);
 
   const getStatusIcon = (status) => {
     switch (status) {
@@ -152,6 +176,35 @@ export default function UserDashboard() {
               </div>
             ) : (
               <div className="space-y-4">
+                {offlineComplaints.length > 0 && (
+                  <div className="mt-8">
+                    <h2 className="text-xl font-semibold mb-4">Pending Sync</h2>
+                    <div className="space-y-4">
+                      {offlineComplaints.map((c, idx) => (
+                        <div
+                          key={c.id || idx}
+                          className="bg-yellow-50 p-4 rounded shadow flex items-center justify-between"
+                        >
+                          <div>
+                            <h3 className="text-lg font-bold flex items-center">
+                              <Clock10 className="h-5 w-5 text-yellow-500 mr-2" />
+                              {c.title || "(No Title)"}
+                            </h3>
+                            <p className="text-sm text-gray-600">
+                              {c.category}
+                            </p>
+                            <p className="text-xs text-yellow-700 mt-1 font-semibold">
+                              Pending Sync
+                            </p>
+                          </div>
+                          <span className="text-xs text-gray-400">
+                            (Offline)
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 {complaints.map((complaint) => (
                   <div
                     key={complaint.id}

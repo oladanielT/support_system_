@@ -13,7 +13,7 @@ export default function ComplaintDetails() {
   const [error, setError] = useState(null);
   const [showConfirm, setShowConfirm] = useState(false);
   const navigate = useNavigate();
-  const toast = useToast();
+  const { toast } = useToast();
 
   useEffect(() => {
     const fetchComplaint = async () => {
@@ -204,21 +204,34 @@ export default function ComplaintDetails() {
 
                 {/* Confirmation dialog */}
                 {showConfirm && (
-                  <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
-                    <div className="bg-white p-6 rounded shadow-md max-w-sm w-full text-center">
-                      <p className="mb-4 text-lg font-medium">
+                  <div
+                    className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="delete-dialog-title"
+                  >
+                    <div
+                      className="bg-white p-6 rounded shadow-md max-w-sm w-full text-center"
+                      tabIndex="-1"
+                    >
+                      <p
+                        id="delete-dialog-title"
+                        className="mb-4 text-lg font-medium"
+                      >
                         Are you sure you want to delete this complaint?
                       </p>
                       <div className="flex justify-center space-x-4">
                         <button
                           onClick={handleDelete}
                           className="btn-primary px-4 py-2"
+                          aria-label="Confirm delete complaint"
                         >
                           Yes, Delete
                         </button>
                         <button
                           onClick={() => setShowConfirm(false)}
                           className="btn-secondary px-4 py-2"
+                          aria-label="Cancel delete complaint"
                         >
                           Cancel
                         </button>

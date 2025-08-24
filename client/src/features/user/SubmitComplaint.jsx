@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { complaintService } from "../../services/complaintService.js";
 import Navbar from "../../components/layout/Navbar.jsx";
-import { toast } from "react-toastify";
+import { useToast } from "../../contexts/ToastContext.jsx";
 
 const categories = [
   { value: "network_slow", label: "Network Slow" },
@@ -25,6 +25,7 @@ export default function SubmitComplaint() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     title: "",
     category: "",
@@ -43,31 +44,68 @@ export default function SubmitComplaint() {
     setLoading(true);
     setError(null);
 
-    if (navigator.onLine) {
-      try {
-        await complaintService.createComplaint(formData);
-        navigate("/user/dashboard");
-      } catch (err) {
-        console.error("Failed to submit complaint:", err);
-        setError("Failed to submit complaint. Please try again.");
-      } finally {
-        setLoading(false);
+    try {
+      const complaint = await complaintService.createComplaint(formData);
+
+      if (complaint.offline) {
+        toast({
+          title: "Saved Offline",
+          description:
+            "Complaint saved offline. It will sync automatically when online.",
+          variant: "info", // you can style this variant in your toaster
+        });
+      } else {
+        toast({
+          title: "Success",
+          description: "Complaint submitted successfully!",
+          variant: "success",
+        });
       }
-    } else {
-      try {
-        await saveComplaintOffline(formData);
-        toast.info(
-          "No internet connection: complaint saved offline and will sync automatically when back online."
-        );
-        setLoading(false);
-        navigate("/user/dashboard");
-      } catch (err) {
-        console.error("Failed to save complaint offline:", err);
-        setError("Failed to save complaint offline. Please try again.");
-        setLoading(false);
-      }
+
+      navigate("/user/dashboard");
+    } catch (err) {
+      console.error("Error submitting complaint:", err);
+      setError("Failed to submit complaint. Please try again.");
+      toast({
+        title: "Error",
+        description: "Failed to submit complaint. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
     }
   };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   setError(null);
+
+  //   if (navigator.onLine) {
+  //     try {
+  //       await complaintService.createComplaint(formData);
+  //       navigate("/user/dashboard");
+  //     } catch (err) {
+  //       console.error("Failed to submit complaint:", err);
+  //       setError("Failed to submit complaint. Please try again.");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   } else {
+  //     try {
+  //       await saveComplaintOffline(formData);
+  //       toast.info(
+  //         "No internet connection: complaint saved offline and will sync automatically when back online."
+  //       );
+  //       setLoading(false);
+  //       navigate("/user/dashboard");
+  //     } catch (err) {
+  //       console.error("Failed to save complaint offline:", err);
+  //       setError("Failed to save complaint offline. Please try again.");
+  //       setLoading(false);
+  //     }
+  //   }
+  // };
 
   return (
     <div className="min-h-screen bg-gray-50">
