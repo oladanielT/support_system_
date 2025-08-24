@@ -237,7 +237,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "https://support-system-rho.vercel.app",
     'https://support-system-rho-swart.vercel.app',
-    'https://network-support-system.vercel.app/',
+    'https://network-support-system.vercel.app',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
