@@ -6,6 +6,7 @@ import { Toaster } from "./components/ui/Toast.jsx";
 import { LoadingSpinner } from "./components/ui/LoadingSpinner.jsx";
 
 import { useEffect } from "react";
+import { ComplaintSyncProvider } from "./contexts/ComplaintSyncContext.jsx";
 import {
   getOfflineComplaints,
   clearOfflineComplaints,
@@ -121,4 +122,11 @@ function App() {
   );
 }
 
-export default App;
+// Wrap App with ComplaintSyncProvider
+export default function AppWithSyncProvider(props) {
+  return (
+    <ComplaintSyncProvider>
+      <App {...props} />
+    </ComplaintSyncProvider>
+  );
+}

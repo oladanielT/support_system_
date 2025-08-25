@@ -13,7 +13,15 @@ const dbPromise = openDB("complaint-db", 1, {
 
 export async function saveComplaintOffline(complaint) {
   const db = await dbPromise;
-  await db.add("complaints", complaint);
+  // Add a tempId and syncStatus for tracking
+  const tempId = `offline-${Date.now()}-${Math.random()
+    .toString(36)
+    .slice(2, 8)}`;
+  await db.add("complaints", {
+    ...complaint,
+    tempId,
+    syncStatus: "pending",
+  });
 }
 
 export async function getOfflineComplaints() {
