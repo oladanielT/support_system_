@@ -1,4 +1,5 @@
 import API from "./api.js";
+import { saveComplaintOffline } from "../lib/offlineDB.js";
 
 export const complaintService = {
   // Get all complaints
@@ -32,13 +33,19 @@ export const complaintService = {
 
       // Check if it's a network issue
       if (!navigator.onLine || err.message === "Network Error") {
-        // Save complaint offline instead
-        await saveComplaintOffline(complaint);
-        return {
-          ...complaint,
-          id: Date.now(),
-          offline: true,
-        };
+        try {
+          await saveComplaintOffline(complaint);
+          return {
+            ...complaint,
+            id: Date.now(),
+            offline: true,
+          };
+        } catch (offlineErr) {
+          // Show a toast or throw a specific error
+          throw new Error(
+            "Failed to save complaint offline. Please try again."
+          );
+        }
       }
 
       // If it's not a network error, rethrow

@@ -22,10 +22,12 @@ function App() {
       if (!navigator.onLine) return;
 
       const offlineComplaints = await getOfflineComplaints();
+      let syncFailed = false;
       for (const complaint of offlineComplaints) {
         try {
           await complaintService.createComplaint(complaint);
         } catch (e) {
+          syncFailed = true;
           console.log("Failed to sync complaint:", complaint, e);
         }
       }
@@ -33,9 +35,11 @@ function App() {
       if (offlineComplaints.length) {
         await clearOfflineComplaints();
         toast({
-          title: "Success",
-          description: "Offline complaints synced successfully!",
-          variant: "success",
+          title: syncFailed ? "Partial Sync" : "Success",
+          description: syncFailed
+            ? "Some offline complaints could not be synced."
+            : "Offline complaints synced successfully!",
+          variant: syncFailed ? "warning" : "success",
           duration: 5000,
         });
       }
