@@ -13,59 +13,26 @@ export default function EngineerDashboard() {
   const [error, setError] = useState(null);
   const location = useLocation();
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       // Fetch assigned complaints
-  //       const complaintsData = await complaintService.getComplaints({
-  //         assigned_to: user.id,
-  //         limit: 10,
-  //       });
-  //       setComplaints(complaintsData.results || complaintsData);
-
-  //       // Mock stats - replace with actual API call
-  //       setStats({
-  //         assigned: complaintsData.length || 0,
-  //         in_progress:
-  //           complaintsData.filter((c) => c.status === "in_progress").length ||
-  //           0,
-  //         resolved_today: 3,
-  //         avg_resolution: "2.4h",
-  //       });
-  //     } catch (err) {
-  //       setError("Failed to load dashboard data");
-  //       console.error(err);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, [user.id]);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         const complaintsData = await complaintService.getComplaints({
           assigned_to: user.id,
         });
-        console.log(complaintsData);
         const complaintsArray = complaintsData.results || complaintsData;
         setComplaints(complaintsArray);
+        // Cache the latest 4 complaints
+        localStorage.setItem(
+          "recentComplaintsEngineer",
+          JSON.stringify(complaintsArray.slice(0, 4))
+        );
 
         const resolvedToday = complaintsArray.filter((c) => {
-          console.log(c.status);
           return (
             c.status === "resolved" &&
             new Date(c.resolved_at).toDateString() === new Date().toDateString()
           );
         }).length;
-
-        console.log(resolvedToday);
-
-        // const resolvedComplaints = complaintsArray.filter(
-        //   (c) => c.status === "resolved"
-        // );
 
         const resolvedComplaints = complaintsArray.filter((c) => {
           return (
@@ -97,6 +64,11 @@ export default function EngineerDashboard() {
           avg_resolution: avgResolution,
         });
       } catch (err) {
+        // Try to load from cache if offline or failed
+        const cached = localStorage.getItem("recentComplaintsEngineer");
+        if (cached) {
+          setComplaints(JSON.parse(cached));
+        }
         setError("Failed to load dashboard data");
         console.error(err);
       } finally {
@@ -107,40 +79,81 @@ export default function EngineerDashboard() {
     fetchData();
   }, [user.id, location.key]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const complaintsData = await complaintService.getComplaints({
-  //         assigned_to: user.id,
-  //         limit: 10,
-  //       });
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const complaintsData = await complaintService.getComplaints({
+          assigned_to: user.id,
+        });
+        const complaintsArray = complaintsData.results || complaintsData;
+        setComplaints(complaintsArray);
+        // Cache the latest 4 complaints
+        localStorage.setItem(
+          "recentComplaintsEngineer",
+          JSON.stringify(complaintsArray.slice(0, 4))
+        );
 
-  //       const complaintsArray = complaintsData.results || complaintsData;
+        const resolvedToday = complaintsArray.filter((c) => {
+          return (
+            c.status === "resolved" &&
+            new Date(c.resolved_at).toDateString() === new Date().toDateString()
+          );
+        }).length;
 
-  //       setComplaints(complaintsArray);
+        const resolvedComplaints = complaintsArray.filter((c) => {
+          return (
+            c.status === "resolved" &&
+            new Date(c.resolved_at).toDateString() === new Date().toDateString()
+          );
+        });
 
-  //       const resolvedToday = complaintsArray.filter((c) => {
-  //         return (
-  //           c.status === "resolved" &&
-  //           new Date(c.resolved_at).toDateString() === new Date().toDateString()
-  //         );
-  //       }).length;
-  //       console.log(resolvedToday);
+        let avgResolution = "N/A";
+        if (resolvedComplaints.length > 0) {
+          const startOfToday = new Date();
+          startOfToday.setHours(0, 0, 0, 0);
 
-  //       const resolvedComplaints = complaintsArray.filter(
-  //         (c) => c.status === "resolved"
-  //       );
+          const totalMs = resolvedComplaints.reduce((acc, c) => {
+            const resolved = new Date(c.resolved_at);
+            return acc + (resolved - startOfToday);
+          }, 0);
 
-  //       let avgResolution = "N/A";
-  //       if (resolvedComplaints.length > 0) {
-  //         const totalMs = resolvedComplaints.reduce((acc, c) => {
-  //           const created = new Date(c.created_at);
-  //           const resolved = new Date(c.resolved_at);
-  //           return acc + (resolved - created);
-  //         }, 0);
+          const avgHours =
+            totalMs / resolvedComplaints.length / (1000 * 60 * 60);
+          avgResolution = `${avgHours.toFixed(1)}h`;
+        }
 
-  //         // average in hours
-  //         const avgHours =
+        const statsObj = {
+          assigned: complaintsArray.length,
+          in_progress: complaintsArray.filter((c) => c.status === "in_progress")
+            .length,
+          resolved_today: resolvedToday,
+          avg_resolution: avgResolution,
+        };
+        setStats(statsObj);
+        // Cache stats
+        localStorage.setItem(
+          "dashboardStatsEngineer",
+          JSON.stringify(statsObj)
+        );
+      } catch (err) {
+        // Try to load from cache if offline or failed
+        const cached = localStorage.getItem("recentComplaintsEngineer");
+        if (cached) {
+          setComplaints(JSON.parse(cached));
+        }
+        const cachedStats = localStorage.getItem("dashboardStatsEngineer");
+        if (cachedStats) {
+          setStats(JSON.parse(cachedStats));
+        }
+        setError("Failed to load dashboard data");
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [user.id, location.key]);
   //           totalMs / resolvedComplaints.length / (1000 * 60 * 60);
   //         avgResolution = `${avgHours.toFixed(1)}h`;
   //       }

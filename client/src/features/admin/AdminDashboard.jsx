@@ -54,18 +54,35 @@ export default function AdminDashboard() {
         const complaintsData = await complaintService.getComplaints({
           limit: 5,
         });
-        setRecentComplaints(complaintsData.results || complaintsData);
+        const complaintsArr = complaintsData.results || complaintsData;
+        setRecentComplaints(complaintsArr);
+        // Cache the latest 4 complaints
+        localStorage.setItem(
+          "recentComplaintsAdmin",
+          JSON.stringify(complaintsArr.slice(0, 4))
+        );
 
         // Fetch real stats from backend
         const realStats = await complaintService.getStats();
-
-        setStats({
+        const statsObj = {
           total_complaints: realStats.total_complaints,
           pending_assignments: realStats.pending_complaints,
           active_engineers: realStats.active_engineers || 0,
           resolution_rate: calculateResolutionRate(realStats),
-        });
+        };
+        setStats(statsObj);
+        // Cache stats
+        localStorage.setItem("dashboardStatsAdmin", JSON.stringify(statsObj));
       } catch (err) {
+        // Try to load from cache if offline or failed
+        const cached = localStorage.getItem("recentComplaintsAdmin");
+        if (cached) {
+          setRecentComplaints(JSON.parse(cached));
+        }
+        const cachedStats = localStorage.getItem("dashboardStatsAdmin");
+        if (cachedStats) {
+          setStats(JSON.parse(cachedStats));
+        }
         setError("Failed to load dashboard data");
         console.error(err);
       } finally {

@@ -37,10 +37,20 @@ export default function UserDashboard() {
       try {
         const data = await complaintService.getComplaints({ limit: 5 });
         setComplaints(data.results || data);
+        // Cache the latest 4 complaints
+        localStorage.setItem(
+          "recentComplaints",
+          JSON.stringify((data.results || data).slice(0, 4))
+        );
         // Fetch offline complaints
         const offline = await getOfflineComplaints();
         setOfflineComplaints(offline);
       } catch (err) {
+        // Try to load from cache if offline or failed
+        const cached = localStorage.getItem("recentComplaints");
+        if (cached) {
+          setComplaints(JSON.parse(cached));
+        }
         setError("Failed to load complaints");
         console.error(err);
       } finally {

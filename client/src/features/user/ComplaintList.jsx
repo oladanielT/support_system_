@@ -30,10 +30,20 @@ export default function ComplaintList() {
       try {
         const res = await API.get("/complaints/");
         setComplaints(res.data);
+        // Cache the latest 4 complaints
+        localStorage.setItem(
+          "recentComplaints",
+          JSON.stringify(res.data.slice(0, 4))
+        );
         // Fetch offline complaints
         const offline = await getOfflineComplaints();
         setOfflineComplaints(offline);
       } catch (err) {
+        // Try to load from cache if offline or failed
+        const cached = localStorage.getItem("recentComplaints");
+        if (cached) {
+          setComplaints(JSON.parse(cached));
+        }
         setError("Failed to load complaints");
       } finally {
         setLoading(false);

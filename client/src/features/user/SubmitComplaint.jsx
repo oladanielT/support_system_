@@ -44,6 +44,18 @@ export default function SubmitComplaint() {
     setLoading(true);
     setError(null);
 
+    // Frontend validation for title and description length
+    if (formData.title.trim().length < 5) {
+      setError("Title must be at least 5 characters long.");
+      setLoading(false);
+      return;
+    }
+    if (formData.description.trim().length < 10) {
+      setError("Description must be at least 10 characters long.");
+      setLoading(false);
+      return;
+    }
+
     try {
       const complaint = await complaintService.createComplaint(formData);
 
@@ -52,7 +64,7 @@ export default function SubmitComplaint() {
           title: "Saved Offline",
           description:
             "Complaint saved offline. It will sync automatically when online.",
-          variant: "info", // you can style this variant in your toaster
+          variant: "info",
         });
       } else {
         toast({
