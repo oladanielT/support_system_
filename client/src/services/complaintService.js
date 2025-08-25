@@ -19,9 +19,31 @@ export const complaintService = {
   },
 
   // Create new complaint
-  async createComplaint(complaintData) {
-    const response = await API.post("/complaints/", complaintData);
-    return response.data;
+  // async createComplaint(complaintData) {
+  //   const response = await API.post("/complaints/", complaintData);
+  //   return response.data;
+  // },
+  createComplaint: async (complaint) => {
+    try {
+      const response = await API.post("/complaints/", complaint);
+      return response.data;
+    } catch (err) {
+      console.log("Online complaint submission failed:", err);
+
+      // Check if it's a network issue
+      if (!navigator.onLine || err.message === "Network Error") {
+        // Save complaint offline instead
+        await saveComplaintOffline(complaint);
+        return {
+          ...complaint,
+          id: Date.now(),
+          offline: true,
+        };
+      }
+
+      // If it's not a network error, rethrow
+      throw err;
+    }
   },
 
   // Update complaint
