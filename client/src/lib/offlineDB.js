@@ -17,11 +17,13 @@ export async function saveComplaintOffline(complaint) {
   const tempId = `offline-${Date.now()}-${Math.random()
     .toString(36)
     .slice(2, 8)}`;
-  await db.add("complaints", {
+  const offlineComplaint = {
     ...complaint,
     tempId,
     syncStatus: "pending",
-  });
+  };
+  await db.add("complaints", offlineComplaint);
+  return offlineComplaint;
 }
 
 export async function getOfflineComplaints() {

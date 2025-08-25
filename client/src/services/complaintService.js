@@ -34,10 +34,9 @@ export const complaintService = {
       // Check if it's a network issue
       if (!navigator.onLine || err.message === "Network Error") {
         try {
-          await saveComplaintOffline(complaint);
+          const offlineComplaint = await saveComplaintOffline(complaint);
           return {
-            ...complaint,
-            id: Date.now(),
+            ...offlineComplaint,
             offline: true,
           };
         } catch (offlineErr) {
