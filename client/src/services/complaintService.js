@@ -31,8 +31,17 @@ export const complaintService = {
     } catch (err) {
       console.log("Online complaint submission failed:", err);
 
-      // Check if it's a network issue
-      if (!navigator.onLine || err.message === "Network Error") {
+      // Check for any network error (robust offline detection)
+      const isNetworkError =
+        !navigator.onLine ||
+        err.message === "Network Error" ||
+        err.code === "ERR_NETWORK" ||
+        (err.isAxiosError &&
+          err.request &&
+          err.request.readyState === 4 &&
+          err.request.status === 0);
+
+      if (isNetworkError) {
         try {
           const offlineComplaint = await saveComplaintOffline(complaint);
           return {
