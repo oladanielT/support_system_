@@ -35,3 +35,13 @@ export async function clearOfflineComplaints() {
   const db = await dbPromise;
   await db.clear("complaints");
 }
+
+// Remove a single offline complaint by tempId
+export async function removeOfflineComplaintByTempId(tempId) {
+  const db = await dbPromise;
+  const all = await db.getAll("complaints");
+  const toRemove = all.find((c) => c.tempId === tempId);
+  if (toRemove) {
+    await db.delete("complaints", toRemove.id);
+  }
+}

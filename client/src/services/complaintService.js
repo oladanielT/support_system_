@@ -40,7 +40,16 @@ export const complaintService = {
             offline: true,
           };
         } catch (offlineErr) {
-          // Show a toast or throw a specific error
+          // Log detailed error for debugging
+          console.error("Failed to save complaint offline:", offlineErr);
+          if (window && window.alert) {
+            window.alert(
+              "Your browser could not save the complaint offline. This may be due to browser privacy settings, unsupported features, or storage issues. Please try another browser or check your settings.\nError: " +
+                (offlineErr && offlineErr.message
+                  ? offlineErr.message
+                  : offlineErr)
+            );
+          }
           throw new Error(
             "Failed to save complaint offline. Please try again."
           );

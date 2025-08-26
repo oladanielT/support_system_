@@ -51,6 +51,19 @@ export default function ComplaintList() {
     };
 
     fetchComplaints();
+
+    // Listen for offlineComplaintsUpdated event to refresh offline complaints in real time
+    const handleOfflineUpdate = async () => {
+      const offline = await getOfflineComplaints();
+      setOfflineComplaints(offline);
+    };
+    window.addEventListener("offlineComplaintsUpdated", handleOfflineUpdate);
+    return () => {
+      window.removeEventListener(
+        "offlineComplaintsUpdated",
+        handleOfflineUpdate
+      );
+    };
   }, []);
 
   if (loading) return <p className="p-6">Loading complaints...</p>;

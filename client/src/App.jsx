@@ -10,6 +10,7 @@ import { ComplaintSyncProvider } from "./contexts/ComplaintSyncContext.jsx";
 import {
   getOfflineComplaints,
   clearOfflineComplaints,
+  removeOfflineComplaintByTempId,
 } from "./lib/offlineDB.js";
 import { complaintService } from "./services/complaintService.js";
 
@@ -34,7 +35,6 @@ function App() {
           successfulComplaints.push(complaint);
         } catch (e) {
           failedComplaints.push(complaint);
-          // Log backend error message if available
           if (e?.response?.data) {
             console.log(
               "Failed to sync complaint:",
@@ -47,24 +47,16 @@ function App() {
         }
       }
 
-      // Only clear offline complaints that were successfully synced
-      if (successfulComplaints.length) {
-        // Remove only the successfully synced complaints from offline storage
-        // If all succeeded, just clear all; otherwise, rewrite failed ones
-        if (failedComplaints.length === 0) {
-          await clearOfflineComplaints();
-        } else {
-          // Rewrite only failed complaints to offline storage
-          // Clear all, then re-save failed
-          await clearOfflineComplaints();
-          if (failedComplaints.length) {
-            // Save failed complaints back
-            const { saveComplaintOffline } = await import("./lib/offlineDB.js");
-            for (const failed of failedComplaints) {
-              await saveComplaintOffline(failed);
-            }
-          }
+      // Remove only the successfully synced complaints from offline storage
+      for (const synced of successfulComplaints) {
+        if (synced.tempId) {
+          await removeOfflineComplaintByTempId(synced.tempId);
         }
+      }
+
+      // Notify UI to update offline complaints (for ComplaintList)
+      if (successfulComplaints.length) {
+        window.dispatchEvent(new Event("offlineComplaintsUpdated"));
       }
 
       if (successfulComplaints.length || failedComplaints.length) {
